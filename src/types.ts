@@ -597,6 +597,8 @@ export interface DeviceTemplate {
   rackForm?: "full" | "half" | "shelf-only"; // Optional override for the size-based rack-form heuristic
   auxiliaryData?: AuxRow[];      // Aux rows shown on the node (each row carries its own header/footer slot)
   facePlateLayout?: FacePlateLayout; // Custom face-plate connector positions
+  /** True for DWAV-authored/verified templates, shown as a small badge in the device library so a designer can tell a verified entry apart from an unreviewed community one with the same model name. */
+  dwavVerified?: boolean;
 }
 
 export interface CustomTemplateGroup {
