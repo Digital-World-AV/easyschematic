@@ -14,6 +14,7 @@ import type { DeviceTemplate } from "../types";
 export const templates: DeviceTemplate[] = [
   {
     id: "37e3b485-ed14-4d44-83d7-703cc6b6df3f",
+    dwavVerified: true,
     deviceType: "wired-mic",
     label: "Audio-Technica BP3600",
     manufacturer: "Audio-Technica",
@@ -32,6 +33,7 @@ export const templates: DeviceTemplate[] = [
   },
   {
     id: "7af08446-b1a9-49ef-a0b7-88b6d789be31",
+    dwavVerified: true,
     deviceType: "wired-mic",
     label: "Audio-Technica ATND1061DAN",
     manufacturer: "Audio-Technica",
@@ -72,6 +74,7 @@ export const templates: DeviceTemplate[] = [
   },
   {
     id: "46f26a4d-ce40-4f16-b042-a4e34c1c4d36",
+    dwavVerified: true,
     deviceType: "speaker",
     label: "Martin Audio ACS-40TS-W",
     manufacturer: "Martin Audio",
