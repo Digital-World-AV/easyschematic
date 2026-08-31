@@ -108,8 +108,8 @@ function TemplateItem({
         </div>
       )}
       <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-        <span className="text-xs text-[var(--color-text-heading)] font-medium truncate flex items-center gap-1">
-          <HighlightedText text={template.label} query={query} />
+        <span className="text-xs text-[var(--color-text-heading)] font-medium flex items-center gap-1 min-w-0">
+          <span className="truncate min-w-0"><HighlightedText text={template.label} query={query} /></span>
           {template.dwavVerified && (
             <span className="text-[8px] text-white bg-[#EF5032] rounded px-1 py-px font-normal shrink-0" title="DWAV-verified device">DWAV</span>
           )}
@@ -348,8 +348,8 @@ function DraggableTemplateItem({
           </div>
         )}
         <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-          <span className="text-xs text-[var(--color-text-heading)] font-medium truncate flex items-center gap-1">
-            <HighlightedText text={template.label} query={query} />
+          <span className="text-xs text-[var(--color-text-heading)] font-medium flex items-center gap-1 min-w-0">
+            <span className="truncate min-w-0"><HighlightedText text={template.label} query={query} /></span>
             {template.dwavVerified && (
               <span className="text-[8px] text-white bg-[#EF5032] rounded px-1 py-px font-normal shrink-0" title="DWAV-verified device">DWAV</span>
             )}
