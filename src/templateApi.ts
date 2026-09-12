@@ -27,7 +27,20 @@ function effectiveTemplates(): DeviceTemplate[] {
   if (!cached) return bundled;
   const cachedIds = new Set(cached.map((t) => t.id).filter((id): id is string => !!id));
   const bundledFloor = bundled.filter((t) => t.id && !cachedIds.has(t.id));
-  return [...cached, ...bundledFloor];
+  // A DWAV-verified bundled template supersedes any community entry for the same
+  // manufacturer + model number. Two rows for one device, one of them unreviewed, is
+  // exactly the pick-the-wrong-one mistake the badge was added to prevent; hiding the
+  // duplicate finishes the job. Same-ID D1 overrides still win above (they never reach
+  // bundledFloor), so a deliberate prod override is untouched.
+  const modelKey = (t: DeviceTemplate) =>
+    `${t.manufacturer ?? ""}|${t.modelNumber ?? ""}`.toLowerCase().replace(/\s+/g, "");
+  const verifiedModels = new Set(
+    bundledFloor.filter((t) => t.dwavVerified && t.modelNumber).map(modelKey),
+  );
+  const community = verifiedModels.size
+    ? cached.filter((t) => !(t.modelNumber && verifiedModels.has(modelKey(t))))
+    : cached;
+  return [...community, ...bundledFloor];
 }
 
 /** Look up a card template by ID from cached API data, bundled fallback, or caller-supplied extras (user's custom templates). */
