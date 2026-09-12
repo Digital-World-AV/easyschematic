@@ -32,13 +32,21 @@ function effectiveTemplates(): DeviceTemplate[] {
   // exactly the pick-the-wrong-one mistake the badge was added to prevent; hiding the
   // duplicate finishes the job. Same-ID D1 overrides still win above (they never reach
   // bundledFloor), so a deliberate prod override is untouched.
-  const modelKey = (t: DeviceTemplate) =>
-    `${t.manufacturer ?? ""}|${t.modelNumber ?? ""}`.toLowerCase().replace(/\s+/g, "");
-  const verifiedModels = new Set(
-    bundledFloor.filter((t) => t.dwavVerified && t.modelNumber).map(modelKey),
-  );
-  const community = verifiedModels.size
-    ? cached.filter((t) => !(t.modelNumber && verifiedModels.has(modelKey(t))))
+  // Matched on manufacturer + model number AND on manufacturer + label: community authors tend to
+  // put the marketing name in modelNumber ("Rally Bar") where DWAV records the SKU ("960-001312"),
+  // and the label is the same words either way.
+  const norm = (s: string | undefined) => (s ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const modelKey = (t: DeviceTemplate) => `${norm(t.manufacturer)}|${norm(t.modelNumber)}`;
+  const labelKey = (t: DeviceTemplate) => `${norm(t.manufacturer)}|${norm(t.label)}`;
+  const verified = bundledFloor.filter((t) => t.dwavVerified);
+  const verifiedModels = new Set(verified.filter((t) => t.modelNumber).map(modelKey));
+  const verifiedLabels = new Set(verified.filter((t) => t.label).map(labelKey));
+  const community = verified.length
+    ? cached.filter(
+        (t) =>
+          !(t.modelNumber && verifiedModels.has(modelKey(t))) &&
+          !(t.label && t.manufacturer && verifiedLabels.has(labelKey(t))),
+      )
     : cached;
   return [...community, ...bundledFloor];
 }
