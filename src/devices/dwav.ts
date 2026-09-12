@@ -21,7 +21,7 @@ export const templates: DeviceTemplate[] = [
     modelNumber: "BP3600",
     referenceUrl: "https://www.audio-technica.com/en-us/bp3600",
     searchTerms: ["bp3600", "immersive audio", "microphone array", "8-channel", "atmos mic", "dwav"],
-    unitCost: 4235.9,
+    unitCost: 8472,   // MSRP — DWAV rule: never dealer cost in this public file
     ports: [
       {
         ...port("Audio Out (8-ch)", "analog-audio", "output", "multipin"),
@@ -44,7 +44,7 @@ export const templates: DeviceTemplate[] = [
     depthMm: 227.5,
     heightMm: 30,
     weightKg: 1.25,
-    unitCost: 2421.75,
+    unitCost: 4844,
     ports: [
       {
         ...port("Dante Primary", "dante", "bidirectional", "rj45"),
@@ -85,7 +85,7 @@ export const templates: DeviceTemplate[] = [
     depthMm: 115,
     heightMm: 30,
     weightKg: 2.2,
-    unitCost: 81,
+    unitCost: 135,
     ports: [
       {
         ...port("Audio In", "speaker-level", "input", "terminal-block"),
