@@ -443,4 +443,37 @@ export const templates: DeviceTemplate[] = [
       { ...port("DC Power In", "power", "input", "barrel"), notes: "19 V DC from the included auto-sensing supply (100-240 V, 2.1 A = 40 W rating); 1.5 m DC lead. No external Rally Mic Pod input on this model." },
     ],
   },
+  {
+    id: "5f872f2b-146e-4369-a202-ba66250f5e9f",
+    deviceType: "camera",
+    label: "Cisco Quad Camera",
+    shortName: "Quad Camera",
+    manufacturer: "Cisco",
+    modelNumber: "CS-QUADCAM=",
+    referenceUrl: "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/spark-room-kit-series/datasheet-c78-738752.html",
+    searchTerms: ["quad camera", "cs-quadcam", "cs-quadcam2", "room kit plus", "room kit pro", "webex", "speaker track", "cisco camera", "dwav"],
+    widthMm: 950,
+    heightMm: 120,
+    depthMm: 102.5,
+    weightKg: 4.8,
+    powerDrawW: 70,
+    voltage: "12V DC (100-240V adapter)",
+    unitCost: 16238.48,
+    dwavVerified: true,
+    // Camera + speaker bar for the Room Kit Plus / Pro and SX80 integrator package: four 5K sensors (one 83 deg
+    // wide lens + three 50 deg tele lenses, 5x digital zoom, 51.5 deg vertical), 6-element mic array for speaker
+    // tracking ONLY (no far-end audio pickup), internal speakers 70 Hz-20 kHz / 90 dB SPL. 950 x 120 x 102.5 mm,
+    // 4.8 kg. Needs a Cisco codec - it is not an all-in-one. Also sold as CS-QUADCAM+ / CS-QUADCAM2 (First
+    // Light) / CS-QUADCAM2-C+ (Carbon Black): same device. Verified 2026-09-14 against Cisco's Room Kit Plus data
+    // sheet, installation guide connector legend and CAD drawing D15386.01; CRM Products carries the same ports.
+    ports: [
+      { ...port("HDMI Out 1", "hdmi", "output", "hdmi"), notes: "Camera video to the codec camera input (Codec Plus / SX80), 1080p60. High Speed HDMI 1.4b cable." },
+      { ...port("HDMI Out 2", "hdmi", "output", "hdmi"), notes: "Second camera stream, 1080p60 (dual-input codecs such as the SX80 integrator package)." },
+      { ...port("Camera Control", "ethernet", "bidirectional", "rj45"), notes: "Point-to-point link to the codec's camera-control Ethernet port: control, speaker-track data and audio to the built-in speakers. Not on the LAN." },
+      { ...port("Subwoofer Out", "analog-audio", "output", "rca"), notes: "Line-level RCA for an optional subwoofer; the bar's own speakers are internal (70 Hz-20 kHz, 90 dB SPL max)." },
+      { ...port("USB-A", "usb", "bidirectional", "usb-a"), notes: "USB 2.0 Type-A." },
+      { ...port("Maintenance", "usb", "bidirectional", "usb-micro"), notes: "Micro-USB maintenance port; factory-reset pinhole beside it." },
+      { ...port("DC Power In", "power", "input", "barrel"), notes: "12 V DC from the supplied 100-240 V adapter (FSP FSP070-AHAN2 or AcBel ADF019, 5.83 A = 70 W rating). Power on/off button and Kensington slot on the same panel." },
+    ],
+  },
 ];
