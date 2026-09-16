@@ -607,4 +607,27 @@ export const templates: DeviceTemplate[] = [
       { ...port("Speaker Out 4", "speaker-level", "output", "rj45"), notes: "As channel 1." },
     ],
   },
+  {
+    id: "5b83e300-4ac8-4c4e-8f11-237d1ae53f01",
+    deviceType: "ptz-camera",
+    label: "Cisco Room Vision PTZ",
+    shortName: "Room Vision PTZ",
+    manufacturer: "Cisco", modelNumber: "CS-CAM-RVPTZ-C=",
+    referenceUrl: "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/conferencing-cameras/room-vision-ptz-ds.html",
+    searchTerms: ["room vision ptz", "cs-cam-rvptz", "ttc8-13", "cisco ptz", "ptz camera", "webex camera", "room kit eq", "room kit pro", "dwav"],
+    widthMm: 165, heightMm: 196, depthMm: 176, weightKg: 2.36,
+    powerDrawW: 25.5,
+    voltage: "PoE+ IEEE 802.3at Type 2 (42.5-57 V)",
+    dwavVerified: true,
+    // 4K PTZ for Cisco Room Series codecs: 12x optical / 5x digital (60x total), 80.5 deg HFOV, pan +/-170 deg, tilt -25 to
+    // +90 deg, 3840x2160p30 / 1080p60, F1.8-3.6. 165 W x 196 H x 176 D mm, 2.36 kg (data sheet says 2.3). PoE+ Type 2, 12 W
+    // average / 3 W standby. Also CS-CAM-RVPTZ-L= (Arctic White) and the -CBUN / -LBUN bundles. Mounts: 1/4-20 tripod thread,
+    // wall kit CS-CAM-RVPTZ-CBKC/-CBKL (HDMI + PoE+, 250 mm off the wall) or -WBKC/-WBKL (PoE only, 217 mm), the CBK kit also
+    // serves as the inverted ceiling mount (lens 173 mm below the ceiling). Verified 2026-09-16 against Cisco data sheet,
+    // CAD drawing D15545.02 and installation guide D15542.03.
+    ports: [
+      { ...port("Ethernet (PoE+)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "RJ45 10/100/1000 to the codec network; powered by PoE+ IEEE 802.3at Type 2 (12 W average, 3 W standby). Video over IP to Cisco Room Series codecs." },
+      { ...port("HDMI Out", "hdmi", "output", "hdmi"), notes: "Camera video to a codec HDMI camera input (up to 3840x2160p30 / 1080p60). Not needed when the camera is used over IP." },
+    ],
+  },
 ];
