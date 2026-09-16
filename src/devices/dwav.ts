@@ -476,4 +476,135 @@ export const templates: DeviceTemplate[] = [
       { ...port("DC Power In", "power", "input", "barrel"), notes: "12 V DC from the supplied 100-240 V adapter (FSP FSP070-AHAN2 or AcBel ADF019, 5.83 A = 70 W rating). Power on/off button and Kensington slot on the same panel." },
     ],
   },
+  {
+    id: "b441e32b-1ff1-47fa-a1ec-23ca0e9666ac",
+    deviceType: "speaker",
+    label: "Biamp Desono C-IC6",
+    shortName: "C-IC6",
+    manufacturer: "Biamp",
+    modelNumber: "Desono C-IC6",
+    referenceUrl: "https://downloads.biamp.com/assets/docs/default-source/data-sheets/biamp_data_sheet_desono_c_ic6_aug23.pdf",
+    searchTerms: ["desono", "c-ic6", "ceiling speaker", "conferencing loudspeaker", "biamp", "dwav"],
+    widthMm: 276,
+    heightMm: 151,
+    depthMm: 276,
+    weightKg: 3.5,
+    voltage: "Passive, 8 ohm (60 W, 240 W peak)",
+    unitCost: 276,
+    dwavVerified: true,
+    // Two-way 6.5 in coaxial conferencing ceiling loudspeaker: 60 Hz-20 kHz (-10 dB), 130 deg conical, 88 dB sensitivity, 112 dB peak SPL,
+    // 8 ohm passive, 60 W continuous / 240 W peak. 151 mm deep x 276 mm dia, 248 mm cutout, 3.5 kg; C-ring, tile bridge and paintable grille
+    // included; UL 2043 plenum. Euroblock (two parallel pairs) plus two RJ-45 for termination-free feeds from an AMP-450BP or TCM-XA.
+    // Verified 2026-09-15 against Biamp data sheet aug23; CRM Products carries the same ports.
+    ports: [
+      { ...port("Speaker In (Euroblock)", "speaker-level", "input", "phoenix"), notes: "4-pole Euroblock, two parallel pairs, up to 16 AWG. 8 ohm passive, 60 W continuous (240 W peak)." },
+      { ...port("Speaker In (RJ-45) 1", "speaker-level", "input", "rj45"), notes: "Termination-free speaker feed over category cable from a Tesira AMP-450BP or Parle TCM-XA." },
+      { ...port("Speaker In (RJ-45) 2", "speaker-level", "passthrough", "rj45"), notes: "Parallel loop-through to the next C-IC6 on the same amplifier channel." },
+    ],
+  },
+  {
+    id: "4c83603a-5700-414f-b6a2-71683134491e",
+    deviceType: "wired-mic",
+    label: "Biamp Parl\u00e9 TCM-1",
+    shortName: "TCM-1",
+    manufacturer: "Biamp",
+    modelNumber: "Parl\u00e9 TCM-1",
+    referenceUrl: "https://downloads.biamp.com/assets/docs/default-source/data-sheets/biamp_data_sheet_parle_tcm-1_jul22.pdf",
+    searchTerms: ["parle", "tcm-1", "pendant microphone", "beamtracking", "ceiling mic", "tesira", "biamp", "dwav"],
+    widthMm: 63,
+    heightMm: 51,
+    depthMm: 63,
+    weightKg: 0.2,
+    powerDrawW: 15.4,
+    voltage: "PoE IEEE 802.3at Class 3",
+    unitCost: 2101,
+    dwavVerified: true,
+    // AVB Beamtracking pendant microphone for Tesira: pendant head 63 x 51 x 63 mm / 0.2 kg on a custom 2-pin lead (10 ft max drop) from a
+    // plenum box 178 x 51 x 181 mm / 1.1 kg that carries the DSP, PoE (Class 3, 15.4 W) and a second RJ-45 for daisy-chaining up to two TCM-1EX.
+    // Three 120 deg zones, 150 Hz-16 kHz, 106 dB max SPL. Verified 2026-09-15 against Biamp data sheet jul22.
+    ports: [
+      { ...port("Network (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "AVB to the Tesira network from the plenum box. PoE IEEE 802.3at Class 3, 15.4 W." },
+      { ...port("Daisy Chain Out", "ethernet", "output", "rj45"), notes: "To a TCM-1EX plenum box; max three mics per chain (one TCM-1 or TCM-1A plus two TCM-1EX)." },
+    ],
+  },
+  {
+    id: "8b46a786-ef1e-4fa9-9e67-cec99d60284b",
+    deviceType: "wired-mic",
+    label: "Biamp Parl\u00e9 TCM-XA",
+    shortName: "TCM-XA",
+    manufacturer: "Biamp",
+    modelNumber: "Parl\u00e9 TCM-XA",
+    referenceUrl: "https://downloads.biamp.com/assets/docs/default-source/data-sheets/biamp_data_sheet_parle-mics_all-models_jul22.pdf",
+    searchTerms: ["parle", "tcm-xa", "tcm-x", "ceiling microphone", "beamtracking", "poe+ amplifier", "tesira", "biamp", "dwav"],
+    widthMm: 150,
+    heightMm: 17,
+    depthMm: 150,
+    weightKg: 0.34,
+    powerDrawW: 30,
+    voltage: "PoE+ IEEE 802.3at Class 4",
+    unitCost: 3150,
+    dwavVerified: true,
+    // AVB Beamtracking ceiling microphone with a 2-channel PoE+ amplifier in its network box: mic head 150 mm dia x 17 mm / 0.34 kg on a 2 m
+    // RJ-45 lead, network box 172 x 30 x 132 mm / 0.68 kg with DSP, PoE+ (Class 4, 30 W), an RJ-45 for a TCM-XEX (10 m max) and two RJ-45
+    // speaker outputs (40 W @ 4 ohm / 30 W @ 8 ohm burst, 4 W continuous both driven). Four 90 deg zones, 109 dB max SPL.
+    // Verified 2026-09-15 against Biamp Parle all-models data sheet jul22.
+    ports: [
+      { ...port("Network (PoE+)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "AVB to the Tesira network; PoE+ IEEE 802.3at Class 4, 30 W; 100 m max to the switch." },
+      { ...port("TCM-XEX Expansion", "ethernet", "output", "rj45"), notes: "Second mic (Parle TCM-XEX), proprietary digital + power, 10 m max." },
+      { ...port("Speaker Out 1", "speaker-level", "output", "rj45"), notes: "Built-in Class D PoE+ amplifier: 40 W @ 4 ohm / 30 W @ 8 ohm burst, 8 W continuous one channel driven, 4 W both. Category cable to a Desono C-IC6." },
+      { ...port("Speaker Out 2", "speaker-level", "output", "rj45"), notes: "Second amplifier channel, same rating; software-selectable power vs channel count." },
+    ],
+  },
+  {
+    id: "84cff4ca-fb37-47ae-a0e8-63ac605d1f30",
+    deviceType: "wired-mic",
+    label: "Biamp Parl\u00e9 TCM-XEX",
+    shortName: "TCM-XEX",
+    manufacturer: "Biamp",
+    modelNumber: "Parl\u00e9 TCM-XEX",
+    referenceUrl: "https://downloads.biamp.com/assets/docs/default-source/data-sheets/biamp_data_sheet_parle_tcm-xex_nov25.pdf",
+    searchTerms: ["parle", "tcm-xex", "expansion microphone", "beamtracking", "ceiling mic", "tesira", "devio", "biamp", "dwav"],
+    widthMm: 150,
+    heightMm: 17,
+    depthMm: 150,
+    weightKg: 0.34,
+    voltage: "From the host TCM-X / TCM-XA box",
+    unitCost: 1635,
+    dwavVerified: true,
+    // Beamtracking expansion ceiling microphone: 150 mm dia x 17 mm / 0.34 kg, four 90 deg zones, 109 dB max SPL. In Tesira systems it hangs
+    // off the spare RJ-45 of a TCM-X or TCM-XA network box (2 m captive lead, 10 m max) and cannot stand alone; in Devio it is a standalone mic.
+    // Verified 2026-09-15 against Biamp data sheet nov25.
+    ports: [
+      { ...port("To TCM-X / TCM-XA Box", "ethernet", "input", "rj45"), notes: "Proprietary digital audio + power from the host network box; 2 m captive lead, 10 m max. Not standalone in Tesira systems." },
+    ],
+  },
+  {
+    id: "8cafc8bb-7bfc-41bc-9fb6-f980ff485484",
+    deviceType: "amplifier",
+    label: "Biamp Tesira AMP-450BP",
+    shortName: "AMP-450BP",
+    manufacturer: "Biamp",
+    modelNumber: "Tesira AMP-450BP",
+    referenceUrl: "https://downloads.biamp.com/assets/docs/default-source/data-sheets/biamp_data_sheet_tesira_amp-450bp.pdf",
+    searchTerms: ["tesira", "amp-450bp", "poe+ amplifier", "backpack amplifier", "conferencing amplifier", "avb", "biamp", "dwav"],
+    widthMm: 195,
+    heightMm: 30,
+    depthMm: 120,
+    weightKg: 0.7,
+    powerDrawW: 30,
+    voltage: "PoE+ IEEE 802.3at Class 4",
+    unitCost: 1028,
+    dwavVerified: true,
+    // Four-channel PoE+ conferencing amplifier, AVB endpoint: 195 x 30 x 120 mm, 0.7 kg, plenum rated (UL 2043), mounts to a Desono C-IC6 back
+    // can (BPAK). Class D, 50 W @ 4 ohm / 30 W @ 8 ohm burst per channel; 15 W / 7 W / 3 W continuous with 1 / 2 / 4 channels driven;
+    // software-selectable power vs channel count. RJ-45 speaker outputs for termination-free category-cable runs.
+    // Verified 2026-09-15 against Biamp data sheet; CRM Products carries the same ports.
+    ports: [
+      { ...port("AVB Network (PoE+)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "Gigabit Ethernet; AVB audio and control from the Tesira system. PoE+ IEEE 802.3at Class 4, 30 W." },
+      { ...port("Speaker Out 1", "speaker-level", "output", "rj45"), notes: "Class D; 50 W @ 4 ohm / 30 W @ 8 ohm burst; 15 W continuous one channel driven, 7 W two, 3 W all four. Category cable to a Desono C-IC6." },
+      { ...port("Speaker Out 2", "speaker-level", "output", "rj45"), notes: "As channel 1." },
+      { ...port("Speaker Out 3", "speaker-level", "output", "rj45"), notes: "As channel 1." },
+      { ...port("Speaker Out 4", "speaker-level", "output", "rj45"), notes: "As channel 1." },
+    ],
+  },
 ];
