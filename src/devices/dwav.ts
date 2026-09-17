@@ -619,6 +619,7 @@ export const templates: DeviceTemplate[] = [
     searchTerms: ["room vision ptz", "cs-cam-rvptz", "ttc8-13", "cisco ptz", "ptz camera", "webex camera", "room kit eq", "room kit pro", "dwav"],
     widthMm: 165, heightMm: 196, depthMm: 176, weightKg: 2.36,
     powerDrawW: 25.5,
+    unitCost: 14429.75,   // CRM Unit_Price (sale price) — Cisco CS-CAM-RVPTZ-L, synced 2026-09-16
     voltage: "PoE+ IEEE 802.3at Type 2 (42.5-57 V)",
     dwavVerified: true,
     // 4K PTZ for Cisco Room Series codecs: 12x optical / 5x digital (60x total), 80.5 deg HFOV, pan +/-170 deg, tilt -25 to
