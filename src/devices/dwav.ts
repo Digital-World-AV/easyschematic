@@ -524,6 +524,7 @@ export const templates: DeviceTemplate[] = [
     // Three 120 deg zones, 150 Hz-16 kHz, 106 dB max SPL. Verified 2026-09-15 against Biamp data sheet jul22.
     ports: [
       { ...port("Network (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "AVB to the Tesira network from the plenum box. PoE IEEE 802.3at Class 3, 15.4 W." },
+      { ...port("Pendant Mic (2-pin)", "ethernet", "input", "phoenix"), notes: "Custom 2-pin lead from the pendant head to a 2-pin 3.5 mm Phoenix on the plenum box (digital audio + power); adjustable drop, 3 m max." },
       { ...port("Daisy Chain Out", "ethernet", "output", "rj45"), notes: "To a TCM-1EX plenum box; max three mics per chain (one TCM-1 or TCM-1A plus two TCM-1EX)." },
     ],
   },
@@ -549,9 +550,10 @@ export const templates: DeviceTemplate[] = [
     // speaker outputs (40 W @ 4 ohm / 30 W @ 8 ohm burst, 4 W continuous both driven). Four 90 deg zones, 109 dB max SPL.
     // Verified 2026-09-15 against Biamp Parle all-models data sheet jul22.
     ports: [
-      { ...port("Network (PoE+)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "AVB to the Tesira network; PoE+ IEEE 802.3at Class 4, 30 W; 100 m max to the switch." },
-      { ...port("TCM-XEX Expansion", "ethernet", "output", "rj45"), notes: "Second mic (Parle TCM-XEX), proprietary digital + power, 10 m max." },
-      { ...port("Speaker Out 1", "speaker-level", "output", "rj45"), notes: "Built-in Class D PoE+ amplifier: 40 W @ 4 ohm / 30 W @ 8 ohm burst, 8 W continuous one channel driven, 4 W both. Category cable to a Desono C-IC6." },
+      { ...port("Network (PoE+)", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "One Cat6 (Cat5e min, 100 m max) from the IDF: AVB to the Tesira network and PoE+ Class 4 (30 W) for the box, two mic heads and both amplifier channels." },
+      { ...port("Mic Head", "ethernet", "input", "rj45"), notes: "Proprietary digital audio + power to the TCM-XA mic head over category cable (Cat5e min): 2 m captive lead, 10 m max." },
+      { ...port("TCM-XEX Expansion", "ethernet", "output", "rj45"), notes: "Second mic (Parle TCM-XEX), proprietary digital + power over category cable (Cat5e min), 10 m max." },
+      { ...port("Speaker Out 1", "speaker-level", "output", "rj45"), notes: "Built-in Class D PoE+ amplifier channel 1 on RJ-45: Cat6 (Cat5e min) to a Desono C-IC6 RJ-45 input, no speaker cable; a second C-IC6 loops through in parallel (4 ohm). 40 W @ 4 ohm / 30 W @ 8 ohm burst, 8 W continuous one channel driven, 4 W both." },
       { ...port("Speaker Out 2", "speaker-level", "output", "rj45"), notes: "Second amplifier channel, same rating; software-selectable power vs channel count." },
     ],
   },
