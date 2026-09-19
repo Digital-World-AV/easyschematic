@@ -633,4 +633,35 @@ export const templates: DeviceTemplate[] = [
       { ...port("HDMI Out", "hdmi", "output", "hdmi"), notes: "Camera video to a codec HDMI camera input (up to 3840x2160p30 / 1080p60). Not needed when the camera is used over IP." },
     ],
   },
+  {
+    id: "26f28910-4b8e-40d2-8fbc-1518abf1f319",
+    deviceType: "hdbaset-extender",
+    label: "Extron DTP T HWP 4K 331 D",
+    shortName: "DTP T HWP 4K 331 D",
+    manufacturer: "Extron", modelNumber: "DTP T HWP 4K 331 D",
+    referenceUrl: "https://media.extron.com/public/download/files/brochure/dtp_t_hwp_4k_331_d_A4.pdf",
+    searchTerms: ["dtp t hwp 4k 331 d", "dtp t hwp 331 d", "60-1421-53", "60-1421-52", "extron dtp transmitter", "hdmi wall plate transmitter", "decorator wallplate", "hdbaset transmitter", "dtp 330", "dwav"],
+    widthMm: 43, heightMm: 71, depthMm: 48,
+    voltage: "External PSU: 100-240 VAC 50/60 Hz in, 12 VDC 1 A (12 W) out; or remote-powered over the DTP link in DTP mode",
+    unitCost: 960,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Single-gang decorator-style wallplate transmitter: HDMI + analog stereo audio + bidirectional RS-232 and IR over one
+    // shielded CATx cable, up to 330 ft (100 m) to a DTP 330-enabled product. HDMI 1.4, HDCP 2.3, max 10.2 Gbps; 4K/UHD
+    // @30 Hz 4:4:4 8-bit and @60 Hz 4:2:0 8-bit. Rear recessed 2-position switch selects DTP or HDBaseT output mode -
+    // in DTP mode the unit can be remote-powered over the TP link (analog audio + remote power available); in HDBaseT
+    // mode remote power is disabled and it must be powered locally. The RJ-45 is a point-to-point TP link, NOT a network
+    // port - Extron warns against connecting it to a telecom or computer data network, so it is not addressable.
+    // Enclosure (device) 1.7 W x 2.8 H x 1.9 D in = 43 x 71 x 48 mm. Decorator faceplate 2.45 x 4.28 in = 62.2 x 108.7 mm;
+    // recommended wall cut-out 1.94 x 3.06 in = 49.3 x 77.8 mm. One PSU can power both this transmitter and its receiver.
+    // Also sold as 60-1421-52 (Black). Verified 2026-09-19 against Extron brochure 68-2676-01 Rev. A4 and user guide
+    // 68-2544-01 Rev. D.
+    ports: [
+      { ...port("HDMI In", "hdmi", "input", "hdmi"), notes: "Front panel. HDMI 1.4, HDCP 2.3, max 10.2 Gbps (3.4 Gbps per colour). 4K/UHD @30 Hz 4:4:4 8-bit, @60 Hz 4:2:0 8-bit; 1080p/60 Deep Color up to 12-bit. CEC and embedded HD lossless audio pass through." },
+      { ...port("DTP / HDBaseT Out", "hdbaset", "output", "rj45"), notes: "Rear panel. Point-to-point shielded TP link, up to 330 ft (100 m) at 1080p60, 2560x1600 and 4K. DTP mode carries HDMI + embedded audio, analog audio, RS-232, IR and remote power; HDBaseT mode drops analog audio and remote power. Not a network port." },
+      { ...port("Audio In", "analog-audio", "input", "trs-eighth"), channelCount: 2, notes: "Front panel. 1 stereo (2 channel) unbalanced, 3.5 mm stereo jack: tip L, ring R, sleeve ground. NOT embedded onto the HDMI signal - sent simultaneously with the HDMI embedded audio and output on a separate receiver connector. DTP mode only." },
+      { ...port("RS-232 (Over TP)", "serial", "bidirectional", "phoenix"), notes: "Rear panel. Bidirectional RS-232 pass-through. Shares one 3.5 mm 5-pole captive screw 'Over TP' connector with the bidirectional IR line - one physical connector, two signal paths." },
+      { ...port("IR (Over TP)", "ir", "bidirectional", "phoenix"), notes: "Rear panel. Bidirectional IR pass-through. Shares one 3.5 mm 5-pole captive screw 'Over TP' connector with the bidirectional RS-232 line - one physical connector, two signal paths." },
+      { ...port("Power 12 VDC", "power", "input", "phoenix"), notes: "Rear panel 2-pole captive screw. Included external PSU: 100-240 VAC 50/60 Hz in, 12 VDC 1 A (12 W) out; one PSU can power both transmitter and receiver. In DTP mode it can instead be remote-powered over the TP link; HDBaseT mode requires local power." },
+    ],
+  },
 ];
