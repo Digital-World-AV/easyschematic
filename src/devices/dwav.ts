@@ -664,4 +664,53 @@ export const templates: DeviceTemplate[] = [
       { ...port("Power 12 VDC", "power", "input", "phoenix"), notes: "Rear panel 2-pole captive screw. Included external PSU: 100-240 VAC 50/60 Hz in, 12 VDC 1 A (12 W) out; one PSU can power both transmitter and receiver. In DTP mode it can instead be remote-powered over the TP link; HDBaseT mode requires local power." },
     ],
   },
+  {
+    id: "2501f167-5ccc-4e98-8dfc-79a477cbf2b1",
+    deviceType: "amplifier",
+    label: "Extron NetPA 204 POE",
+    shortName: "NetPA 204 POE",
+    manufacturer: "Extron", modelNumber: "NetPA 204 POE (60-2047-01)",
+    referenceUrl: "https://www.extron.com/download/files/brochure/netpa_204_poe_revA1.pdf",
+    searchTerms: ["netpa 204 poe", "netpa", "poe amplifier", "dante amplifier", "ceiling amplifier", "plenum amplifier", "extron amplifier", "60-2047-01", "dwav"],
+    widthMm: 221, heightMm: 43, depthMm: 76, weightKg: 0.4,
+    powerDrawW: 38.7,
+    voltage: "PoE++ IEEE 802.3bt Class 5 (38.7 W max), PoE+ 802.3at Class 4 (25.5 W) or PoE 802.3af Class 3 (13.9 W)",
+    dwavVerified: true,
+    // Four-channel Dante / AES67 PoE amplifier with a 4x4 DSP mix matrix, made to sit above the ceiling tiles near the speakers:
+    // half-rack 1U, 221 W x 43 H x 76 D mm, 0.4 kg, UL 2043 plenum rated, fanless. Up to 20 W rms per channel into 8 or 4 ohm
+    // (one or two 8 ohm speakers or one 4 ohm per channel); total output scales with the PoE class - 10-18 W (PoE), 18-20 W (PoE+),
+    // 20-23 W (PoE++) per channel. Power, audio and control on one RJ-45. Mounts on the included MBU 123 low-profile kit or the
+    // optional ATB 100 tile bridge. Verified 2026-09-20 against Extron brochure 68-3893-01 rev A1 and setup guide 68-3742-50 rev A.
+    ports: [
+      { ...port("AT (PoE++) - Dante", "dante", "bidirectional", "rj45"), addressable: true, poeDrawW: 38.7, linkSpeed: "1G", notes: "RJ-45: Dante / AES67 audio in (4 ch), control (SIS, DSP Configurator Pro, Dante Controller) and PoE power on one cable. Negotiates 802.3af / at / bt; output power scales with the class." },
+      { ...port("Speaker Out 1", "speaker-level", "output", "phoenix"), notes: "2-pin 5 mm captive screw, Class 2 wiring. Up to 20 W into 8 or 4 ohm: one or two 8 ohm speakers or one 4 ohm per channel; 10-23 W depending on PoE class and channels used." },
+      { ...port("Speaker Out 2", "speaker-level", "output", "phoenix"), notes: "2-pin 5 mm captive screw, Class 2 wiring. Same rating as channel 1; each channel set to 8 ohm, 4 ohm or off in DSP Configurator Pro." },
+      { ...port("Speaker Out 3", "speaker-level", "output", "phoenix"), notes: "2-pin 5 mm captive screw, Class 2 wiring. Same rating as channel 1." },
+      { ...port("Speaker Out 4", "speaker-level", "output", "phoenix"), notes: "2-pin 5 mm captive screw, Class 2 wiring. Same rating as channel 1." },
+      { ...port("Remote (mute)", "contact-closure", "input", "phoenix"), notes: "2-pole 3.5 mm captive screw: jump MUTE to G to mute all four outputs." },
+      { ...port("Config (USB-C)", "usb", "bidirectional", "usb-c"), notes: "Rear USB Type-C for DSP Configurator Pro when the amplifier cannot be reached over the network." },
+    ],
+  },
+  {
+    id: "0658e301-6707-4146-9be5-3e31e8e8af56",
+    deviceType: "speaker",
+    label: "Martin Audio C4.8T",
+    shortName: "C4.8T",
+    manufacturer: "Martin Audio", modelNumber: "C4.8T",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/C4.8Tdatasheet.pdf",
+    searchTerms: ["c4.8t", "c4 8t", "ceiling speaker", "martin audio", "c-series ceiling", "70v ceiling speaker", "100v ceiling speaker", "flush mount speaker", "dwav"],
+    widthMm: 205, heightMm: 131, depthMm: 205, weightKg: 2.6,
+    voltage: "Passive: 16 ohm, or 70 V / 100 V line via the included 25 W transformer (taps 25 / 12.5 / 6 W at 100 V; 25 / 12.5 / 6 / 3 W at 70 V)",
+    unitCost: 165,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Compact two-way flush-mount ceiling speaker: 4 in (100 mm) UL94V-0 carbon-fibre-loaded polypropylene cone plus a 0.8 in (19 mm)
+    // dome tweeter side by side on the baffle, 5 kHz passive crossover, 100 Hz-20 kHz +/-3 dB (-10 dB at 80 Hz), 86 dB sensitivity,
+    // 100 dB continuous / 106 dB peak, 180 deg conical dispersion (-6 dB) up to 10 kHz - made for low ceilings. 16 ohm, 40 W AES /
+    // 160 W peak, or 70 / 100 V line through the included 25 W transformer. Steel back can, 205 mm OD x 131 mm deep, 178 mm cut-out,
+    // 2.6 kg; white overpaintable bezel and perforated steel grille; tile rails, C bracket, paint mask and template included.
+    // UL 2043 (air-handling spaces) and UL 1480. Verified 2026-09-20 against Martin Audio's C4.8T data sheet and product page.
+    ports: [
+      { ...port("Speaker In (70/100 V or 16 ohm)", "speaker-level", "input", "phoenix"), notes: "Phoenix MSTB 2,5/4-ST rising-clamp plug and socket (fireproofed, pre-wireable). 16 ohm passive, 40 W AES / 160 W peak, or the included 25 W line transformer: 100 V taps 25 / 12.5 / 6 W, 70 V taps 25 / 12.5 / 6 / 3 W. Loop on at the plug." },
+    ],
+  },
 ];
