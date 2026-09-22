@@ -21,6 +21,10 @@ export const templates: DeviceTemplate[] = [
     modelNumber: "BP3600",
     referenceUrl: "https://www.audio-technica.com/en-us/bp3600",
     searchTerms: ["bp3600", "immersive audio", "microphone array", "8-channel", "atmos mic", "dwav"],
+    widthMm: 160.4,
+    depthMm: 160.4,
+    heightMm: 217.7,
+    weightKg: 0.656,
     unitCost: 8472,   // MSRP — DWAV rule: never dealer cost in this public file
     ports: [
       {
@@ -82,8 +86,8 @@ export const templates: DeviceTemplate[] = [
     referenceUrl: "https://martin-audio.com/products/loudspeakers/acs-40ts",
     searchTerms: ["acs-40ts", "adorn", "ceiling speaker", "70v", "100v", "dwav"],
     widthMm: 221,
-    depthMm: 115,
-    heightMm: 30,
+    depthMm: 221,
+    heightMm: 115,
     weightKg: 2.2,
     unitCost: 135,
     ports: [
