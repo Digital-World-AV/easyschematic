@@ -744,4 +744,533 @@ export const templates: DeviceTemplate[] = [
       { ...port("OUTLET 2", "power", "output", "edison"), notes: "NEMA 5-15R, lower half of the duplex." },
     ],
   },
+  {
+    id: "4e1487e5-6f3e-40f2-bd7b-82781dbb8173",
+    deviceType: "led-fixture",
+    label: "Chauvet DJ SlimPAR Pro H USB",
+    shortName: "SlimPAR Pro H USB",
+    manufacturer: "Chauvet DJ", modelNumber: "SLIMPARPROHUSBWHT",
+    referenceUrl: "https://www.chauvetdj.com/wp-content/uploads/2016/01/SlimPAR_Pro_H_USB_UM_Rev3_WO.pdf",
+    searchTerms: ["slimpar pro h usb", "chauvet dj", "hex par", "rgbaw+uv", "wash light", "d-fi usb", "dwav"],
+    widthMm: 253, heightMm: 290, depthMm: 98, weightKg: 3.3,
+    powerDrawW: 99,
+    voltage: "100 - 240 V AC, 50/60 Hz auto-ranging",
+    unitCost: 505.48,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Low-profile hex-colour LED wash PAR, WHITE HOUSING (Chauvet item code 03031280; 03031132 is the black).
+    // 12 x 10 W RGBAW+UV (6-in-1) LEDs, 2.4 A LED current, 50,000 hour rated lifespan.
+    // Beam angle 24 deg, field angle 41 deg, 3,218 lux at 2 m. Strobe 0-31 Hz.
+    // 253 (L) x 98 (W) x 290 (H) mm, 7.2 lb (3.3 kg) - recorded as W 253 x H 290 x D 98, which is how the
+    // fixture actually sits: wide face, tall with the yoke, shallow body.
+    // Consumption 99 W / 1.4 A at 120 V 60 Hz; 96 W / 0.8 A at 230 V 50 Hz. F 2 A 250 V fuse, replaceable.
+    // Indoor only (IP20), convection cooled, maximum ambient 40 C (104 F). Never connect to a dimmer.
+    // DMX 6, 7 or 12 channel personalities; standalone sound-active and automatic programs.
+    // Rated power_max_w and power_typ_w are the same 99 W: Chauvet publish one consumption figure per voltage,
+    // not a max/typical pair.
+    ports: [
+      { ...port("DMX IN", "dmx", "input", "xlr-3"), notes: "3-pin XLR. DMX personality 6, 7 or 12 channels." },
+      { ...port("DMX OUT", "dmx", "output", "xlr-3"), notes: "3-pin XLR through." },
+      { ...port("D-Fi USB", "usb", "input", "usb-a"), notes: "USB port for the Chauvet D-Fi USB wireless DMX transceiver (sold separately)." },
+      { ...port("AC IN", "power", "input", "iec"), notes: "IEC inlet. 99 W / 1.4 A at 120 V, 60 Hz; 96 W / 0.8 A at 230 V." },
+      { ...port("AC OUT", "power", "output", "edison"), notes: "Power link out (Edison in the US, IEC in UK/Europe): up to 5 units at 120 V, 10 at 230 V, 8 A." },
+    ],
+  },
+  {
+    id: "73e5741b-05da-4646-97c1-d1066bfdae05",
+    deviceType: "speaker",
+    label: "Martin Audio CDD15-WR",
+    shortName: "CDD15-WR",
+    manufacturer: "Martin Audio", modelNumber: "CDD15W-WR",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD15-WRdatasheet.pdf",
+    searchTerms: ["cdd15-wr", "cdd15w-wr", "martin audio weatherised", "ip54 speaker", "outdoor coaxial", "dwav"],
+    widthMm: 429, heightMm: 691, depthMm: 413, weightKg: 28.3,
+    unitCost: 2750,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Weatherised high-output passive two-way Coaxial Differential Dispersion system, rated IP54 - the outdoor
+    // version of the CDD15. White (RAL9016); CDD15B-WR is the black.
+    // LF 15 in (380 mm) with 3 in voice coil sharing a ferrite motor with the HF; HF 1.4 in (36 mm) exit,
+    // 3 in voice coil titanium dome compression driver. 1.6 kHz passive crossover, 68 litre composite enclosure.
+    // Dispersion 100-60 deg horizontal x 60 deg vertical, -6 dB, user-rotatable driver.
+    // 400 W AES / 1600 W peak, 8 ohms, 100 dB sensitivity, 126 dB continuous / 132 dB peak max SPL.
+    // 55 Hz - 18 kHz +/-3 dB. Zinc plated steel grille with weatherised backing. 10 x M8 fly points.
+    // Accessories: CDDYA15B/W yoke assembly, WB15B/W wall bracket. No 70/100 V tap - low-Z amplifier load.
+    // Recommended amplifiers: iK41, iK81, VIA5002, VIA5004.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low profile 20A push-lock under a weatherproof input panel cover with cable gland. Pins: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same push-lock block." },
+    ],
+  },
+  {
+    id: "6f2798e0-5bee-4b84-8d4e-d7a378abe201",
+    deviceType: "speaker",
+    label: "Martin Audio CDD5",
+    shortName: "CDD5",
+    manufacturer: "Martin Audio", modelNumber: "CDD5B",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD5datasheet.pdf",
+    searchTerms: ["cdd5", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 160, heightMm: 230, depthMm: 149, weightKg: 3,
+    unitCost: 315,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Ultra-compact passive two-way Coaxial Differential Dispersion system in a moulded ABS enclosure.
+    // LF 5.25 in (130 mm) with 1.25 in voice coil, ferrite motor; HF 0.75 in (19 mm) fabric dome, neodymium.
+    // Dispersion 120-90 deg horizontal x 80 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the
+    // wide axis can be put either way round. 2.5 kHz passive crossover, 3 litre enclosure.
+    // 100 W AES / 400 W peak, 8 ohms nominal, 90 dB sensitivity, 110 dB continuous / 116 dB peak max SPL.
+    // 100 Hz - 20 kHz +/-3 dB. 6 x M5 inserts for wall/ceiling brackets; the ASM10001 (white) / ASM10002 (black)
+    // omnidirectional wall bracket ships with the speaker, CDDCB5B/W is the optional close-mount ceiling bracket.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap - this is a low-Z amplifier load.
+    // Finish: black (RAL9005 black / RAL9016 white); any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low profile 13A push-lock, 4-way block. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-way push-lock block." },
+    ],
+  },
+  {
+    id: "cfc99124-a50a-460b-b7c9-192d1e149fcc",
+    deviceType: "speaker",
+    label: "Martin Audio CDD5",
+    shortName: "CDD5",
+    manufacturer: "Martin Audio", modelNumber: "CDD5W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD5datasheet.pdf",
+    searchTerms: ["cdd5", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 160, heightMm: 230, depthMm: 149, weightKg: 3,
+    unitCost: 315,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Ultra-compact passive two-way Coaxial Differential Dispersion system in a moulded ABS enclosure.
+    // LF 5.25 in (130 mm) with 1.25 in voice coil, ferrite motor; HF 0.75 in (19 mm) fabric dome, neodymium.
+    // Dispersion 120-90 deg horizontal x 80 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the
+    // wide axis can be put either way round. 2.5 kHz passive crossover, 3 litre enclosure.
+    // 100 W AES / 400 W peak, 8 ohms nominal, 90 dB sensitivity, 110 dB continuous / 116 dB peak max SPL.
+    // 100 Hz - 20 kHz +/-3 dB. 6 x M5 inserts for wall/ceiling brackets; the ASM10001 (white) / ASM10002 (black)
+    // omnidirectional wall bracket ships with the speaker, CDDCB5B/W is the optional close-mount ceiling bracket.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap - this is a low-Z amplifier load.
+    // Finish: white (RAL9005 black / RAL9016 white); any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low profile 13A push-lock, 4-way block. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-way push-lock block." },
+    ],
+  },
+  {
+    id: "938584aa-3902-454f-8d1d-df0815c30034",
+    deviceType: "amplifier",
+    label: "Martin Audio iKON iK41",
+    shortName: "iK41",
+    manufacturer: "Martin Audio", modelNumber: "iK41",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/ik41-datasheet.pdf",
+    searchTerms: ["ik41", "ikon", "martin audio amplifier", "class d", "vu-net", "dante amplifier", "dwav"],
+    widthMm: 482, heightMm: 88, depthMm: 441, weightKg: 12.5,
+    voltage: "85 - 240 V AC auto-sensing, 47 - 63 Hz",
+    unitCost: 7000,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Four-channel Class D amplifier with 96 kHz DSP on all inputs and outputs (48 kHz on outputs when FIR filters are used).
+    // Power output: 1500W into 2 ohms, 1500W into 4 ohms, 750W into 8 ohms, 325W into 16 ohms; 3000W bridged per channel pair at 4 or 8 ohms; Constant voltage: 685W at 25V, 1500W at 70V, 1163W at 100V line.
+    // Analogue, AES3 and Dante (AES67 compatible) inputs; Ethernet for VU-NET control and monitoring.
+    // Dynamic range >113 dBA analogue, >114 dBA AES/Dante. 7 Hz - 30 kHz (-2.5 dB, 4 ohm). THD <0.05%% at 1 kHz.
+    // Damping factor >800 ref 8 ohms. Slew rate >60 V/us. Dual vari-speed fans, front-to-back airflow;
+    // maximum ambient 40 C (105 F). Series resonant power supply with External Breaker Protection.
+    // 2U, 482 x 88 x 441 mm including handles and the optional rear support. 12.5 kg.
+    // AMPLIFIER OUTPUTS: 4 x NL4, one per channel.
+    // POWER CONSUMPTION LEFT BLANK: the datasheet gives input power as a load-dependent graph, not a single figure.
+    ports: [
+      { ...port("ANALOGUE IN 1", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 2", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 3", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 4", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE LINK 1", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 2", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 3", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 4", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("AES3 IN", "aes", "input", "xlr-3"), notes: "Neutrik XLR female, balanced, 2 channels." },
+      { ...port("AES3 LINK", "aes", "output", "xlr-3"), notes: "Neutrik XLR male, balanced link out." },
+      { ...port("DANTE", "dante", "input", "rj45"), addressable: true, channelCount: 4, notes: "Dante / AES67 compatible, 4 channels. Martin Audio's datasheet states the channel count but not whether a redundant secondary port is fitted; one port recorded." },
+      { ...port("NETWORK", "ethernet", "input", "rj45"), addressable: true, notes: "Ethernet for control and monitoring via Martin Audio VU-NET. DHCP, static and auto-IP; direct computer connection without a switch." },
+      { ...port("OUT 1", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 2", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 3", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 4", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("AC MAINS", "power", "input", "powercon"), notes: "Neutrik 32A powerCON. Inrush 6A at 115V, 12A at 230V, max for <10 ms." },
+    ],
+  },
+  {
+    id: "b7c0fa92-349f-472c-99db-337dbb43a292",
+    deviceType: "amplifier",
+    label: "Martin Audio iKON iK42",
+    shortName: "iK42",
+    manufacturer: "Martin Audio", modelNumber: "iK42",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/ik42-datasheet.pdf",
+    searchTerms: ["ik42", "ikon", "martin audio amplifier", "class d", "vu-net", "dante amplifier", "dwav"],
+    widthMm: 482, heightMm: 88, depthMm: 441, weightKg: 12.5,
+    voltage: "85 - 240 V AC auto-sensing, 47 - 63 Hz",
+    unitCost: 10500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Four-channel Class D amplifier with 96 kHz DSP on all inputs and outputs (48 kHz on outputs when FIR filters are used).
+    // Power output: 5000W into 2 ohms, 3000W into 4 ohms, 1500W into 8 ohms, 750W into 16 ohms; 10000W bridged per channel pair at 4 ohms, 6000W at 8 ohms; Constant voltage: 1250W at 25V, 3500W at 70V, 5000W at 100V line.
+    // Analogue, AES3 and Dante (AES67 compatible) inputs; Ethernet for VU-NET control and monitoring.
+    // Dynamic range >113 dBA analogue, >114 dBA AES/Dante. 7 Hz - 30 kHz (-2.5 dB, 4 ohm). THD <0.05%% at 1 kHz.
+    // Damping factor >800 ref 8 ohms. Slew rate >60 V/us. Dual vari-speed fans, front-to-back airflow;
+    // maximum ambient 40 C (105 F). Series resonant power supply with External Breaker Protection.
+    // 2U, 482 x 88 x 441 mm including handles and the optional rear support. 12.5 kg.
+    // AMPLIFIER OUTPUTS: 4 x NL4, one per channel.
+    // POWER CONSUMPTION LEFT BLANK: the datasheet gives input power as a load-dependent graph, not a single figure.
+    ports: [
+      { ...port("ANALOGUE IN 1", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 2", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 3", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 4", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE LINK 1", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 2", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 3", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 4", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("AES3 IN", "aes", "input", "xlr-3"), notes: "Neutrik XLR female, balanced, 2 channels." },
+      { ...port("AES3 LINK", "aes", "output", "xlr-3"), notes: "Neutrik XLR male, balanced link out." },
+      { ...port("DANTE", "dante", "input", "rj45"), addressable: true, channelCount: 4, notes: "Dante / AES67 compatible, 4 channels. Martin Audio's datasheet states the channel count but not whether a redundant secondary port is fitted; one port recorded." },
+      { ...port("NETWORK", "ethernet", "input", "rj45"), addressable: true, notes: "Ethernet for control and monitoring via Martin Audio VU-NET. DHCP, static and auto-IP; direct computer connection without a switch." },
+      { ...port("OUT 1", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 2", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 3", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 4", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("AC MAINS", "power", "input", "powercon"), notes: "Neutrik 32A powerCON. Inrush 6A at 115V, 12A at 230V, max for <10 ms." },
+    ],
+  },
+  {
+    id: "c8020e18-742a-430e-a035-69545edcd0c3",
+    deviceType: "amplifier",
+    label: "Martin Audio iKON iK81",
+    shortName: "iK81",
+    manufacturer: "Martin Audio", modelNumber: "iK81",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/ik81-datasheet.pdf",
+    searchTerms: ["ik81", "ikon", "martin audio amplifier", "class d", "vu-net", "dante amplifier", "dwav"],
+    widthMm: 482, heightMm: 88, depthMm: 441, weightKg: 12.5,
+    voltage: "85 - 240 V AC auto-sensing, 47 - 63 Hz",
+    unitCost: 11250,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Eight-channel Class D amplifier with 96 kHz DSP on all inputs and outputs (48 kHz on outputs when FIR filters are used).
+    // Power output: 1250W into 2, 4 or 8 ohms, 625W into 16 ohms; 2500W bridged per channel pair at 4 or 8 ohms; Constant voltage: 625W at 25V, 1250W at 70V, 1250W at 100V line.
+    // Analogue, AES3 and Dante (AES67 compatible) inputs; Ethernet for VU-NET control and monitoring.
+    // Dynamic range >113 dBA analogue, >114 dBA AES/Dante. 7 Hz - 30 kHz (-2.5 dB, 4 ohm). THD <0.05%% at 1 kHz.
+    // Damping factor >800 ref 8 ohms. Slew rate >60 V/us. Dual vari-speed fans, front-to-back airflow;
+    // maximum ambient 40 C (105 F). Series resonant power supply with External Breaker Protection.
+    // 2U, 482 x 88 x 441 mm including handles and the optional rear support. 12.5 kg.
+    // AMPLIFIER OUTPUTS are 4 x NL4 on every model in the range - on the iK81 each NL4 carries two channels.
+    // POWER CONSUMPTION LEFT BLANK: the datasheet gives input power as a load-dependent graph, not a single figure.
+    ports: [
+      { ...port("ANALOGUE IN 1", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 2", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 3", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE IN 4", "analog-audio", "input", "xlr-3"), notes: "Neutrik XLR female, 20 kohm balanced to ground, +20 dBu maximum input level." },
+      { ...port("ANALOGUE LINK 1", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 2", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 3", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("ANALOGUE LINK 4", "analog-audio", "output", "xlr-3"), notes: "Neutrik XLR male, parallel link out." },
+      { ...port("AES3 IN", "aes", "input", "xlr-3"), notes: "Neutrik XLR female, balanced, 2 channels." },
+      { ...port("AES3 LINK", "aes", "output", "xlr-3"), notes: "Neutrik XLR male, balanced link out." },
+      { ...port("DANTE", "dante", "input", "rj45"), addressable: true, channelCount: 8, notes: "Dante / AES67 compatible, 8 channels. Martin Audio's datasheet states the channel count but not whether a redundant secondary port is fitted; one port recorded." },
+      { ...port("NETWORK", "ethernet", "input", "rj45"), addressable: true, notes: "Ethernet for control and monitoring via Martin Audio VU-NET. DHCP, static and auto-IP; direct computer connection without a switch." },
+      { ...port("OUT 1", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 2", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 3", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("OUT 4", "speaker-level", "output", "speakon"), notes: "Neutrik Speakon NL4." },
+      { ...port("AC MAINS", "power", "input", "powercon"), notes: "Neutrik 32A powerCON. Inrush 6A at 115V, 12A at 230V, max for <10 ms." },
+    ],
+  },
+  {
+    id: "cdb91e50-c35c-46ab-b128-e3a85b64d54c",
+    deviceType: "speaker",
+    label: "Martin Audio TORUS T1215",
+    shortName: "TORUS T1215",
+    manufacturer: "Martin Audio", modelNumber: "T1215-W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/T1215datasheet.pdf",
+    searchTerms: ["t1215", "torus", "martin audio", "constant curvature array", "array element", "dwav"],
+    widthMm: 650, heightMm: 369, depthMm: 452, weightKg: 31,
+    unitCost: 4500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // TORUS T1215: passive two-way 12” constant curvature array element, 60-75-90 deg horizontal (Dynamic Horn Flare) x 15 deg vertical.
+    // LF 12 in with 3 in voice coil, neodymium; HF 3 x 1 in exit, 1.4 in voice coil HT polymer dome neodymium compression drivers.
+    // 400 W AES / 1600 W peak, 8 ohms, 100 dB sensitivity (2.83 V 1 m free field), 128dB continuous, 134dB peak.
+    // Martin Audio quote a crest factor of 2 (6 dB peak to continuous); add 6 dB to compare with makers quoting 12 dB.
+    // Frequency response see datasheet.
+    // Plywood enclosure in PU textured paint, two pocket handles, full-width steel grille with cloth backing.
+    // Integral rigging for vertical and horizontal arrays of up to six enclosures; pole-mount fixing.
+    // Powered by Martin Audio iKON amplifiers (VU-NET control, Dante); modelled in DISPLAY 3.
+    // Finish: white. Standard is black (T1215B); white is made to order.
+    // No 70/100 V tap - this is a low-Z amplifier load.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "Neutrik NL4. Passive configuration on pins 1+/1- or 2+/2-, selected by the rear-panel switch." },
+      { ...port("LINK", "speaker-level", "output", "speakon"), notes: "Second NL4, parallel link for the next enclosure in the array." },
+    ],
+  },
+  {
+    id: "653ad00e-7d0f-4478-ae70-356b16897d48",
+    deviceType: "speaker",
+    label: "Martin Audio TORUS T1215",
+    shortName: "TORUS T1215",
+    manufacturer: "Martin Audio", modelNumber: "T1215",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/T1215datasheet.pdf",
+    searchTerms: ["t1215", "torus", "martin audio", "constant curvature array", "array element", "dwav"],
+    widthMm: 650, heightMm: 369, depthMm: 452, weightKg: 31,
+    unitCost: 4500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // TORUS T1215: passive two-way 12” constant curvature array element, 60-75-90 deg horizontal (Dynamic Horn Flare) x 15 deg vertical.
+    // LF 12 in with 3 in voice coil, neodymium; HF 3 x 1 in exit, 1.4 in voice coil HT polymer dome neodymium compression drivers.
+    // 400 W AES / 1600 W peak, 8 ohms, 100 dB sensitivity (2.83 V 1 m free field), 128dB continuous, 134dB peak.
+    // Martin Audio quote a crest factor of 2 (6 dB peak to continuous); add 6 dB to compare with makers quoting 12 dB.
+    // Frequency response see datasheet.
+    // Plywood enclosure in PU textured paint, two pocket handles, full-width steel grille with cloth backing.
+    // Integral rigging for vertical and horizontal arrays of up to six enclosures; pole-mount fixing.
+    // Powered by Martin Audio iKON amplifiers (VU-NET control, Dante); modelled in DISPLAY 3.
+    // Finish: black. Standard is black (T1215B); white is made to order.
+    // No 70/100 V tap - this is a low-Z amplifier load.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "Neutrik NL4. Passive configuration on pins 1+/1- or 2+/2-, selected by the rear-panel switch." },
+      { ...port("LINK", "speaker-level", "output", "speakon"), notes: "Second NL4, parallel link for the next enclosure in the array." },
+    ],
+  },
+  {
+    id: "3ebcbb9b-b7c7-4a81-8337-4547092d9ad1",
+    deviceType: "speaker",
+    label: "Martin Audio TORUS T1230",
+    shortName: "TORUS T1230",
+    manufacturer: "Martin Audio", modelNumber: "T1230-W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/T1230datasheet.pdf",
+    searchTerms: ["t1230", "torus", "martin audio", "constant curvature array", "array element", "dwav"],
+    widthMm: 650, heightMm: 350, depthMm: 442, weightKg: 26,
+    unitCost: 4500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // TORUS T1230: passive two-way 12” constant curvature array element, 60-75-90 deg horizontal (Dynamic Horn Flare) x 30 deg vertical.
+    // LF 12 in with 3 in voice coil, neodymium; HF 3 x 1 in exit, 1.4 in voice coil HT polymer dome neodymium compression drivers.
+    // 400 W AES / 1600 W peak, 8 ohms, 99 dB sensitivity (2.83 V 1 m free field), 126dB continuous, 132dB peak.
+    // Martin Audio quote a crest factor of 2 (6 dB peak to continuous); add 6 dB to compare with makers quoting 12 dB.
+    // Frequency response see datasheet.
+    // Plywood enclosure in PU textured paint, two pocket handles, full-width steel grille with cloth backing.
+    // Integral rigging for vertical and horizontal arrays of up to six enclosures; pole-mount fixing.
+    // Powered by Martin Audio iKON amplifiers (VU-NET control, Dante); modelled in DISPLAY 3.
+    // Finish: white. Standard is black (T1230B); white is made to order.
+    // No 70/100 V tap - this is a low-Z amplifier load.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "Neutrik NL4. Passive configuration on pins 1+/1- or 2+/2-, selected by the rear-panel switch." },
+      { ...port("LINK", "speaker-level", "output", "speakon"), notes: "Second NL4, parallel link for the next enclosure in the array." },
+    ],
+  },
+  {
+    id: "b7a0e1fb-9ecf-48ad-adb0-9ee8568b1300",
+    deviceType: "speaker",
+    label: "Martin Audio TORUS T1230",
+    shortName: "TORUS T1230",
+    manufacturer: "Martin Audio", modelNumber: "T1230",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/T1230datasheet.pdf",
+    searchTerms: ["t1230", "torus", "martin audio", "constant curvature array", "array element", "dwav"],
+    widthMm: 650, heightMm: 350, depthMm: 442, weightKg: 26,
+    unitCost: 4500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // TORUS T1230: passive two-way 12” constant curvature array element, 60-75-90 deg horizontal (Dynamic Horn Flare) x 30 deg vertical.
+    // LF 12 in with 3 in voice coil, neodymium; HF 3 x 1 in exit, 1.4 in voice coil HT polymer dome neodymium compression drivers.
+    // 400 W AES / 1600 W peak, 8 ohms, 99 dB sensitivity (2.83 V 1 m free field), 126dB continuous, 132dB peak.
+    // Martin Audio quote a crest factor of 2 (6 dB peak to continuous); add 6 dB to compare with makers quoting 12 dB.
+    // Frequency response see datasheet.
+    // Plywood enclosure in PU textured paint, two pocket handles, full-width steel grille with cloth backing.
+    // Integral rigging for vertical and horizontal arrays of up to six enclosures; pole-mount fixing.
+    // Powered by Martin Audio iKON amplifiers (VU-NET control, Dante); modelled in DISPLAY 3.
+    // Finish: black. Standard is black (T1230B); white is made to order.
+    // No 70/100 V tap - this is a low-Z amplifier load.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "Neutrik NL4. Passive configuration on pins 1+/1- or 2+/2-, selected by the rear-panel switch." },
+      { ...port("LINK", "speaker-level", "output", "speakon"), notes: "Second NL4, parallel link for the next enclosure in the array." },
+    ],
+  },
+  {
+    id: "7423fe14-aae7-41b0-b756-bf574b86368d",
+    deviceType: "speaker",
+    label: "Martin Audio TORUS T820",
+    shortName: "TORUS T820",
+    manufacturer: "Martin Audio", modelNumber: "T820-W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/T820datasheet.pdf",
+    searchTerms: ["t820", "torus", "martin audio", "constant curvature array", "array element", "dwav"],
+    widthMm: 500, heightMm: 257, depthMm: 320, weightKg: 14,
+    unitCost: 3000,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // TORUS T820: passive two-way 8” constant curvature array element, 100 deg horizontal x 20 deg vertical.
+    // LF 8 in with 2 in voice coil, neodymium; HF 2 x 1 in exit, 1.4 in voice coil HT polymer dome neodymium compression drivers.
+    // 200 W AES / 800 W peak, 8 ohms, 97 dB sensitivity (2.83 V 1 m free field), 124dB continuous, 130dB peak.
+    // Martin Audio quote a crest factor of 2 (6 dB peak to continuous); add 6 dB to compare with makers quoting 12 dB.
+    // Frequency response 70 Hz - 18 kHz +/-3 dB with iKON settings, -10 dB at 56 Hz.
+    // Plywood enclosure in PU textured paint, two pocket handles, full-width steel grille with cloth backing.
+    // Integral rigging for vertical and horizontal arrays of up to six enclosures; pole-mount fixing.
+    // Powered by Martin Audio iKON amplifiers (VU-NET control, Dante); modelled in DISPLAY 3.
+    // Finish: white. Standard is black (T820B); white is made to order.
+    // No 70/100 V tap - this is a low-Z amplifier load.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "Neutrik NL4. Passive configuration on pins 1+/1- or 2+/2-, selected by the rear-panel switch." },
+      { ...port("LINK", "speaker-level", "output", "speakon"), notes: "Second NL4, parallel link for the next enclosure in the array." },
+    ],
+  },
+  {
+    id: "9fe30450-6662-430d-a512-9044725efabe",
+    deviceType: "speaker",
+    label: "Martin Audio TORUS T820",
+    shortName: "TORUS T820",
+    manufacturer: "Martin Audio", modelNumber: "T820",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/T820datasheet.pdf",
+    searchTerms: ["t820", "torus", "martin audio", "constant curvature array", "array element", "dwav"],
+    widthMm: 500, heightMm: 257, depthMm: 320, weightKg: 14,
+    unitCost: 3000,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // TORUS T820: passive two-way 8” constant curvature array element, 100 deg horizontal x 20 deg vertical.
+    // LF 8 in with 2 in voice coil, neodymium; HF 2 x 1 in exit, 1.4 in voice coil HT polymer dome neodymium compression drivers.
+    // 200 W AES / 800 W peak, 8 ohms, 97 dB sensitivity (2.83 V 1 m free field), 124dB continuous, 130dB peak.
+    // Martin Audio quote a crest factor of 2 (6 dB peak to continuous); add 6 dB to compare with makers quoting 12 dB.
+    // Frequency response 70 Hz - 18 kHz +/-3 dB with iKON settings, -10 dB at 56 Hz.
+    // Plywood enclosure in PU textured paint, two pocket handles, full-width steel grille with cloth backing.
+    // Integral rigging for vertical and horizontal arrays of up to six enclosures; pole-mount fixing.
+    // Powered by Martin Audio iKON amplifiers (VU-NET control, Dante); modelled in DISPLAY 3.
+    // Finish: black. Standard is black (T820B); white is made to order.
+    // No 70/100 V tap - this is a low-Z amplifier load.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "Neutrik NL4. Passive configuration on pins 1+/1- or 2+/2-, selected by the rear-panel switch." },
+      { ...port("LINK", "speaker-level", "output", "speakon"), notes: "Second NL4, parallel link for the next enclosure in the array." },
+    ],
+  },
+  {
+    id: "4ef1e9a6-6986-4d7b-b971-ac23ff654c17",
+    deviceType: "amplifier",
+    label: "QSC CX-Q 2K4",
+    shortName: "CX-Q 2K4",
+    manufacturer: "QSC", modelNumber: "CX-Q 2K4",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/cx-q/4_channel/q_rep_specs_cxq_4ch.pdf",
+    searchTerms: ["cx-q 2k4", "cx-q", "q-sys amplifier", "network amplifier", "flexamp", "q-lan", "dwav"],
+    widthMm: 482, heightMm: 89, depthMm: 406, weightKg: 10.4,
+    voltage: "AC mains, IEC C-14 inlet",
+    unitCost: 3235,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 4-channel Q-SYS network amplifier, 500 W per channel, 2RU.
+    // 5th generation high-efficiency Class D hybrid powertrain on the PL380 PowerLight platform, with fully
+    // active Power Factor Correction. FlexAmp allows asymmetric per-channel power; FAST (Flexible Amplifier
+    // Summing Technology) combines channels in bridge, parallel or bridge/parallel mode for up to 200 Vrms
+    // or up to 35 A. Low impedance, 70 V and 100 V direct drive on all channels - no output transformers.
+    // Native Q-SYS component: drag-and-drop into a design, with Intrinsic Correction loudspeaker voicings.
+    // 4 channels of mic/line input with +12 V phantom act as Q-SYS on-ramps.
+    // Noise: unweighted output unmuted >102 dB, weighted output muted >106 dB.
+    // Protection: short circuit, open circuit, over current, over voltage, thermal, RF, DC fault shutdown,
+    // active inrush limiting, on/off muting.
+    // 89 x 482 x 406 mm (H x W x D), 10.4 kg net.
+    // POWER CONSUMPTION LEFT BLANK: QSC publish current draw and heat loss as per-load tables, not one figure.
+    ports: [
+      { ...port("MIC/LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("Q-LAN", "ethernet", "input", "rj45"), addressable: true, notes: "Q-LAN network - audio transport, control and monitoring as a native Q-SYS component. QSC's spec sheet says 'Q-LAN Network connectivity' without stating a port count; one port recorded." },
+      { ...port("OUTPUTS", "speaker-level", "output", "phoenix"), channelCount: 4, notes: "8-pin touch-proof Euroblock (green) carrying 4 channels. Low impedance, 70 V or 100 V direct drive on every channel." },
+      { ...port("GPIO", "gpio", "input", "phoenix"), channelCount: 8, notes: "Eight configurable bi-directional GPIO connections." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC C-14 inlet with AC power disconnect; locking IEC cord supplied." },
+    ],
+  },
+  {
+    id: "8952ed98-0d58-4522-b678-f1794337d9aa",
+    deviceType: "amplifier",
+    label: "QSC CX-Q 4K4",
+    shortName: "CX-Q 4K4",
+    manufacturer: "QSC", modelNumber: "CX-Q 4K4",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/cx-q/4_channel/q_rep_specs_cxq_4ch.pdf",
+    searchTerms: ["cx-q 4k4", "cx-q", "q-sys amplifier", "network amplifier", "flexamp", "q-lan", "dwav"],
+    widthMm: 482, heightMm: 89, depthMm: 406, weightKg: 11.3,
+    voltage: "AC mains, IEC C-14 inlet",
+    unitCost: 4355,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 4-channel Q-SYS network amplifier, 1000 W per channel, 2RU.
+    // 5th generation high-efficiency Class D hybrid powertrain on the PL380 PowerLight platform, with fully
+    // active Power Factor Correction. FlexAmp allows asymmetric per-channel power; FAST (Flexible Amplifier
+    // Summing Technology) combines channels in bridge, parallel or bridge/parallel mode for up to 200 Vrms
+    // or up to 35 A. Low impedance, 70 V and 100 V direct drive on all channels - no output transformers.
+    // Native Q-SYS component: drag-and-drop into a design, with Intrinsic Correction loudspeaker voicings.
+    // 4 channels of mic/line input with +12 V phantom act as Q-SYS on-ramps.
+    // Noise: unweighted output unmuted >102 dB, weighted output muted >106 dB.
+    // Protection: short circuit, open circuit, over current, over voltage, thermal, RF, DC fault shutdown,
+    // active inrush limiting, on/off muting.
+    // 89 x 482 x 406 mm (H x W x D), 11.3 kg net.
+    // POWER CONSUMPTION LEFT BLANK: QSC publish current draw and heat loss as per-load tables, not one figure.
+    ports: [
+      { ...port("MIC/LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("Q-LAN", "ethernet", "input", "rj45"), addressable: true, notes: "Q-LAN network - audio transport, control and monitoring as a native Q-SYS component. QSC's spec sheet says 'Q-LAN Network connectivity' without stating a port count; one port recorded." },
+      { ...port("OUTPUTS", "speaker-level", "output", "phoenix"), channelCount: 4, notes: "8-pin touch-proof Euroblock (green) carrying 4 channels. Low impedance, 70 V or 100 V direct drive on every channel." },
+      { ...port("GPIO", "gpio", "input", "phoenix"), channelCount: 8, notes: "Eight configurable bi-directional GPIO connections." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC C-14 inlet with AC power disconnect; locking IEC cord supplied." },
+    ],
+  },
+  {
+    id: "348cef68-3778-4641-a700-62204945edd7",
+    deviceType: "amplifier",
+    label: "QSC CX-Q 8K4",
+    shortName: "CX-Q 8K4",
+    manufacturer: "QSC", modelNumber: "CX-Q 8K4",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/cx-q/4_channel/q_rep_specs_cxq_4ch.pdf",
+    searchTerms: ["cx-q 8k4", "cx-q", "q-sys amplifier", "network amplifier", "flexamp", "q-lan", "dwav"],
+    widthMm: 482, heightMm: 89, depthMm: 406, weightKg: 11.8,
+    voltage: "AC mains, IEC C-14 inlet",
+    unitCost: 5465,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 4-channel Q-SYS network amplifier, 2000 W per channel, 2RU.
+    // 5th generation high-efficiency Class D hybrid powertrain on the PL380 PowerLight platform, with fully
+    // active Power Factor Correction. FlexAmp allows asymmetric per-channel power; FAST (Flexible Amplifier
+    // Summing Technology) combines channels in bridge, parallel or bridge/parallel mode for up to 200 Vrms
+    // or up to 35 A. Low impedance, 70 V and 100 V direct drive on all channels - no output transformers.
+    // Native Q-SYS component: drag-and-drop into a design, with Intrinsic Correction loudspeaker voicings.
+    // 4 channels of mic/line input with +12 V phantom act as Q-SYS on-ramps.
+    // Noise: unweighted output unmuted >102 dB, weighted output muted >106 dB.
+    // Protection: short circuit, open circuit, over current, over voltage, thermal, RF, DC fault shutdown,
+    // active inrush limiting, on/off muting.
+    // 89 x 482 x 406 mm (H x W x D), 11.8 kg net.
+    // POWER CONSUMPTION LEFT BLANK: QSC publish current draw and heat loss as per-load tables, not one figure.
+    ports: [
+      { ...port("MIC/LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("Q-LAN", "ethernet", "input", "rj45"), addressable: true, notes: "Q-LAN network - audio transport, control and monitoring as a native Q-SYS component. QSC's spec sheet says 'Q-LAN Network connectivity' without stating a port count; one port recorded." },
+      { ...port("OUTPUTS", "speaker-level", "output", "phoenix"), channelCount: 4, notes: "8-pin touch-proof Euroblock (green) carrying 4 channels. Low impedance, 70 V or 100 V direct drive on every channel." },
+      { ...port("GPIO", "gpio", "input", "phoenix"), channelCount: 8, notes: "Eight configurable bi-directional GPIO connections." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC C-14 inlet with AC power disconnect; locking IEC cord supplied." },
+    ],
+  },
+  {
+    id: "d04a97c3-3b52-49bd-948f-74d85fc762c5",
+    deviceType: "amplifier",
+    label: "QSC CX-Q 8K8",
+    shortName: "CX-Q 8K8",
+    manufacturer: "QSC", modelNumber: "CX-Q 8K8",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/cx-q/8_channel/q_rep_specs_cxq_8ch.pdf",
+    searchTerms: ["cx-q 8k8", "cx-q", "q-sys amplifier", "network amplifier", "flexamp", "q-lan", "dwav"],
+    widthMm: 482, heightMm: 89, depthMm: 406, weightKg: 11.8,
+    voltage: "AC mains, IEC C-14 inlet",
+    unitCost: 7915,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 8-channel Q-SYS network amplifier, 1000 W per channel, 2RU.
+    // 5th generation high-efficiency Class D hybrid powertrain on the PL380 PowerLight platform, with fully
+    // active Power Factor Correction. FlexAmp allows asymmetric per-channel power; FAST (Flexible Amplifier
+    // Summing Technology) combines channels in bridge, parallel or bridge/parallel mode for up to 200 Vrms
+    // or up to 35 A. Low impedance, 70 V and 100 V direct drive on all channels - no output transformers.
+    // Native Q-SYS component: drag-and-drop into a design, with Intrinsic Correction loudspeaker voicings.
+    // 8 channels of mic/line input with +12 V phantom act as Q-SYS on-ramps.
+    // Noise: unweighted output unmuted >102 dB, weighted output muted >106 dB.
+    // Protection: short circuit, open circuit, over current, over voltage, thermal, RF, DC fault shutdown,
+    // active inrush limiting, on/off muting.
+    // 89 x 482 x 406 mm (H x W x D), 11.8 kg net.
+    // POWER CONSUMPTION LEFT BLANK: QSC publish current draw and heat loss as per-load tables, not one figure.
+    ports: [
+      { ...port("MIC/LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 5", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 6", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 7", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 8", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("Q-LAN", "ethernet", "input", "rj45"), addressable: true, notes: "Q-LAN network - audio transport, control and monitoring as a native Q-SYS component. QSC's spec sheet says 'Q-LAN Network connectivity' without stating a port count; one port recorded." },
+      { ...port("OUTPUTS", "speaker-level", "output", "phoenix"), channelCount: 8, notes: "8-pin touch-proof Euroblock (green) carrying 8 channels. Low impedance, 70 V or 100 V direct drive on every channel." },
+      { ...port("GPIO", "gpio", "input", "phoenix"), channelCount: 8, notes: "Eight configurable bi-directional GPIO connections." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC C-14 inlet with AC power disconnect; locking IEC cord supplied." },
+    ],
+  },
 ];
