@@ -717,4 +717,31 @@ export const templates: DeviceTemplate[] = [
       { ...port("Speaker In (70/100 V or 16 ohm)", "speaker-level", "input", "phoenix"), notes: "Phoenix MSTB 2,5/4-ST rising-clamp plug and socket (fireproofed, pre-wireable). 16 ohm passive, 40 W AES / 160 W peak, or the included 25 W line transformer: 100 V taps 25 / 12.5 / 6 W, 70 V taps 25 / 12.5 / 6 / 3 W. Loop on at the plug." },
     ],
   },
+  {
+    id: "a1134584-0b4f-466e-b54d-28e6b3ddd689",
+    deviceType: "power-distribution",
+    label: "ACE PE Electric Pocket Panel",
+    shortName: "PE",
+    manufacturer: "ACE Backstage", modelNumber: "PE",
+    referenceUrl: "https://www.acebackstage.com/product/connextrix-pocket-panels-pnl-100-series/",
+    searchTerms: ["ace backstage", "pe", "switchbox", "stage pocket outlet", "connectrix electric panel", "duplex", "dwav"],
+    widthMm: 93.7, heightMm: 114.3, depthMm: 63.5,
+    voltage: "120 V AC branch circuit, by EC",
+    unitCost: 10.67,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // CONNECTRIX electric pocket panel: one standard duplex outlet on a single-gang switch box, for isolated high
+    // voltage in the same pocket as AV connectivity. Complete with duplex switch box, black powder-coated steel
+    // mounting plate and a narrow black powder-coated cover plate with mounting screws. Indexed so the plug clears
+    // the lid when the pocket is closed. Fits the Half, Full, Double Wide and Super Double Wide pockets, taking one
+    // CONNECTRIX panel bay. PE-MP is the Mini Pocket version (use with ISOBBX). UL listed in conjunction with UL
+    // listed ACE pockets when the AC is run in isolating conduit.
+    // 3.69 W x 4.50 H x 2.50 D in. Dimensions from the AV-iQ product record (ACE publish no PE spec sheet); the
+    // 4.50 in height matches the PNL-100 plate height on ACE's own pocket drawings, which is the cross-check.
+    // WEIGHT LEFT BLANK - not in ACE's product weight guide.
+    ports: [
+      { ...port("LINE IN", "power", "input", "terminal-block"), notes: "120 V AC branch circuit hardwired into the switch box by the EC; isolated from the AV bays." },
+      { ...port("OUTLET 1", "power", "output", "edison"), notes: "NEMA 5-15R, upper half of the duplex." },
+      { ...port("OUTLET 2", "power", "output", "edison"), notes: "NEMA 5-15R, lower half of the duplex." },
+    ],
+  },
 ];
