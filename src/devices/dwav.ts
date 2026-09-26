@@ -1865,4 +1865,258 @@ export const templates: DeviceTemplate[] = [
       { ...port("Link", "ethernet", "bidirectional", "rj45"), notes: "Second RJ45 link port - not active yet: supported in a future Q-SYS Designer Software release." },
     ],
   },
+  {
+    id: "dbec9b64-c39a-4326-9c03-eed2caef4cc9",
+    deviceType: "speaker",
+    label: "Martin Audio CDD6",
+    shortName: "CDD6",
+    manufacturer: "Martin Audio", modelNumber: "CDD6W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD6datasheet.pdf",
+    searchTerms: ["cdd6", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 210, heightMm: 325, depthMm: 210, weightKg: 5.69,
+    unitCost: 550,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Ultra-compact passive two-way Coaxial Differential Dispersion system, 9 litre composite enclosure.
+    // LF 6.5 in (165 mm) with 1.5 in voice coil, long excursion, ferrite motor; HF 1 in (25 mm) voice coil fabric dome, neodymium motor.
+    // Dispersion 110-80 deg horizontal x 80 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 2.5 kHz passive crossover.
+    // 150 W AES / 600 W peak, 8 ohms nominal, 91 dB sensitivity, 113 dB continuous / 119 dB peak max SPL. 80 Hz - 20 kHz +/-3 dB (-10 dB at 70 Hz).
+    // 4 x M6 inserts for wall / ceiling brackets. Accessories: CDDWB6/8B/W wall bracket, CDDCB6/8B/W ceiling bracket.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: white (RAL9016) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 13A push-lock, pluggable 4-pole Euroblock (user guide: 12 A). Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "ac8870b4-f3d9-4ab0-8b3c-8e3f2d439c5b",
+    deviceType: "speaker",
+    label: "Martin Audio CDD6",
+    shortName: "CDD6",
+    manufacturer: "Martin Audio", modelNumber: "CDD6B",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD6datasheet.pdf",
+    searchTerms: ["cdd6", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 210, heightMm: 325, depthMm: 210, weightKg: 5.69,
+    unitCost: 550,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Ultra-compact passive two-way Coaxial Differential Dispersion system, 9 litre composite enclosure.
+    // LF 6.5 in (165 mm) with 1.5 in voice coil, long excursion, ferrite motor; HF 1 in (25 mm) voice coil fabric dome, neodymium motor.
+    // Dispersion 110-80 deg horizontal x 80 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 2.5 kHz passive crossover.
+    // 150 W AES / 600 W peak, 8 ohms nominal, 91 dB sensitivity, 113 dB continuous / 119 dB peak max SPL. 80 Hz - 20 kHz +/-3 dB (-10 dB at 70 Hz).
+    // 4 x M6 inserts for wall / ceiling brackets. Accessories: CDDWB6/8B/W wall bracket, CDDCB6/8B/W ceiling bracket.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: black (RAL9005) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 13A push-lock, pluggable 4-pole Euroblock (user guide: 12 A). Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "ce33bec1-2ae7-4767-a209-d046b6952e04",
+    deviceType: "speaker",
+    label: "Martin Audio CDD8",
+    shortName: "CDD8",
+    manufacturer: "Martin Audio", modelNumber: "CDD8W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD8datasheet.pdf",
+    searchTerms: ["cdd8", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 256, heightMm: 410, depthMm: 252, weightKg: 9.5,
+    unitCost: 960,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Ultra-compact passive two-way Coaxial Differential Dispersion system, 14 litre composite enclosure.
+    // LF 8 in (200 mm) with 2 in voice coil, long excursion, ferrite motor shared with the HF; HF 1 in (25 mm) exit, 1.4 in voice coil polyimide dome compression driver.
+    // Dispersion 110-80 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 2.3 kHz passive crossover.
+    // 200 W AES / 800 W peak, 8 ohms nominal, 94 dB sensitivity, 117 dB continuous / 123 dB peak max SPL. 70 Hz - 20 kHz +/-3 dB (-10 dB at 55 Hz).
+    // 6 x M6 inserts for wall / ceiling brackets. Accessories: CDDWB6/8B/W wall bracket, CDDCB6/8B/W ceiling bracket.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: white (RAL9016) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 13A push-lock, pluggable 4-pole Euroblock (user guide: 12 A). Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "2dd4f5d5-cfd0-48c6-ac86-c17570c9a112",
+    deviceType: "speaker",
+    label: "Martin Audio CDD8",
+    shortName: "CDD8",
+    manufacturer: "Martin Audio", modelNumber: "CDD8B",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD8datasheet.pdf",
+    searchTerms: ["cdd8", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 256, heightMm: 410, depthMm: 252, weightKg: 9.5,
+    unitCost: 960,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Ultra-compact passive two-way Coaxial Differential Dispersion system, 14 litre composite enclosure.
+    // LF 8 in (200 mm) with 2 in voice coil, long excursion, ferrite motor shared with the HF; HF 1 in (25 mm) exit, 1.4 in voice coil polyimide dome compression driver.
+    // Dispersion 110-80 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 2.3 kHz passive crossover.
+    // 200 W AES / 800 W peak, 8 ohms nominal, 94 dB sensitivity, 117 dB continuous / 123 dB peak max SPL. 70 Hz - 20 kHz +/-3 dB (-10 dB at 55 Hz).
+    // 6 x M6 inserts for wall / ceiling brackets. Accessories: CDDWB6/8B/W wall bracket, CDDCB6/8B/W ceiling bracket.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: black (RAL9005) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 13A push-lock, pluggable 4-pole Euroblock (user guide: 12 A). Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "95df4260-64d6-416c-87bb-55fd5ecb40c8",
+    deviceType: "speaker",
+    label: "Martin Audio CDD10",
+    shortName: "CDD10",
+    manufacturer: "Martin Audio", modelNumber: "CDD10W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD10datasheet.pdf",
+    searchTerms: ["cdd10", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 323, heightMm: 513, depthMm: 310, weightKg: 15.3,
+    unitCost: 1400,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Compact passive two-way Coaxial Differential Dispersion system, 28 litre composite enclosure.
+    // LF 10 in (250 mm) with 2.5 in voice coil, long excursion, ferrite motor shared with the HF; HF 1 in (25 mm) exit, 1.4 in voice coil polyimide dome compression driver.
+    // Dispersion 110-75 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 2 kHz passive crossover.
+    // 250 W AES / 1000 W peak, 8 ohms nominal, 96 dB sensitivity, 120 dB continuous / 126 dB peak max SPL. 65 Hz - 20 kHz +/-3 dB (-10 dB at 55 Hz).
+    // 6 x M8 inserts for wall bracket, 10 x M8 fly points. Accessories: CDDWB10/12B/W wall bracket, CDDY10B/W yoke.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: white (RAL9016) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 20A push-lock, pluggable 4-pole Euroblock. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "5f82a369-0e6a-4a8c-822a-044419e60349",
+    deviceType: "speaker",
+    label: "Martin Audio CDD10",
+    shortName: "CDD10",
+    manufacturer: "Martin Audio", modelNumber: "CDD10B",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD10datasheet.pdf",
+    searchTerms: ["cdd10", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 323, heightMm: 513, depthMm: 310, weightKg: 15.3,
+    unitCost: 1400,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Compact passive two-way Coaxial Differential Dispersion system, 28 litre composite enclosure.
+    // LF 10 in (250 mm) with 2.5 in voice coil, long excursion, ferrite motor shared with the HF; HF 1 in (25 mm) exit, 1.4 in voice coil polyimide dome compression driver.
+    // Dispersion 110-75 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 2 kHz passive crossover.
+    // 250 W AES / 1000 W peak, 8 ohms nominal, 96 dB sensitivity, 120 dB continuous / 126 dB peak max SPL. 65 Hz - 20 kHz +/-3 dB (-10 dB at 55 Hz).
+    // 6 x M8 inserts for wall bracket, 10 x M8 fly points. Accessories: CDDWB10/12B/W wall bracket, CDDY10B/W yoke.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA2004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: black (RAL9005) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 20A push-lock, pluggable 4-pole Euroblock. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "2e4e304a-092c-4820-be51-2d4168feda84",
+    deviceType: "speaker",
+    label: "Martin Audio CDD12",
+    shortName: "CDD12",
+    manufacturer: "Martin Audio", modelNumber: "CDD12W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD12datasheet.pdf",
+    searchTerms: ["cdd12", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 360, heightMm: 560, depthMm: 350, weightKg: 19,
+    unitCost: 1750,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Compact high-output passive two-way Coaxial Differential Dispersion system, 38 litre birch plywood enclosure.
+    // LF 12 in (300 mm) with 2.5 in voice coil, long excursion, ferrite motor shared with the HF; HF 1 in (25 mm) exit, 1.7 in voice coil polyimide dome compression driver.
+    // Dispersion 110-60 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 1.9 kHz passive crossover.
+    // 300 W AES / 1200 W peak, 8 ohms nominal, 97 dB sensitivity, 122 dB continuous / 128 dB peak max SPL. 62 Hz - 20 kHz +/-3 dB (-10 dB at 50 Hz).
+    // 6 x M8 inserts for wall bracket, 10 x M8 fly points. Accessories: CDDWB10/12B/W wall bracket, CDDY12B/W yoke.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA5002, VIA5004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: white (RAL9016) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 20A push-lock, pluggable 4-pole Euroblock. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "1579294f-a37d-4c84-84fe-ab0554e684d2",
+    deviceType: "speaker",
+    label: "Martin Audio CDD12",
+    shortName: "CDD12",
+    manufacturer: "Martin Audio", modelNumber: "CDD12B",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD12datasheet.pdf",
+    searchTerms: ["cdd12", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 360, heightMm: 560, depthMm: 350, weightKg: 19,
+    unitCost: 1750,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Compact high-output passive two-way Coaxial Differential Dispersion system, 38 litre birch plywood enclosure.
+    // LF 12 in (300 mm) with 2.5 in voice coil, long excursion, ferrite motor shared with the HF; HF 1 in (25 mm) exit, 1.7 in voice coil polyimide dome compression driver.
+    // Dispersion 110-60 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 1.9 kHz passive crossover.
+    // 300 W AES / 1200 W peak, 8 ohms nominal, 97 dB sensitivity, 122 dB continuous / 128 dB peak max SPL. 62 Hz - 20 kHz +/-3 dB (-10 dB at 50 Hz).
+    // 6 x M8 inserts for wall bracket, 10 x M8 fly points. Accessories: CDDWB10/12B/W wall bracket, CDDY12B/W yoke.
+    // Recommended amplifiers: iK41, iK81, VIA2502, VIA5002, VIA5004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: black (RAL9005) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 20A push-lock, pluggable 4-pole Euroblock. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "fd85533e-439e-4798-b28b-52478253aedb",
+    deviceType: "speaker",
+    label: "Martin Audio CDD15",
+    shortName: "CDD15",
+    manufacturer: "Martin Audio", modelNumber: "CDD15W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD15datasheet.pdf",
+    searchTerms: ["cdd15", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 432, heightMm: 685, depthMm: 413, weightKg: 26,
+    unitCost: 2500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // High-output passive two-way Coaxial Differential Dispersion system, 68 litre birch plywood enclosure.
+    // LF 15 in (380 mm) with 3 in voice coil, long excursion, ferrite motor shared with the HF; HF 1.4 in (36 mm) exit, 3 in voice coil titanium dome compression driver.
+    // Dispersion 100-60 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 1.6 kHz passive crossover.
+    // 400 W AES / 1600 W peak, 8 ohms nominal, 100 dB sensitivity, 126 dB continuous / 132 dB peak max SPL. 55 Hz - 18 kHz +/-3 dB (-10 dB at 45 Hz).
+    // 10 x M8 fly points. Accessories: CDDY15B/W yoke, WB15B/W wall bracket.
+    // Recommended amplifiers: iK41, iK81, VIA5002, VIA5004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: white (RAL9016) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 20A push-lock, pluggable 4-pole Euroblock. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "c7c12800-7470-4d1c-818e-d7d4f01bbc4d",
+    deviceType: "speaker",
+    label: "Martin Audio CDD15",
+    shortName: "CDD15",
+    manufacturer: "Martin Audio", modelNumber: "CDD15B",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/CDD15datasheet.pdf",
+    searchTerms: ["cdd15", "martin audio cdd", "coaxial differential dispersion", "on-wall speaker", "dwav"],
+    widthMm: 432, heightMm: 685, depthMm: 413, weightKg: 26,
+    unitCost: 2500,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // High-output passive two-way Coaxial Differential Dispersion system, 68 litre birch plywood enclosure.
+    // LF 15 in (380 mm) with 3 in voice coil, long excursion, ferrite motor shared with the HF; HF 1.4 in (36 mm) exit, 3 in voice coil titanium dome compression driver.
+    // Dispersion 100-60 deg horizontal x 60 deg vertical, -6 dB; the coaxial driver is USER-ROTATABLE, so the wide axis can go either way round. 1.6 kHz passive crossover.
+    // 400 W AES / 1600 W peak, 8 ohms nominal, 100 dB sensitivity, 126 dB continuous / 132 dB peak max SPL. 55 Hz - 18 kHz +/-3 dB (-10 dB at 45 Hz).
+    // 10 x M8 fly points. Accessories: CDDY15B/W yoke, WB15B/W wall bracket.
+    // Recommended amplifiers: iK41, iK81, VIA5002, VIA5004. No 70/100 V tap on this model (the TX versions are separate products) - a low-Z amplifier load.
+    // Finish: black (RAL9005) textured paint, perforated steel grille with scrim; any RAL to order.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Low-profile 20A push-lock, pluggable 4-pole Euroblock. Pins left to right: Input+, Input-, Link-, Link+." },
+      { ...port("LINK", "speaker-level", "output", "terminal-block"), notes: "Parallel link on the same 4-pole push-lock block, for daisy-chain wiring." },
+    ],
+  },
+  {
+    id: "2990b44d-d93e-4579-ab63-339cec445720",
+    deviceType: "speaker",
+    label: "Martin Audio FP4",
+    shortName: "FP4",
+    manufacturer: "Martin Audio", modelNumber: "FP4",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/FP4datasheet.pdf",
+    searchTerms: ["fp4", "flexpoint", "martin audio fp4", "miniature point source", "fill speaker", "dwav"],
+    widthMm: 130, heightMm: 130, depthMm: 126, weightKg: 1.9,
+    unitCost: 650,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Miniature passive two-way coaxial point-source loudspeaker for short-throw fill and spot coverage.
+    // LF 4 in with 1.25 in voice coil, ferrite motor; HF 0.7 in exit, 1 in voice coil HT polymer dome compression driver, coaxial.
+    // 110 deg conical dispersion (-6 dB). 2.6 kHz crossover. 142 Hz - 18 kHz +/-3 dB (-10 dB at 103 Hz) with preset.
+    // 60 W AES / 240 W peak, 16 ohms nominal, 84 dB sensitivity (4 V, 1 m), 102 dB continuous / 108 dB peak max SPL.
+    // 0.8 litre birch plywood enclosure, black hardwearing paint, steel grille with triple-layer polyester backing.
+    // 4 x M6 inserts and one 3/8 in mic-stand fixing; touring & install yoke accessory.
+    // Powered by iKON amplifiers, or VIA amplifiers with a DX4.0 / DX0.4 / DX0.6 controller. No 70/100 V tap - low-Z load.
+    ports: [
+      { ...port("INPUT (NL4)", "speaker-level", "input", "speakon"), notes: "Neutrik NL4MP, input on 1+ / 1-." },
+      { ...port("LINK (NL4)", "speaker-level", "output", "speakon"), notes: "Neutrik NL4MP link, passes 1+/- and 2+/- through." },
+      { ...port("INPUT (Phoenix)", "speaker-level", "input", "phoenix"), notes: "Phoenix terminal block 1725302 (datasheet). The sheet does not say whether it is in parallel with the NL4 input." },
+    ],
+  },
 ];
