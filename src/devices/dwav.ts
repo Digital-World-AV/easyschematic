@@ -1273,4 +1273,565 @@ export const templates: DeviceTemplate[] = [
       { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC C-14 inlet with AC power disconnect; locking IEC cord supplied." },
     ],
   },
+  {
+    id: "24cc0a31-6d82-4804-a250-23e148ac2a6d",
+    deviceType: "audio-dsp",
+    label: "Q-SYS Core Nano",
+    shortName: "Core Nano",
+    manufacturer: "QSC", modelNumber: "Core Nano",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/dsp_cores/core_nano/q_core_nano_specsheet.pdf",
+    searchTerms: ["core nano", "q-sys core", "q-sys processor", "network i/o processor", "dsp", "qsc", "dwav"],
+    widthMm: 220, heightMm: 43.6, depthMm: 286.6, weightKg: 1.6,
+    powerDrawW: 60,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 3285,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network-only AV&C processor: 64x64 Q-LAN / AES67, software Dante 8x8 (32x32 licensed), 8 AEC,
+    // 12x12 WAN, 2 VoIP softphones, USB AV bridging 8x8 audio + Q-SYS cameras, 32 network peripherals. No analog audio.
+    // 1U half-rack, 220 W x 43.6 H x 286.6 D mm, 1.6 kg; rack ears / spacer for one or two in a 19 in space.
+    // 40 W typical / 60 W max. Verified 2026-09-25 against the QSC spec sheet (2/24/2023) and the Core Nano / 8 Flex
+    // hardware user manual TD-001615-00-B.
+    ports: [
+      { ...port("USB Type B (Device)", "usb", "bidirectional", "usb-b"), notes: "USB 3.0 dedicated device port: USB audio (up to 8x8, 24-bit 48 kHz) + UVC video bridging to a room PC; appears as audio, video and communications devices." },
+      { ...port("USB Type C (Host / Device)", "usb", "bidirectional", "usb-c"), notes: "USB 3.1, host port or device port (device only when USB Type B is not in use)." },
+      { ...port("USB Type A Host 1", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host: standard USB headset or speakerphone (one device at a time) and Q-SYS USB peripherals." },
+      { ...port("USB Type A Host 2", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host." },
+      { ...port("USB Type A Host 3", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host." },
+      { ...port("USB Type A Host 4", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host." },
+      { ...port("LAN A", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Primary, 1000 Mbps: Q-LAN, AES67, software Dante (8x8 included, 32x32 licensed), VoIP, WAN streaming, control." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Backup / second network, 1000 Mbps: assignable to Q-LAN redundancy, VoIP, control or streaming." },
+      { ...port("RS-232 COM 1", "serial", "bidirectional", "phoenix"), notes: "3-position 3.5 mm Euroblock." },
+      { ...port("RS-232 COM 2", "serial", "bidirectional", "phoenix"), notes: "3-position 3.5 mm Euroblock." },
+      { ...port("AC Mains", "power", "input", "iec"), notes: "IEC 60320 C14, internal universal supply 100-240 V 50/60 Hz. 40 W typical, 60 W maximum, 110 BTU/hr typical." },
+    ],
+  },
+  {
+    id: "595410f1-23ac-4643-904e-35d904974f62",
+    deviceType: "audio-dsp",
+    label: "Q-SYS Core 8 Flex",
+    shortName: "Core 8 Flex",
+    manufacturer: "QSC", modelNumber: "Core 8 Flex",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/dsp_cores/q_dn_core_nano_8flex_usermanual.pdf",
+    searchTerms: ["core 8 flex", "q-sys core", "q-sys processor", "flex channels", "dsp", "qsc", "dwav"],
+    widthMm: 220, heightMm: 43.6, depthMm: 286.6, weightKg: 1.8,
+    powerDrawW: 60,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 4180,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS AV&C processor with 8 FLEX Channels (each a mic/line input with +48 V phantom or a line output, set in
+    // the design) and 8x8 GPIO, plus the Core Nano's network I/O, USB AV bridging, VoIP and control engine.
+    // 1U half-rack, 220 W x 43.6 H x 286.6 D mm, 1.8 kg. 40 W typical / 60 W max. Verified 2026-09-25 against
+    // the Core Nano / 8 Flex hardware user manual TD-001615-00-B.
+    ports: [
+      { ...port("FLEX 1", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 2", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 3", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 4", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 5", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 6", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 7", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("FLEX 8", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX Channel: 3-pin Euroblock, set per channel in the design (or at run time) as a mic/line input or a line output; +48 V phantom on inputs (IEC 61938 P48, 10 mA)." },
+      { ...port("GPIO Inputs 1-8", "gpio", "input", "phoenix"), channelCount: 8, notes: "Upper pins 1-8 of the GPIO block: 0-24 V analog input or contact closure. +12 VDC (0.1 A) and ground pins on the same block." },
+      { ...port("GPIO Outputs 1-8", "gpio", "output", "phoenix"), channelCount: 8, notes: "Lower pins 1-8 of the GPIO block: open collector, 24 V 0.2 A max, pull-up to +3.3 V." },
+      { ...port("USB Type B (Device)", "usb", "bidirectional", "usb-b"), notes: "USB 3.0 dedicated device port: USB audio (up to 8x8, 24-bit 48 kHz) + UVC video bridging to a room PC; appears as audio, video and communications devices." },
+      { ...port("USB Type C (Host / Device)", "usb", "bidirectional", "usb-c"), notes: "USB 3.1, host port or device port (device only when USB Type B is not in use)." },
+      { ...port("USB Type A Host 1", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host: standard USB headset or speakerphone (one device at a time) and Q-SYS USB peripherals." },
+      { ...port("USB Type A Host 2", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host." },
+      { ...port("USB Type A Host 3", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host." },
+      { ...port("USB Type A Host 4", "usb", "bidirectional", "usb-a"), notes: "USB 3.0 host." },
+      { ...port("LAN A", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Primary, 1000 Mbps: Q-LAN, AES67, software Dante (8x8 included, 32x32 licensed), VoIP, WAN streaming, control." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Backup / second network, 1000 Mbps: assignable to Q-LAN redundancy, VoIP, control or streaming." },
+      { ...port("RS-232 COM 1", "serial", "bidirectional", "phoenix"), notes: "3-position 3.5 mm Euroblock." },
+      { ...port("RS-232 COM 2", "serial", "bidirectional", "phoenix"), notes: "3-position 3.5 mm Euroblock." },
+      { ...port("AC Mains", "power", "input", "iec"), notes: "IEC 60320 C14, internal universal supply 100-240 V 50/60 Hz. 40 W typical, 60 W maximum, 110 BTU/hr typical." },
+    ],
+  },
+  {
+    id: "a59f65c4-8137-4b64-8b8e-e64deccbe57f",
+    deviceType: "audio-dsp",
+    label: "Q-SYS Core 24f",
+    shortName: "Core 24f",
+    manufacturer: "QSC", modelNumber: "Core 24f",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/dsp_cores/core_24f/q_dn_core24f_specsheet.pdf",
+    searchTerms: ["core 24f", "q-sys core", "q-sys processor", "flex channels", "dsp", "qsc", "dwav"],
+    widthMm: 482.6, heightMm: 43.6, depthMm: 310.9, weightKg: 5.44,
+    powerDrawW: 150,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 6415,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network + analog AV&C processor, 1U: 160x160 network channels, 8 mic/line in (+48 V), 8 line out,
+    // 8 FLEX channels, 24 AEC, 8 VoIP softphones, software Dante 8x8 (64x64 licensed), 96 network peripherals.
+    // 8x8 GPIO, 2 RS-232, USB-C (AV bridging / HID / DP Alt) + 2 USB-A, four 2.5 Gb LAN ports. 482.6 W x 310.9 D x
+    // 43.6 H mm, 5.44 kg; 60 W typical / 150 W max. Needs 6 in open behind it. Verified 2026-09-25 against the Core 24f
+    // spec sheet and hardware user manual WA-001710-01-A.
+    ports: [
+      { ...port("MIC/LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 5", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 6", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 7", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("MIC/LINE IN 8", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (orange), balanced or unbalanced, +48 V phantom (IEC 61938 P48, 10 mA), -36 to +24 dBu." },
+      { ...port("FLEX 1", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 2", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 3", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 4", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 5", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 6", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 7", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("FLEX 8", "analog-audio", "bidirectional", "phoenix"), notes: "3-pin Euroblock (blue), set per channel as a mic/line input (+48 V available) or a line output." },
+      { ...port("LINE OUT 1", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 2", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 3", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 4", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 5", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 6", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 7", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("LINE OUT 8", "analog-audio", "output", "phoenix"), notes: "3-pin Euroblock (green), balanced or unbalanced, -36 to +24 dBu, 100 Ohm." },
+      { ...port("GPIO Inputs 1-8", "gpio", "input", "phoenix"), channelCount: 8, notes: "10-terminal Euroblock: pins 2-9 0-24 VDC analog, potentiometer, TTL or contact closure (GPI 1 can be word clock in); pin 1 12 VDC 0.2 A; pin 10 ground." },
+      { ...port("GPIO Outputs 1-8", "gpio", "output", "phoenix"), channelCount: 8, notes: "10-terminal Euroblock: pins 2-9 open collector (24 V, 0.2 A max) with 3.3 V pull-ups or TTL; pin 1 12 VDC 0.2 A; pin 10 ground." },
+      { ...port("RS-232 COM A", "serial", "bidirectional", "phoenix"), notes: "3-terminal Euroblock." },
+      { ...port("RS-232 COM B", "serial", "bidirectional", "phoenix"), notes: "3-terminal Euroblock." },
+      { ...port("USB-C", "usb", "bidirectional", "usb-c"), notes: "USB 3.1 host, device or DisplayPort Alt Mode; AV bridging and HID routing (16x16 audio), up to 3 USB audio devices; sources 2.0 A." },
+      { ...port("USB-A 1", "usb", "bidirectional", "usb-a"), notes: "USB 3.1 host, 900 mA." },
+      { ...port("USB-A 2", "usb", "bidirectional", "usb-a"), notes: "USB 3.1 host, 900 mA." },
+      { ...port("LAN A", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Up to 2.5 Gbps. Q-LAN, AES67, software Dante (8x8 included, 64x64 licensed), VoIP, streaming, control." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Up to 2.5 Gbps. Assignable: Q-LAN redundancy, VoIP, control, streaming." },
+      { ...port("LAN C", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Up to 2.5 Gbps. Assignable." },
+      { ...port("LAN D", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Up to 2.5 Gbps. Assignable." },
+      { ...port("AC Mains", "power", "input", "iec"), notes: "Universal 100-240 VAC 50/60 Hz, 150 W (rear label). 60 W typical, 150 W max, 136 BTU/hr." },
+    ],
+  },
+  {
+    id: "4b057d00-c5aa-44da-be5a-b385722b3ae1",
+    deviceType: "audio-dsp",
+    label: "Q-SYS Server Core X10",
+    shortName: "Server Core X10",
+    manufacturer: "QSC", modelNumber: "Server Core X10",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/dsp_cores/server_core_x10/q_dn_server_core_x10_specsheet.pdf",
+    searchTerms: ["server core x10", "core x10", "q-sys server core", "q-sys processor", "dsp", "qsc", "dwav"],
+    widthMm: 438, heightMm: 44, depthMm: 460, weightKg: 8.5,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 9940,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network-only server processor, 1U: 256x256 network audio, software Dante 8x8 (128x128 licensed),
+    // 64x64 WAN/media, 32 VoIP softphones, 64 AEC, 256 GB media drive. Four 2.5 Gb LAN (2 Q-SYS Multimedia,
+    // 2 Q-SYS Aux), one DB-9 RS-232, one 500 W universal PSU module. 438 W x 460 D x 44 H mm body (rail kit and
+    // rack-ear handles included), 8.5 kg. Verified 2026-09-25 against the Server Core X10 spec sheet (14 May 2025).
+    ports: [
+      { ...port("LAN 1 (Multimedia)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Q-SYS Multimedia port, 2.5 Gbps: Q-LAN, AES67, Dante, media." },
+      { ...port("LAN 2 (Multimedia)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Q-SYS Multimedia port, 2.5 Gbps." },
+      { ...port("LAN 3 (Aux)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Q-SYS Aux port, 2.5 Gbps: control, VoIP, management." },
+      { ...port("LAN 4 (Aux)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "2.5G", notes: "Q-SYS Aux port, 2.5 Gbps." },
+      { ...port("RS-232", "serial", "bidirectional", "db9"), notes: "DB-9, 16550-compliant, rear panel." },
+      { ...port("AC Mains", "power", "input", "other"), notes: "One universal-input 500 W PSU module, 100-240 VAC 50/60 Hz, 2.0 A; region-specific cord included. Inlet type not stated." },
+    ],
+  },
+  {
+    id: "96eeece2-d9a8-41ad-9b14-88c976a297d1",
+    deviceType: "audio-dsp",
+    label: "Q-SYS Server Core X20r",
+    shortName: "Server Core X20r",
+    manufacturer: "QSC", modelNumber: "Server Core X20r",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/dsp_cores/server_core_x20r/q_dn_server_core_x20r_specsheet.pdf",
+    searchTerms: ["server core x20r", "core x20r", "q-sys server core", "q-sys processor", "dsp", "qsc", "redundant", "dwav"],
+    widthMm: 482, heightMm: 42.8, depthMm: 599, weightKg: 13.23,
+    voltage: "AC 100-240 V, dual PSU",
+    unitCost: 16070,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network-only server processor on a Dell R360XE, 1U, dual 600 W PSUs: 384x384 network audio, software
+    // Dante 8x8 (256x256 licensed), 96x96 WAN/media, 64 VoIP, 128 AEC, 480 GB media drive. Four 1 Gb LAN (2 Q-SYS
+    // Multimedia, 2 Q-SYS Aux), dedicated iDRAC v9 Ethernet, one DB-9 RS-232, iDRAC Direct micro-USB on the front.
+    // 482 W x 599 D x 42.8 H mm including rack ears and handles, 13.23 kg - needs a deep rack. Verified 2026-09-25
+    // against the Server Core X20r spec sheet (14 May 2025).
+    ports: [
+      { ...port("LAN 1 (Multimedia)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-SYS Multimedia port, 1000 Mbps: Q-LAN, AES67, Dante, media." },
+      { ...port("LAN 2 (Multimedia)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-SYS Multimedia port, 1000 Mbps." },
+      { ...port("LAN 3 (Aux)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-SYS Aux port, 1000 Mbps: control, VoIP, management." },
+      { ...port("LAN 4 (Aux)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-SYS Aux port, 1000 Mbps." },
+      { ...port("iDRAC", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Dedicated iDRAC v9 out-of-band management Ethernet (rear)." },
+      { ...port("iDRAC Direct", "usb", "bidirectional", "usb-micro"), notes: "Front panel Micro-AB USB for iDRAC Direct." },
+      { ...port("RS-232", "serial", "bidirectional", "db9"), notes: "DB-9, 16550-compliant, rear panel." },
+      { ...port("AC Mains 1", "power", "input", "other"), notes: "PSU 1 of 2, universal 600 W module, 100-240 VAC 50/60 Hz. Inlet type not stated; two cords included." },
+      { ...port("AC Mains 2", "power", "input", "other"), notes: "PSU 2 of 2 (redundant), universal 600 W module." },
+    ],
+  },
+  {
+    id: "8784717f-4dff-4a86-a79c-efc65ac00e72",
+    deviceType: "amplifier",
+    label: "QSC CX-Q 4K8",
+    shortName: "CX-Q 4K8",
+    manufacturer: "QSC", modelNumber: "CX-Q 4K8",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/cx-q/8_channel/q_rep_specs_cxq_8ch.pdf",
+    searchTerms: ["cx-q 4k8", "cx-q", "q-sys amplifier", "network amplifier", "flexamp", "q-lan", "dwav"],
+    widthMm: 482, heightMm: 89, depthMm: 406, weightKg: 11.3,
+    voltage: "AC mains, IEC C-14 inlet",
+    unitCost: 6355,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 8-channel Q-SYS network amplifier: 300 W continuous per channel at 8 Ohm / 70 V / 100 V, all channels driven,
+    // 1000 W max (20 ms burst, one channel); 4,000 W supply shared by FlexAmp. 2RU.
+    // FAST combines channels: BTL pairs 600 W at 8 Ohm / 140-200 V, parallel pairs 600 W at 70 / 100 V, bridge/parallel
+    // quads 1200 W, parallel quads 1200 W down to 1 Ohm. Low-Z, 70 V and 100 V direct drive - no output transformers.
+    // 8 channels of mic/line input with +12 V phantom act as Q-SYS on-ramps. Universal supply 100-240 VAC with active PFC.
+    // 89 x 482 x 406 mm (H x W x D), 25 lb / 11.3 kg net. Verified 2026-09-25 against the CX-Q Series 8-channel
+    // specifications sheet (4K8 column).
+    // POWER CONSUMPTION LEFT BLANK: QSC publish current draw and heat loss as per-load tables, not one figure.
+    ports: [
+      { ...port("MIC/LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 5", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 6", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 7", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("MIC/LINE IN 8", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (green), mic/line with +12 V phantom power; acts as a Q-SYS on-ramp." },
+      { ...port("Q-LAN", "ethernet", "input", "rj45"), addressable: true, notes: "Q-LAN network - audio transport, control and monitoring as a native Q-SYS component. QSC's spec sheet says 'Q-LAN Network connectivity' without stating a port count; one port recorded." },
+      { ...port("OUTPUTS", "speaker-level", "output", "phoenix"), channelCount: 8, notes: "8-pin touch-proof Euroblock output connectors (green), one +/- pair per channel, 8 channels. Low impedance, 70 V or 100 V direct drive on every channel." },
+      { ...port("GPIO", "gpio", "input", "phoenix"), channelCount: 8, notes: "Eight configurable bi-directional GPIO connections." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC C-14 inlet with AC power disconnect; locking IEC cord supplied." },
+    ],
+  },
+  {
+    id: "799eb38d-4ae3-4b7c-9811-8108cdb9da27",
+    deviceType: "amplifier",
+    label: "QSC MPA-Q 4x250",
+    shortName: "MPA-Q 4x250",
+    manufacturer: "QSC", modelNumber: "MPA-Q 4x250",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/mpa-q/q_amp_mpa-q_series_spec_sheet.pdf",
+    searchTerms: ["mpa-q 4x250", "mpa-q", "q-sys amplifier", "network amplifier", "q-lan", "70v amplifier", "dwav"],
+    widthMm: 483, heightMm: 89, depthMm: 381, weightKg: 9,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 2325,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 4-channel Q-SYS network amplifier, 2RU: 150 W continuous (all channels) / 250 W max per channel at
+    // 8, 4 or 2 Ohm and 70 / 100 V; bridged pairs double it (2 Ohm bridged not supported).
+    // 4 line-level analog inputs (not mic). Q-SYS Mode or Analog Mode by a rear switch read at boot; standby
+    // fails over to the analog inputs when the network drops. DSP: IIR/FIR (1024 taps), 2020 ms delay, limiters.
+    // 4 GPI + 2 NO/NC relays on a 12-pin Euroblock; LAN A optionally PoE 802.3af.
+    // 381 D x 483 W x 89 H mm, 9.0 kg. Verified 2026-09-25 against the MPA-Q Series spec sheet (April 29, 2026),
+    // the hardware user manual and help.qsys.com (rear panel).
+    // POWER CONSUMPTION LEFT BLANK: QSC publish only the AC current range, not a wattage.
+    ports: [
+      { ...port("LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LAN A (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN primary, 1 Gbps. Optionally accepts PoE 802.3af Type 1 so the amp's network side restores audio within seconds after a power interruption." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN secondary / redundant, 1 Gbps." },
+      { ...port("GPI 1-4", "gpio", "input", "phoenix"), channelCount: 4, notes: "4 GPI inputs, 0-3.3 V DC closure, on the 12-pin (2-row) 3.5 mm Euroblock shared with the relays. GPIO (MPA-Q) component." },
+      { ...port("Relays 1-2", "contact-closure", "output", "phoenix"), channelCount: 2, notes: "2 relay outputs, NO / C / NC each, on the same 12-pin Euroblock." },
+      { ...port("OUTPUT A", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT B", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT C", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT D", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC inlet, 100-240 V 50/60 Hz, 2.8-1.8 A. No wattage published." },
+    ],
+  },
+  {
+    id: "4fbe948b-c129-4d98-b692-d4e69825eebe",
+    deviceType: "amplifier",
+    label: "QSC MPA-Q 4x500",
+    shortName: "MPA-Q 4x500",
+    manufacturer: "QSC", modelNumber: "MPA-Q 4x500",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/mpa-q/q_amp_mpa-q_series_spec_sheet.pdf",
+    searchTerms: ["mpa-q 4x500", "mpa-q", "q-sys amplifier", "network amplifier", "q-lan", "70v amplifier", "dwav"],
+    widthMm: 483, heightMm: 89, depthMm: 381, weightKg: 9.4,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 2975,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 4-channel Q-SYS network amplifier, 2RU: 300 W continuous (all channels) / 500 W max per channel at
+    // 8, 4 or 2 Ohm and 70 / 100 V; bridged pairs double it (2 Ohm bridged not supported).
+    // 4 line-level analog inputs (not mic). Q-SYS Mode or Analog Mode by a rear switch read at boot; standby
+    // fails over to the analog inputs when the network drops. DSP: IIR/FIR (1024 taps), 2020 ms delay, limiters.
+    // 4 GPI + 2 NO/NC relays on a 12-pin Euroblock; LAN A optionally PoE 802.3af.
+    // 381 D x 483 W x 89 H mm, 9.4 kg. Verified 2026-09-25 against the MPA-Q Series spec sheet (April 29, 2026),
+    // the hardware user manual and help.qsys.com (rear panel).
+    // POWER CONSUMPTION LEFT BLANK: QSC publish only the AC current range, not a wattage.
+    ports: [
+      { ...port("LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LAN A (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN primary, 1 Gbps. Optionally accepts PoE 802.3af Type 1 so the amp's network side restores audio within seconds after a power interruption." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN secondary / redundant, 1 Gbps." },
+      { ...port("GPI 1-4", "gpio", "input", "phoenix"), channelCount: 4, notes: "4 GPI inputs, 0-3.3 V DC closure, on the 12-pin (2-row) 3.5 mm Euroblock shared with the relays. GPIO (MPA-Q) component." },
+      { ...port("Relays 1-2", "contact-closure", "output", "phoenix"), channelCount: 2, notes: "2 relay outputs, NO / C / NC each, on the same 12-pin Euroblock." },
+      { ...port("OUTPUT A", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 300 W continuous / 500 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT B", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 300 W continuous / 500 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT C", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 300 W continuous / 500 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT D", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 300 W continuous / 500 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC inlet, 100-240 V 50/60 Hz, 4.6-2.5 A. No wattage published." },
+    ],
+  },
+  {
+    id: "395efd09-bc6a-46f6-8c0f-a5a81d94da61",
+    deviceType: "amplifier",
+    label: "QSC MPA-Q 8x125",
+    shortName: "MPA-Q 8x125",
+    manufacturer: "QSC", modelNumber: "MPA-Q 8x125",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/mpa-q/q_amp_mpa-q_series_spec_sheet.pdf",
+    searchTerms: ["mpa-q 8x125", "mpa-q", "q-sys amplifier", "network amplifier", "q-lan", "70v amplifier", "dwav"],
+    widthMm: 483, heightMm: 89, depthMm: 381, weightKg: 10.2,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 3550,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 8-channel Q-SYS network amplifier, 2RU: 75 W continuous (all channels) / 125 W max per channel at
+    // 8, 4 or 2 Ohm and 70 / 100 V; bridged pairs double it (2 Ohm bridged not supported).
+    // 8 line-level analog inputs (not mic). Q-SYS Mode or Analog Mode by a rear switch read at boot; standby
+    // fails over to the analog inputs when the network drops. DSP: IIR/FIR (1024 taps), 2020 ms delay, limiters.
+    // 4 GPI + 2 NO/NC relays on a 12-pin Euroblock; LAN A optionally PoE 802.3af.
+    // 381 D x 483 W x 89 H mm, 10.2 kg. Verified 2026-09-25 against the MPA-Q Series spec sheet (April 29, 2026),
+    // the hardware user manual and help.qsys.com (rear panel).
+    // POWER CONSUMPTION LEFT BLANK: QSC publish only the AC current range, not a wattage.
+    ports: [
+      { ...port("LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 5", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 6", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 7", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 8", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LAN A (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN primary, 1 Gbps. Optionally accepts PoE 802.3af Type 1 so the amp's network side restores audio within seconds after a power interruption." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN secondary / redundant, 1 Gbps." },
+      { ...port("GPI 1-4", "gpio", "input", "phoenix"), channelCount: 4, notes: "4 GPI inputs, 0-3.3 V DC closure, on the 12-pin (2-row) 3.5 mm Euroblock shared with the relays. GPIO (MPA-Q) component." },
+      { ...port("Relays 1-2", "contact-closure", "output", "phoenix"), channelCount: 2, notes: "2 relay outputs, NO / C / NC each, on the same 12-pin Euroblock." },
+      { ...port("OUTPUT A", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT B", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT C", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT D", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT E", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT F", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT G", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT H", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 75 W continuous / 125 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC inlet, 100-240 V 50/60 Hz, 3.2-2.0 A. No wattage published." },
+    ],
+  },
+  {
+    id: "520930c6-504d-4f01-83ff-9eca4c2de771",
+    deviceType: "amplifier",
+    label: "QSC MPA-Q 8x250",
+    shortName: "MPA-Q 8x250",
+    manufacturer: "QSC", modelNumber: "MPA-Q 8x250",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/mpa-q/q_amp_mpa-q_series_spec_sheet.pdf",
+    searchTerms: ["mpa-q 8x250", "mpa-q", "q-sys amplifier", "network amplifier", "q-lan", "70v amplifier", "dwav"],
+    widthMm: 483, heightMm: 89, depthMm: 381, weightKg: 10.4,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 4475,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 8-channel Q-SYS network amplifier, 2RU: 150 W continuous (all channels) / 250 W max per channel at
+    // 8, 4 or 2 Ohm and 70 / 100 V; bridged pairs double it (2 Ohm bridged not supported).
+    // 8 line-level analog inputs (not mic). Q-SYS Mode or Analog Mode by a rear switch read at boot; standby
+    // fails over to the analog inputs when the network drops. DSP: IIR/FIR (1024 taps), 2020 ms delay, limiters.
+    // 4 GPI + 2 NO/NC relays on a 12-pin Euroblock; LAN A optionally PoE 802.3af.
+    // 381 D x 483 W x 89 H mm, 10.4 kg. Verified 2026-09-25 against the MPA-Q Series spec sheet (April 29, 2026),
+    // the hardware user manual and help.qsys.com (rear panel).
+    // POWER CONSUMPTION LEFT BLANK: QSC publish only the AC current range, not a wattage.
+    ports: [
+      { ...port("LINE IN 1", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 2", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 3", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 4", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 5", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 6", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 7", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LINE IN 8", "analog-audio", "input", "phoenix"), notes: "3-pin Euroblock (3.5 mm), balanced or unbalanced, LINE LEVEL ONLY (not mic). >11k balanced. Q-SYS Mode: on-ramp over Q-LAN; Analog Mode: drives the matching output directly." },
+      { ...port("LAN A (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN primary, 1 Gbps. Optionally accepts PoE 802.3af Type 1 so the amp's network side restores audio within seconds after a power interruption." },
+      { ...port("LAN B", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Q-LAN secondary / redundant, 1 Gbps." },
+      { ...port("GPI 1-4", "gpio", "input", "phoenix"), channelCount: 4, notes: "4 GPI inputs, 0-3.3 V DC closure, on the 12-pin (2-row) 3.5 mm Euroblock shared with the relays. GPIO (MPA-Q) component." },
+      { ...port("Relays 1-2", "contact-closure", "output", "phoenix"), channelCount: 2, notes: "2 relay outputs, NO / C / NC each, on the same 12-pin Euroblock." },
+      { ...port("OUTPUT A", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT B", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT C", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT D", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT E", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT F", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT G", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("OUTPUT H", "speaker-level", "output", "phoenix"), notes: "4-pin Euroblock (7.62 mm), 10 AWG max. 150 W continuous / 250 W max at 8, 4 or 2 Ohm, 70 V or 100 V; bridge with its pair for 2x." },
+      { ...port("AC MAINS", "power", "input", "iec"), notes: "IEC inlet, 100-240 V 50/60 Hz, 5.2-2.8 A. No wattage published." },
+    ],
+  },
+  {
+    id: "c73bcce0-984a-4081-a755-9daafa244632",
+    deviceType: "amplifier",
+    label: "QSC SPA-Qf 60x2",
+    shortName: "SPA-Qf 60x2",
+    manufacturer: "QSC", modelNumber: "SPA-Qf 60x2",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/spa-q/q_rep_spa-qf_specsheet.pdf",
+    searchTerms: ["spa-qf 60x2", "spa-q", "spa-qf", "q-sys amplifier", "network amplifier", "half rack amplifier", "dwav"],
+    widthMm: 221, heightMm: 44, depthMm: 286,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 1645,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 2-channel Q-SYS network amplifier, half-rack 1U, convection cooled: 60 W per channel at 4, 8 or 16 Ohm;
+    // bridged pairs 120 W at 8/16 Ohm or 70 / 100 V (70 / 100 V only bridged), 100 W at 4 Ohm.
+    // 2 FLEX channels (mic/line in with 48 V, or line out), 4 bi-directional GPIO, one 1 Gb Q-LAN port.
+    // 44 H x 221 W x 286 D mm; rack / wall kit included. Verified 2026-09-25 against the SPA-Q Series spec sheet
+    // (2023) and the SPA-Qf hardware user manual TD-001669-01-A.
+    ports: [
+      { ...port("FLEX 1", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX channel, 3.5 mm Euroblock (blue): mic/line input with 48 V phantom (-30 to +20 dBu, EIN < -123 dBu) or line output (to +21 dBu), set in Q-SYS Designer." },
+      { ...port("FLEX 2", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX channel, 3.5 mm Euroblock (blue): mic/line input with 48 V phantom (-30 to +20 dBu, EIN < -123 dBu) or line output (to +21 dBu), set in Q-SYS Designer." },
+      { ...port("GPIO 1-4", "gpio", "bidirectional", "phoenix"), channelCount: 4, notes: "6-position 3.5 mm Euroblock (black): 4 bi-directional pins, one 3.3 V 100 mA power pin, one ground." },
+      { ...port("LAN", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "RJ45, 1 Gigabit Q-LAN. The only network port." },
+      { ...port("OUTPUT A", "speaker-level", "output", "phoenix"), notes: "On the 4-position 5 mm Euroblock (green, screw locks) shared with B. 60 W at 4/8/16 Ohm; bridged with B: 120 W at 8/16 Ohm, 70 V or 100 V (100 W at 4 Ohm)." },
+      { ...port("OUTPUT B", "speaker-level", "output", "phoenix"), notes: "On the 4-position 5 mm Euroblock (green, screw locks) shared with A. 60 W at 4/8/16 Ohm; bridged with A: 120 W at 8/16 Ohm, 70 V or 100 V (100 W at 4 Ohm)." },
+      { ...port("AC POWER", "power", "input", "other"), notes: "100-240 VAC +/-10 %, 50-60 Hz with PFC; power cord included. Inlet type not stated in QSC's sheet or manual." },
+    ],
+  },
+  {
+    id: "79fb97f5-8c4c-49c5-9cbf-30a944b5fa65",
+    deviceType: "amplifier",
+    label: "QSC SPA-Qf 60x4",
+    shortName: "SPA-Qf 60x4",
+    manufacturer: "QSC", modelNumber: "SPA-Qf 60x4",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/amp/spa-q/q_rep_spa-qf_specsheet.pdf",
+    searchTerms: ["spa-qf 60x4", "spa-q", "spa-qf", "q-sys amplifier", "network amplifier", "half rack amplifier", "dwav"],
+    widthMm: 221, heightMm: 44, depthMm: 286,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 1940,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 4-channel Q-SYS network amplifier, half-rack 1U, convection cooled: 60 W per channel at 4, 8 or 16 Ohm;
+    // bridged pairs 120 W at 8/16 Ohm or 70 / 100 V (70 / 100 V only bridged), 100 W at 4 Ohm.
+    // 2 FLEX channels (mic/line in with 48 V, or line out), 4 bi-directional GPIO, one 1 Gb Q-LAN port.
+    // 44 H x 221 W x 286 D mm; rack / wall kit included. Verified 2026-09-25 against the SPA-Q Series spec sheet
+    // (2023) and the SPA-Qf hardware user manual TD-001669-01-A.
+    ports: [
+      { ...port("FLEX 1", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX channel, 3.5 mm Euroblock (blue): mic/line input with 48 V phantom (-30 to +20 dBu, EIN < -123 dBu) or line output (to +21 dBu), set in Q-SYS Designer." },
+      { ...port("FLEX 2", "analog-audio", "bidirectional", "phoenix"), notes: "FLEX channel, 3.5 mm Euroblock (blue): mic/line input with 48 V phantom (-30 to +20 dBu, EIN < -123 dBu) or line output (to +21 dBu), set in Q-SYS Designer." },
+      { ...port("GPIO 1-4", "gpio", "bidirectional", "phoenix"), channelCount: 4, notes: "6-position 3.5 mm Euroblock (black): 4 bi-directional pins, one 3.3 V 100 mA power pin, one ground." },
+      { ...port("LAN", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "RJ45, 1 Gigabit Q-LAN. The only network port." },
+      { ...port("OUTPUT A", "speaker-level", "output", "phoenix"), notes: "On the 4-position 5 mm Euroblock (green, screw locks) shared with B. 60 W at 4/8/16 Ohm; bridged with B: 120 W at 8/16 Ohm, 70 V or 100 V (100 W at 4 Ohm)." },
+      { ...port("OUTPUT B", "speaker-level", "output", "phoenix"), notes: "On the 4-position 5 mm Euroblock (green, screw locks) shared with A. 60 W at 4/8/16 Ohm; bridged with A: 120 W at 8/16 Ohm, 70 V or 100 V (100 W at 4 Ohm)." },
+      { ...port("OUTPUT C", "speaker-level", "output", "phoenix"), notes: "On the 4-position 5 mm Euroblock (green, screw locks) shared with D. 60 W at 4/8/16 Ohm; bridged with D: 120 W at 8/16 Ohm, 70 V or 100 V (100 W at 4 Ohm)." },
+      { ...port("OUTPUT D", "speaker-level", "output", "phoenix"), notes: "On the 4-position 5 mm Euroblock (green, screw locks) shared with C. 60 W at 4/8/16 Ohm; bridged with C: 120 W at 8/16 Ohm, 70 V or 100 V (100 W at 4 Ohm)." },
+      { ...port("AC POWER", "power", "input", "other"), notes: "100-240 VAC +/-10 %, 50-60 Hz with PFC; power cord included. Inlet type not stated in QSC's sheet or manual." },
+    ],
+  },
+  {
+    id: "089cdb31-d159-4b9a-9ab7-4c2679a2a4ab",
+    deviceType: "amplifier",
+    label: "QSC ISA500Ti",
+    shortName: "ISA500Ti",
+    manufacturer: "QSC", modelNumber: "ISA500Ti",
+    referenceUrl: "https://www.qscaudio.com/resource-files/productresources/amp/q_amp_isa_specs.pdf",
+    searchTerms: ["isa500ti", "isa 500ti", "isa series", "70v amplifier", "transformer amplifier", "qsc amplifier", "dwav"],
+    widthMm: 483, heightMm: 133, depthMm: 400, weightKg: 22.3,
+    voltage: "AC 100/120/230 V, 50-60 Hz",
+    unitCost: 739,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 2-channel installed amplifier with internal output transformers (Ti), Class AB, 3RU. Per channel, both driven:
+    // direct 260 W / 8 Ohm, 425 W / 4 Ohm, 700 W / 2 Ohm; isolated XF outputs 500 W at 70 or 100 V, 300 W at 25 V.
+    // Bridge mono 900 W / 8, 1400 W / 4 Ohm, 1000 W at 140 / 200 V. Inputs XLR and Euroblock in parallel per channel,
+    // 20k balanced; rear gain knobs, 10-position DIP switch; DataPort V2 (HD-15). 133 H x 483 W x 400 D mm (behind
+    // the front rails), 22.3 kg. Discontinued. Verified 2026-09-25 against the QSC ISA Series spec sheet (02/22/06).
+    ports: [
+      { ...port("INPUT 1 (XLR)", "analog-audio", "input", "xlr-3"), notes: "Active balanced, 20k, pin 2+. In parallel with INPUT 1 (Euro) - the same input." },
+      { ...port("INPUT 1 (Euro)", "analog-audio", "input", "phoenix"), notes: "3-pin detachable Euroblock, in parallel with INPUT 1 (XLR)." },
+      { ...port("INPUT 2 (XLR)", "analog-audio", "input", "xlr-3"), notes: "Active balanced, 20k, pin 2+. In parallel with INPUT 2 (Euro)." },
+      { ...port("INPUT 2 (Euro)", "analog-audio", "input", "phoenix"), notes: "3-pin detachable Euroblock, in parallel with INPUT 2 (XLR)." },
+      { ...port("DataPort V2", "custom", "bidirectional", "db15"), notes: "HD-15 DataPort V2 for DPV2-compatible QSC signal processing accessories." },
+      { ...port("OUTPUT 1", "speaker-level", "output", "terminal-block"), notes: "Covered barrier strip: direct (260 W / 8 Ohm) and isolated 25 / 70 / 100 V transformer terminals; the terminals used set the mode." },
+      { ...port("OUTPUT 2", "speaker-level", "output", "terminal-block"), notes: "As OUTPUT 1. Bridge mono across both: 900 W / 8 Ohm or 1000 W at 140 / 200 V." },
+      { ...port("AC MAINS", "power", "input", "other"), notes: "100, 120 or 230 VAC, 50-60 Hz (regional). Inlet type not stated on the sheet." },
+    ],
+  },
+  {
+    id: "77426a01-5945-43ff-afd7-8a3c4df75d36",
+    deviceType: "ptz-camera",
+    label: "Q-SYS NC-12x80",
+    shortName: "NC-12x80",
+    manufacturer: "QSC", modelNumber: "NC-12x80",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/nc_series/q_dn_qsys_ncseries_specsheet.pdf",
+    searchTerms: ["nc-12x80", "nc series", "q-sys camera", "ptz camera", "network camera", "visionsuite", "dwav"],
+    widthMm: 142, heightMm: 201, depthMm: 170, weightKg: 1.6,
+    powerDrawW: 13,
+    voltage: "PoE IEEE 802.3af Type 1 Class 3, or 12 VDC 2 A local",
+    unitCost: 4950,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network PTZ camera: 12x optical zoom, 80 deg HFOV wide, 1/2.8 in CMOS, f=3.47-41.65 mm, F1.84-F3.72.
+    // Pan +/-170 deg, tilt -30 to +90 deg, flip for ceiling mounting (PTZ-CMB1 ceiling mount, optional; PTZ-WMB1 wall
+    // bracket included). Video to Q-SYS bridging endpoints over the network (no USB extenders); HDMI 1.4b 4K30 or 3G-SDI
+    // 1080p60 local out. PoE Type 1 Class 3, 12.95 W max, or 12 VDC local.
+    // 142 W x 201 H x 170 D mm, 1.6 kg. Verified 2026-09-25 against the NC Series spec sheet (Nov 4, 2025), the NC Series
+    // user manual TD-001654-01-C (rear panel, dimension drawing) and QSC's A&E specification (dimension orientation).
+    ports: [
+      { ...port("HDMI Out", "hdmi", "output", "hdmi"), notes: "HDMI 1.4b, up to 2160p30 (RGB 4:4:4 8-bit). HDMI or 3G-SDI, not both at once. Not needed for Q-SYS bridging, which is over the network." },
+      { ...port("3G-SDI Out", "sdi", "output", "bnc"), notes: "3G-SDI up to 1080p60. HDMI or SDI, not both at once." },
+      { ...port("LAN / PoE", "ethernet", "bidirectional", "rj45"), addressable: true, poeDrawW: 13, linkSpeed: "1G", notes: "Gigabit Q-LAN: video (H.264 / MJPEG / YUY2 to the bridging endpoint), control, PoE Type 1 Class 3 (12.95 W max). Cat5e or better." },
+      { ...port("DC 12 V", "power", "input", "barrel"), notes: "Optional local power: 12 VDC 2 A, EIAJ-04, centre positive, class 2 / LPS supply NOT included. PoE alone is enough." },
+    ],
+  },
+  {
+    id: "6a4aec71-7bfe-4798-8017-de2e0f14f5da",
+    deviceType: "ptz-camera",
+    label: "Q-SYS NC-20x60",
+    shortName: "NC-20x60",
+    manufacturer: "QSC", modelNumber: "NC-20x60",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/nc_series/q_dn_qsys_ncseries_specsheet.pdf",
+    searchTerms: ["nc-20x60", "nc series", "q-sys camera", "ptz camera", "network camera", "visionsuite", "dwav"],
+    widthMm: 142, heightMm: 201, depthMm: 170, weightKg: 1.6,
+    powerDrawW: 13,
+    voltage: "PoE IEEE 802.3af Type 1 Class 3, or 12 VDC 2 A local",
+    unitCost: 5930,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network PTZ camera: 20x optical zoom, 60 deg HFOV wide, 1/1.8 in CMOS, f=6.25-125 mm, F1.58-F3.95.
+    // Pan +/-170 deg, tilt -30 to +90 deg, flip for ceiling mounting (PTZ-CMB1 ceiling mount, optional; PTZ-WMB1 wall
+    // bracket included). Video to Q-SYS bridging endpoints over the network (no USB extenders); HDMI 1.4b 4K30 or 3G-SDI
+    // 1080p60 local out. PoE Type 1 Class 3, 12.95 W max, or 12 VDC local.
+    // 142 W x 201 H x 170 D mm, 1.6 kg. Verified 2026-09-25 against the NC Series spec sheet (Nov 4, 2025), the NC Series
+    // user manual TD-001654-01-C (rear panel, dimension drawing) and QSC's A&E specification (dimension orientation).
+    ports: [
+      { ...port("HDMI Out", "hdmi", "output", "hdmi"), notes: "HDMI 1.4b, up to 2160p30 (RGB 4:4:4 8-bit). HDMI or 3G-SDI, not both at once. Not needed for Q-SYS bridging, which is over the network." },
+      { ...port("3G-SDI Out", "sdi", "output", "bnc"), notes: "3G-SDI up to 1080p60. HDMI or SDI, not both at once." },
+      { ...port("LAN / PoE", "ethernet", "bidirectional", "rj45"), addressable: true, poeDrawW: 13, linkSpeed: "1G", notes: "Gigabit Q-LAN: video (H.264 / MJPEG / YUY2 to the bridging endpoint), control, PoE Type 1 Class 3 (12.95 W max). Cat5e or better." },
+      { ...port("DC 12 V", "power", "input", "barrel"), notes: "Optional local power: 12 VDC 2 A, EIAJ-04, centre positive, class 2 / LPS supply NOT included. PoE alone is enough." },
+    ],
+  },
+  {
+    id: "9d564526-15ef-456f-bfdd-2804f5df1c31",
+    deviceType: "camera",
+    label: "Q-SYS NC-110",
+    shortName: "NC-110",
+    manufacturer: "QSC", modelNumber: "NC-110",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/nc_series/q_dn_qsys_nc-110_specsheet.pdf",
+    searchTerms: ["nc-110", "nc series", "q-sys camera", "eptz", "conference camera", "network camera", "wide angle camera", "dwav"],
+    widthMm: 194.3, heightMm: 34, depthMm: 41.5, weightKg: 0.4,
+    powerDrawW: 6.4,
+    voltage: "PoE IEEE 802.3af Type 1 Class 2",
+    unitCost: 1550,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network ePTZ conference camera: fixed-focus 110 deg HFOV lens (f=1.86 mm), 1/2.8 in 4K CMOS, 8x digital
+    // zoom (2x lossless), electronic pan/tilt. Video to Q-SYS bridging endpoints over the network; no HDMI or SDI out.
+    // PoE Type 1 Class 2, 6.4 W max. Removable bracket for monitor or surface mounting, universal mount adapter.
+    // Body 194.26 W x 34 H x 41.5 D mm (manual drawing); 194.5 x 54.7 x 95.7 mm and 0.4 kg with the bracket.
+    // Verified 2026-09-25 against the NC-110 spec sheet (Feb 12, 2026) and the NC Series user manual TD-001654-01-C.
+    ports: [
+      { ...port("LAN / PoE", "ethernet", "bidirectional", "rj45"), addressable: true, poeDrawW: 6.4, linkSpeed: "1G", notes: "The only port: Gigabit Q-LAN (video to the bridging endpoint, control) and PoE Type 1 Class 2, 6.4 W max. Cat5e or better." },
+    ],
+  },
+  {
+    id: "ea06d9d4-6694-436f-b678-ee8dd257e981",
+    deviceType: "wall-plate",
+    label: "Q-SYS QIO-WP-BT-NA",
+    shortName: "QIO-WP-BT",
+    manufacturer: "QSC", modelNumber: "QIO-WP-BT-NA",
+    referenceUrl: "https://www.qsys.com/resource-files/productresources/dn/io_peripherals/wall_plate/qio-wp-bt/q_dn_io_wallplate_qio-wp-bt_specs.pdf",
+    searchTerms: ["qio-wp-bt", "qio", "bluetooth wall plate", "bluetooth", "auracast", "q-sys wall plate", "dwav"],
+    widthMm: 69.9, heightMm: 117.1, depthMm: 39.5, weightKg: 0.17,
+    powerDrawW: 3,
+    voltage: "PoE IEEE 802.3af Class 0, 3 W max",
+    unitCost: 980,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Q-SYS network Bluetooth audio wall plate, North American 1-gang Decora: Bluetooth 5.4 - A2DP/AVRCP receive,
+    // HFP two-way calls, Auracast broadcast (LE PBP), SBC / AAC / aptX / aptX HD / LC3; NFC tap-to-pair, pairing button,
+    // RGB status LED. Two Q-LAN channels to/from Q-SYS. PoE Class 0, 3 W max, 10.24 BTU/h; no fan.
+    // 69.9 W x 117.1 H x 39.5 D mm with the 1-gang cover plate; fits a single- or dual-gang box >= 1.50 in deep. 170 g.
+    // White and black faceplates included. Verified 2026-09-25 against the QIO-WP-BT spec sheet (Sep 24, 2026).
+    ports: [
+      { ...port("Bluetooth", "bluetooth", "bidirectional", "wireless"), notes: "Bluetooth 5.4, >25 m line of sight. Receive A2DP stereo media; HFP two-way for call bridging; transmit Auracast (PBP, LC3). Up to 10 paired devices remembered." },
+      { ...port("LAN (PoE)", "ethernet", "bidirectional", "rj45"), addressable: true, poeDrawW: 3, linkSpeed: "1G", notes: "1 Gbps Q-LAN: two audio channels each way, control; PoE 802.3af Class 0, 3 W max." },
+      { ...port("Link", "ethernet", "bidirectional", "rj45"), notes: "Second RJ45 link port - not active yet: supported in a future Q-SYS Designer Software release." },
+    ],
+  },
 ];
