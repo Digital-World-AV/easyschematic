@@ -2119,4 +2119,43 @@ export const templates: DeviceTemplate[] = [
       { ...port("INPUT (Phoenix)", "speaker-level", "input", "phoenix"), notes: "Phoenix terminal block 1725302 (datasheet). The sheet does not say whether it is in parallel with the NL4 input." },
     ],
   },
+  {
+    id: "57611a55-9dfc-47ea-87b5-11c8d01ea3b1",
+    deviceType: "led-fixture",
+    label: "Chauvet Professional Maverick Force X Spot",
+    shortName: "Maverick Force X Spot",
+    manufacturer: "Chauvet Professional", modelNumber: "MAVERICKFORCEXSPOT",
+    referenceUrl: "https://chauvetprofessional.com/wp-content/uploads/2025/07/Maverick_Force_X_Spot_UM_Rev5.pdf",
+    searchTerms: ["maverick force x spot", "chauvet professional", "moving head", "spot", "cmy", "520 w led", "dwav"],
+    widthMm: 361, heightMm: 646, depthMm: 239, weightKg: 20,
+    powerDrawW: 565,
+    voltage: "100 - 240 V AC, 50/60 Hz auto-ranging",
+    unitCost: 4280,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // 520 W LED yoke spot: CMY, colour wheel, rotating + static gobo wheels, zoom 3.5-57.7 deg, 16-bit dimming.
+    // Beam 3.5-51.3 deg, field 3.7-56.3 deg, cutoff 3.9-57.7 deg. 93,084 lux at 5 m narrow, 1,135 lux wide.
+    // Output 17,325 (the UM table prints the unit as lux; it is the lumens row). 6462 K, CRI 72.2 (90 with the filter).
+    // 361 (L) x 239 (W) x 646 (H) mm, 44.2 lb (20 kg). Recorded W 361 x H 646 x D 239: across the yoke arms, overall height
+    // (head vertical), head depth. UM p. 6 drawing: head 276 W x 457 long x 239 deep, tilt axis 356 mm above the base
+    // bottom, base 330 W x 106 H x 231 D.
+    // Consumption 565 W @100 V, 554 W @120 V, 541 W @208 V, 542 W @230 V, 541 W @240 V; current 5.66 / 4.64 / 2.68 / 2.44 / 2.34 A.
+    // Power_Max_W 565 (the 100 V figure), Power_Typ_W 554 (120 V, what a US circuit sees). Current_120V_A 4.6 (4.64, CRM
+    // takes one decimal).
+    // Power link 12 A at every voltage: at 120 V two fixtures per link (2 x 4.64 = 9.3 A).
+    // F 10 A 250 V fuse. Max ambient 45 C, fan-assisted. No IP rating stated for the fixture (the Powerkon connectors are IP65).
+    // Control: 3- and 5-pin DMX, Art-Net, sACN, CRMX, RDM; 22 or 29 channels. UL 1573, CSA C22.2 No. 166.
+    // Chauvet item code 08012672, UPC 781462230203.
+    ports: [
+      { ...port("DMX IN (3-pin)", "dmx", "input", "xlr-3"), notes: "3-pin XLR. DMX personalities 22 or 29 channels; RDM." },
+      { ...port("DMX OUT (3-pin)", "dmx", "output", "xlr-3"), notes: "3-pin XLR through." },
+      { ...port("DMX IN (5-pin)", "dmx", "input", "xlr-5"), notes: "5-pin XLR, same DMX input as the 3-pin (use one)." },
+      { ...port("DMX OUT (5-pin)", "dmx", "output", "xlr-5"), notes: "5-pin XLR through." },
+      { ...port("Ethernet 1", "ethernet", "bidirectional", "ethercon"), addressable: true, notes: "Seetronic Etherkon (etherCON-compatible) through port. Art-Net / sACN, web server." },
+      { ...port("Ethernet 2", "ethernet", "bidirectional", "ethercon"), notes: "Seetronic Etherkon through port (daisy chain)." },
+      { ...port("CRMX", "dmx", "input", "wireless"), notes: "Built-in LumenRadio CRMX receiver, up to 300 m from the transmitter." },
+      { ...port("USB-C", "usb", "input", "usb-c"), notes: "Software update only (FAT32 flash drive)." },
+      { ...port("AC IN", "power", "input", "powercon-true1"), notes: "Seetronic Powerkon IP65 (TRUE1-compatible). 554 W / 4.64 A at 120 V 60 Hz; 541 W / 2.68 A at 208 V." },
+      { ...port("AC OUT", "power", "output", "powercon-true1"), notes: "Seetronic Powerkon IP65 power link out, 12 A max at every voltage (2 units at 120 V incl. this one)." },
+    ],
+  },
 ];
