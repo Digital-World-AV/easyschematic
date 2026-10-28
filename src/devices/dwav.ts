@@ -2158,4 +2158,583 @@ export const templates: DeviceTemplate[] = [
       { ...port("AC OUT", "power", "output", "powercon-true1"), notes: "Seetronic Powerkon IP65 power link out, 12 A max at every voltage (2 units at 120 V incl. this one)." },
     ],
   },
+  {
+    id: "bdfc16da-87bb-47b5-b3f5-befc4189f694",
+    deviceType: "network-switch",
+    label: "Netgear M4250-9G1F-PoE+",
+    shortName: "M4250-9G1F-PoE+",
+    manufacturer: "Netgear", modelNumber: "M4250-9G1F-PoE+ (GSM4210PD)",
+    referenceUrl: "https://www.netgear.com/business/wired/switches/fully-managed/gsm4210pd/",
+    searchTerms: ["m4250", "gsm4210pd", "av line switch", "poe switch", "netgear av", "dante switch", "dwav"],
+    widthMm: 210, heightMm: 40, depthMm: 140, weightKg: 0.965,
+    powerDrawW: 132.3,
+    voltage: "54 V DC 2.4 A, ext. adapter",
+    unitCost: 714.01,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Netgear AV Line M4250 desktop switch, fanless: 8 x 1G PoE+ (110 W budget, 30 W/port), 1 x 1G, 1 x SFP.
+    // Rear 1G out-of-band management port and USB 2.0; front USB-C console. External 54 V adapter.
+    // Desk / under-table / wall mount with the included brackets - not rack-mountable (HIG).
+    // Max 132.25 W / 451.5 BTU/hr with PoE, 9.88 W without. 210 x 140 x 40 mm (W x D x H), 965 g. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("Port 1 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 2 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 3 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 4 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 5 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 6 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 7 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 8 (PoE+)", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, PoE+ 802.3at source up to 30 W; ports 1-8 share the 110 W PoE budget." },
+      { ...port("Port 9", "ethernet", "bidirectional", "rj45"), linkSpeed: "1G", notes: "10/100/1000BASE-T, no PoE." },
+      { ...port("Port 10 (SFP)", "ethernet", "bidirectional", "sfp"), linkSpeed: "1G", notes: "1000BASE-X SFP fibre uplink; transceiver sold separately." },
+      { ...port("OOB", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "1G", notes: "Rear 1000BASE-T out-of-band management port." },
+      { ...port("Console (USB-C)", "usb", "bidirectional", "usb-c"), notes: "Front USB Type-C, console access only." },
+      { ...port("USB", "usb", "bidirectional", "usb-a"), notes: "Rear USB 2.0 port (storage)." },
+      { ...port("DC IN", "power", "input", "barrel"), notes: "Rear DC receptacle 54 V 2.4 A from the included external adapter (130 W per the M4250 product brief)." },
+    ],
+  },
+  {
+    id: "53804e65-29d2-43ab-874c-1332658aa294",
+    deviceType: "power-distribution",
+    label: "Furman M-8x2",
+    shortName: "M-8x2",
+    manufacturer: "Furman", modelNumber: "M-8x2",
+    referenceUrl: "https://furmanpower.com/products/m-8x2",
+    searchTerms: ["m-8x2", "merit series", "power conditioner", "rack power", "furman", "dwav"],
+    widthMm: 482.6, heightMm: 44.5, depthMm: 95.3, weightKg: 2.268,
+    voltage: "120 V AC, 15 A",
+    unitCost: 139.95,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Furman Merit Series 15 A standard power conditioner, 1U: 8 rear + 1 front outlets, 6 ft 14 AWG captive cord.
+    // Spike protection line-neutral, 150 J, 12,000 A peak. 19 W x 3.75 D x 1.75 H in, 5 lb, rack ears included. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("Outlet 1 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 2 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 3 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 4 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 5 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 6 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 7 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 8 (rear)", "power", "output", "edison"), notes: "15 A Edison outlet, rear; 15 A total across all nine." },
+      { ...port("Outlet 9 (front)", "power", "output", "edison"), notes: "15 A Edison convenience outlet on the front panel." },
+      { ...port("AC IN", "power", "input", "edison"), notes: "6 ft captive 14 AWG cord, 3-conductor Edison plug; 15 A max." },
+    ],
+  },
+  {
+    id: "4b895c8f-aac3-46ff-8848-c8da1920f0cb",
+    deviceType: "audio-mixer",
+    label: "Shure SCM410",
+    shortName: "SCM410",
+    manufacturer: "Shure", modelNumber: "SCM410",
+    referenceUrl: "https://www.canford.de/Products/ManufacturerInformation/Shure/ss/us_pro_scm410_specsheet.pdf",
+    searchTerms: ["scm410", "automatic mixer", "automixer", "shure mixer", "gated mixer", "dwav"],
+    widthMm: 219, heightMm: 44, depthMm: 267, weightKg: 1.75,
+    powerDrawW: 12,
+    voltage: "100-120 V AC, 100 mA",
+    unitCost: 1459,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Shure SCM410 four-channel automatic mic mixer (IntelliMix), half-rack 1U; long / short rack brackets and straddle bracket included.
+    // 4 balanced XLR mic inputs with 12 V phantom, XLR mic/line out, phono aux out, DB-15 logic, link in/out.
+    // 44 H x 219 W x 267 D mm, 1.75 kg. 100-120 V AC, 100 mA max. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("MIC IN 1", "analog-audio", "input", "xlr-3"), notes: "Active balanced mic-level XLR; 12 V phantom (DIP switch)." },
+      { ...port("MIC IN 2", "analog-audio", "input", "xlr-3"), notes: "Active balanced mic-level XLR; 12 V phantom (DIP switch)." },
+      { ...port("MIC IN 3", "analog-audio", "input", "xlr-3"), notes: "Active balanced mic-level XLR; 12 V phantom (DIP switch)." },
+      { ...port("MIC IN 4", "analog-audio", "input", "xlr-3"), notes: "Active balanced mic-level XLR; 12 V phantom (DIP switch)." },
+      { ...port("OUTPUT", "analog-audio", "output", "xlr-3"), notes: "Balanced XLR, mic or line level by DIP switch." },
+      { ...port("AUX OUT", "analog-audio", "output", "rca"), notes: "Unbalanced aux-level phono output, unaffected by the mic/line switch." },
+      { ...port("LOGIC", "gpio", "bidirectional", "db15"), channelCount: 4, notes: "High-density DB-15 male: per channel gate out, mute in and override in, logic ground (pins in the user guide)." },
+      { ...port("LINK IN", "analog-audio", "input", "other"), notes: "Unbalanced link to other SCM410 / FP410 / SCM810 / SCM800 / AMS8100; link cable 95A8889 supplied. Jack type not printed in the guide." },
+      { ...port("LINK OUT", "analog-audio", "output", "other"), notes: "Unbalanced link out; see LINK IN. Jack type not printed in the guide." },
+      { ...port("AC POWER", "power", "input", "other"), notes: "100-120 V AC 50/60 Hz, 100 mA max; power cord supplied. Inlet type not printed in the guide." },
+    ],
+  },
+  {
+    id: "df8f6320-9391-4e55-878d-8aeaabd3cd62",
+    deviceType: "wireless-mic-receiver",
+    label: "Audio-Technica ATW-R1440",
+    shortName: "ATW-R1440",
+    manufacturer: "Audio-Technica", modelNumber: "ATW-R1440 (ATW-RC14 + ATW-RU14)",
+    referenceUrl: "https://docs.audio-technica.com/all/System20PRO_Datasheet_EN_v7.pdf",
+    searchTerms: ["atw-r1440", "system 20 pro", "wireless receiver", "2.4 ghz wireless", "audio-technica wireless", "dwav"],
+    widthMm: 209.8, heightMm: 42.5, depthMm: 165.6, weightKg: 0.74,
+    powerDrawW: 6,
+    voltage: "12 V DC 0.5 A, AC adapter",
+    unitCost: 923,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Audio-Technica System 20 PRO 2.4 GHz receiver: half-rack chassis ATW-RC14 with removable receiver unit ATW-RU14
+    // (front-mounted or remote on Cat5e). 2 channels Standard / 4 channels HD; 4 XLR outs, ch 4 doubles as mix.
+    // RJ45 network, RJ12 link in/out (up to 5 receivers). 209.8 W x 165.6 D x 42.5 H mm, 740 g; RU14 86 x 70.2 x 18.7 mm, 77 g. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("CH 1 OUT", "analog-audio", "output", "xlr-3"), notes: "Balanced XLR-3M, mic or line level (line max +22 dBu)." },
+      { ...port("CH 2 OUT", "analog-audio", "output", "xlr-3"), notes: "Balanced XLR-3M, mic or line level (line max +22 dBu)." },
+      { ...port("CH 3 OUT", "analog-audio", "output", "xlr-3"), notes: "Balanced XLR-3M, mic or line level (line max +22 dBu)." },
+      { ...port("CH 4 / MIX OUT", "analog-audio", "output", "xlr-3"), notes: "Balanced XLR-3M; channel 4 or a mix of all channels (setting). Two channels in Standard mode, four in HD mode." },
+      { ...port("RF IN", "rf", "input", "wireless"), notes: "2.4 GHz diversity on the ATW-RU14 receiver unit (half-wave dipoles). Receives ATW-T1401 / T1402." },
+      { ...port("RECEIVER UNIT", "custom", "bidirectional", "rj45"), notes: "RJ45 to the ATW-RU14 when it is mounted remotely, Cat5e or better; one receiver unit per chassis." },
+      { ...port("NETWORK", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "100M", notes: "RJ45 Fast Ethernet: Wireless Manager and IP control." },
+      { ...port("LINK IN", "custom", "input", "rj12"), notes: "RX-link, up to five receivers, link cable included." },
+      { ...port("LINK OUT", "custom", "output", "rj12"), notes: "RX-link out to the next receiver." },
+      { ...port("DC IN", "power", "input", "barrel"), notes: "12 V DC 0.5 A from the included AC adapter; 3.7 W." },
+    ],
+  },
+  {
+    id: "5bd0791b-e83a-4a05-85ae-52dafd68914f",
+    deviceType: "wired-mic",
+    label: "Audio-Technica ATW-T1401",
+    shortName: "ATW-T1401",
+    manufacturer: "Audio-Technica", modelNumber: "ATW-T1401",
+    referenceUrl: "https://docs.audio-technica.com/all/System20PRO_Datasheet_EN_v7.pdf",
+    searchTerms: ["atw-t1401", "system 20 pro", "body-pack transmitter", "bodypack", "wireless lavalier", "dwav"],
+    widthMm: 63.7, heightMm: 107.4, depthMm: 22.7, weightKg: 0.08,
+    voltage: "3 V DC, 2 x AA",
+    unitCost: 377,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Audio-Technica System 20 PRO body-pack transmitter, 2.4 GHz, 10 mW EIRP.
+    // Four-pin locking (cW) input: pin 1 GND, 2 instrument in, 3 mic in, 4 +10 V bias. 2 x AA (NiMH chargeable in ATW-CHG3a).
+    // 63.7 W x 107.4 H x 22.7 D mm, 80 g without batteries. EasySchematic has no transmitter type - recorded as Wired Mic. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("MIC / INST IN", "analog-audio", "input", "other"), notes: "A-T cW four-pin locking connector: 1 GND, 2 instrument in, 3 mic in, 4 +10 V DC bias. Takes BP892xcW etc." },
+      { ...port("RF OUT", "rf", "output", "wireless"), notes: "2.4 GHz, 10 mW EIRP, to an ATW-R1440." },
+      { ...port("USB-C", "usb", "input", "usb-c"), notes: "Firmware updates only." },
+      { ...port("CHARGE", "power", "input", "other"), notes: "Charging contacts for ATW-CHG3a / CHG3Na (NiMH only). 2 x AA: approx. 15 h alkaline, 14.5 h NiMH, 29 h lithium." },
+    ],
+  },
+  {
+    id: "73b98533-2f70-4778-9103-13c461d3b80e",
+    deviceType: "wired-mic",
+    label: "Audio-Technica ATW-T1402",
+    shortName: "ATW-T1402",
+    manufacturer: "Audio-Technica", modelNumber: "ATW-T1402",
+    referenceUrl: "https://docs.audio-technica.com/all/System20PRO_Datasheet_EN_v7.pdf",
+    searchTerms: ["atw-t1402", "system 20 pro", "handheld transmitter", "wireless handheld", "wireless mic", "dwav"],
+    widthMm: 53.7, heightMm: 265, depthMm: 53.7, weightKg: 0.3,
+    voltage: "3 V DC, 2 x AA",
+    unitCost: 405,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Audio-Technica System 20 PRO handheld transmitter, dynamic hypercardioid element, 2.4 GHz, 10 mW EIRP.
+    // 265.0 x 53.7 mm (length x head diameter), 300 g. 2 x AA (NiMH chargeable in ATW-CHG3a).
+    // EasySchematic has no transmitter type - recorded as Wired Mic. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("RF OUT", "rf", "output", "wireless"), notes: "2.4 GHz, 10 mW EIRP, to an ATW-R1440." },
+      { ...port("USB-C", "usb", "input", "usb-c"), notes: "Firmware updates only." },
+      { ...port("CHARGE", "power", "input", "other"), notes: "Charging contacts for ATW-CHG3a / CHG3Na (NiMH only). 2 x AA: approx. 18 h alkaline, 16.5 h NiMH, 35 h lithium." },
+    ],
+  },
+  {
+    id: "011adec5-e1f4-4c76-a5a4-69de80ad46b3",
+    deviceType: "wired-mic",
+    label: "Audio-Technica BP892xcW",
+    shortName: "BP892xcW",
+    manufacturer: "Audio-Technica", modelNumber: "BP892xcW",
+    referenceUrl: "https://docs.audio-technica.com/us/p52761_bp892x_spec.pdf",
+    searchTerms: ["bp892", "bp892xcw", "microset", "earset", "headworn mic", "dwav"],
+    voltage: "Bias 2.5-10 V from transmitter",
+    unitCost: 533,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Audio-Technica BP892x MicroSet omnidirectional condenser earset, black, cW termination for A-T wireless body-packs.
+    // Sensitivity -43 dB, max 136 dB SPL, 20-20,000 Hz. Capsule 9.5 mm long x 2.6 mm dia; 2.6 g mic, boom and earpiece; 1.4 m detachable cable. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("OUTPUT", "analog-audio", "output", "other"), notes: "cW-style locking 4-pin on a 1.4 m detachable cable; pin 4 bias + in. For ATW-T1401 and other cW body-packs." },
+    ],
+  },
+  {
+    id: "a8bb19be-066d-4ae5-86ca-a88be177dd69",
+    deviceType: "charging-station",
+    label: "Audio-Technica ATW-CHG3aAD",
+    shortName: "ATW-CHG3aAD",
+    manufacturer: "Audio-Technica", modelNumber: "ATW-CHG3aAD",
+    referenceUrl: "https://docs.audio-technica.com/us/ATW-CHG3a_UM_351702570_V1_EN_web_231124.pdf",
+    searchTerms: ["atw-chg3a", "charging station", "charger", "system 20 pro", "3000 series", "dwav"],
+    widthMm: 185, heightMm: 68.5, depthMm: 99, weightKg: 0.405,
+    powerDrawW: 4.9,
+    voltage: "12 V DC 3.0 A (AD-SA1230XA)",
+    unitCost: 416,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Audio-Technica ATW-CHG3a two-bay charging station with AC adapter (AD-SA1230XA). Charges System 20 PRO / 3000 Series transmitters (NiMH), approx. 6.5 h.
+    // Up to five docks linked on one AD-SA1230XA adapter (AT8687 link kit). 4.9 W charging two; 27.4 W for five docks / ten transmitters.
+    // 185 W x 99 D x 68.5 H mm, 405 g. Flat surface only. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("BAY 1", "power", "output", "other"), notes: "Charging contacts, 3.6 V 500 mA; takes ATW-T1401 / T1402 and 3000 Series transmitters." },
+      { ...port("BAY 2", "power", "output", "other"), notes: "Charging contacts, 3.6 V 500 mA." },
+      { ...port("DC IN", "power", "input", "barrel"), notes: "12 V DC 3.0 A from AD-SA1230XA (one adapter feeds up to five linked docks)." },
+      { ...port("LINK DC IN", "power", "input", "barrel"), notes: "DC input for linking from the previous dock (AT8687 link kit)." },
+      { ...port("LINK DC OUT", "power", "output", "barrel"), notes: "DC output to the next dock (AT8687 link kit), five docks max." },
+    ],
+  },
+  {
+    id: "2b31ec6d-606b-46bc-b8bb-b508de47e3f5",
+    deviceType: "charging-station",
+    label: "Audio-Technica ATW-CHG3aEXP",
+    shortName: "ATW-CHG3aEXP",
+    manufacturer: "Audio-Technica", modelNumber: "ATW-CHG3aEXP",
+    referenceUrl: "https://docs.audio-technica.com/us/ATW-CHG3a_UM_351702570_V1_EN_web_231124.pdf",
+    searchTerms: ["atw-chg3a", "charging station", "charger", "system 20 pro", "3000 series", "dwav"],
+    widthMm: 185, heightMm: 68.5, depthMm: 99, weightKg: 0.405,
+    powerDrawW: 4.9,
+    voltage: "12 V DC 3.0 A (AD-SA1230XA)",
+    unitCost: 369,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Audio-Technica ATW-CHG3a two-bay charging station with AT8687 link kit (no AC adapter). Charges System 20 PRO / 3000 Series transmitters (NiMH), approx. 6.5 h.
+    // Up to five docks linked on one AD-SA1230XA adapter (AT8687 link kit). 4.9 W charging two; 27.4 W for five docks / ten transmitters.
+    // 185 W x 99 D x 68.5 H mm, 405 g. Flat surface only. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("BAY 1", "power", "output", "other"), notes: "Charging contacts, 3.6 V 500 mA; takes ATW-T1401 / T1402 and 3000 Series transmitters." },
+      { ...port("BAY 2", "power", "output", "other"), notes: "Charging contacts, 3.6 V 500 mA." },
+      { ...port("DC IN", "power", "input", "barrel"), notes: "12 V DC 3.0 A from AD-SA1230XA (one adapter feeds up to five linked docks)." },
+      { ...port("LINK DC IN", "power", "input", "barrel"), notes: "DC input for linking from the previous dock (AT8687 link kit)." },
+      { ...port("LINK DC OUT", "power", "output", "barrel"), notes: "DC output to the next dock (AT8687 link kit), five docks max." },
+    ],
+  },
+  {
+    id: "5f6d8804-528f-4374-8a45-9ed9174243c4",
+    deviceType: "amplifier",
+    label: "Sonance PowerZone Connect PRO 2000.2",
+    shortName: "PZC PRO 2000.2",
+    manufacturer: "Sonance", modelNumber: "PowerZone Connect PRO 2000.2 (93804)",
+    referenceUrl: "https://www.sonance.com/products/93804",
+    searchTerms: ["powerzone connect pro", "2000.2", "pzconn", "sonance amplifier", "70v amplifier", "zone amplifier", "dwav"],
+    widthMm: 440, heightMm: 88, depthMm: 320, weightKg: 7.4,
+    powerDrawW: 700,
+    voltage: "AC 100-240 V, 50/60 Hz",
+    unitCost: 2100,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Sonance PowerZone Connect PRO 2000.2, 2 ch DSP zone amplifier, 2U, rack ears included: 2 x 1000 W at 4 / 8 Ohm, 70 V or 100 V
+    // (per-channel Hi-Z / Lo-Z, default Hi-Z 70 V). Class D, UREC universal mains with PFC; 700 W consumption, < 0.5 W standby.
+    // Full-matrix DSP via the built-in web app; GPIO, S/PDIF I/O, network control. 88 x 440 x 320 mm, 7.4 kg. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("INPUT 1", "analog-audio", "input", "phoenix"), notes: "Balanced on Euroblock or unbalanced on RCA phono - one input, wire one (quick start)." },
+      { ...port("INPUT 2", "analog-audio", "input", "phoenix"), notes: "Balanced on Euroblock or unbalanced on RCA phono - one input, wire one." },
+      { ...port("S/PDIF", "spdif", "bidirectional", "other"), notes: "Configurable S/PDIF audio I/O. Connector not printed for the 2U (RCA phono on the 1U models)." },
+      { ...port("OUTPUT 1", "speaker-level", "output", "other"), notes: "Channel 1: 1000 W at 4 / 8 Ohm, 70 V or 100 V, set per channel (default Hi-Z 70 V). Connector type not printed - check the unit." },
+      { ...port("OUTPUT 2", "speaker-level", "output", "other"), notes: "Channel 2: as channel 1. Connector type not printed - check the unit." },
+      { ...port("NETWORK", "ethernet", "bidirectional", "rj45"), addressable: true, notes: "Network control socket: built-in PowerZone Control web app, iOS app, Wall-M controller, open API. RJ45 per the data sheet's wired-connection note." },
+      { ...port("GPIO", "gpio", "bidirectional", "other"), notes: "Configurable GPIO socket (web app). Type and pin count not printed in the 2U documents." },
+      { ...port("AC MAINS", "power", "input", "other"), notes: "100-240 V 50/60 Hz universal, PFC; 700 W consumption. Mains cable supplied; inlet type not printed." },
+    ],
+  },
+  {
+    id: "9ef0d791-ca11-4492-96dd-a7abb764ffa9",
+    deviceType: "speaker",
+    label: "Sonance IS6T",
+    shortName: "IS6T",
+    manufacturer: "Sonance", modelNumber: "IS6T (40198)",
+    referenceUrl: "https://images.salsify.com/image/upload/s--jn3LAhFi--/l0s6p2z3wnvphnzt2ttu.pdf",
+    searchTerms: ["is6t", "invisible series", "invisible speaker", "plaster-in speaker", "sonance", "dwav"],
+    widthMm: 409, heightMm: 409, depthMm: 98, weightKg: 8.35,
+    unitCost: 682.5,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Sonance Invisible Series IS6T commercial loudspeaker with transformer: installs flush in a ceiling or wall and is finished over
+    // (up to 1/8 in of flexible material). 84 dB (2.83 V / 1 m), 50 Hz - 30 kHz +/-3 dB, 170 deg hemispherical to 10 kHz.
+    // 100 W RMS, taps 30 / 15 / 7.5 / 3.8 W (70 V) and bypass. 409 x 409 x 98 mm, 86 mm mounting depth, 8.35 kg. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "terminal-block"), notes: "Screw terminals with strain relief. Rear-mounted tap selector 30 / 15 / 7.5 / 3.8 W (70 V) or bypass." },
+    ],
+  },
+  {
+    id: "9c977a54-80e5-465c-9e5a-269b7f1cc0ea",
+    deviceType: "speaker",
+    label: "Martin Audio Blackline Q26",
+    shortName: "Q26",
+    manufacturer: "Martin Audio", modelNumber: "Q26-W",
+    referenceUrl: "https://martin-audio.com/downloads/datasheets/Q26datasheet.pdf",
+    searchTerms: ["q26", "blacklineq", "blackline q26", "column speaker", "martin audio", "dwav"],
+    widthMm: 193, heightMm: 670, depthMm: 218, weightKg: 9.5,
+    unitCost: 640,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Martin Audio BlacklineQ Q26: passive two-way compact column, 2 x 6 in LF + 1 in compression driver, plywood, white.
+    // 300 W AES / 1200 W peak, 8 Ohm, 94 dB, 119 dB continuous / 125 dB peak. 69 Hz - 17 kHz +/-3 dB. Dispersion 100-120 x 40 deg.
+    // 3 x M8 + 1 x M6 inserts, 4 x M6 for WB6/8, pole socket. Accessories WB6/8, SP6/8, Q26YP yoke, HTKCT05. 193 x 670 x 218 mm, 9.5 kg. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("INPUT", "speaker-level", "input", "speakon"), notes: "1 x NL4, pins 1+ / 1-. No link connector." },
+    ],
+  },
+  {
+    id: "4eadec1b-4cea-41e5-8c1b-23aa11c92f14",
+    deviceType: "digital-signage-player",
+    label: "BrightSign LS445",
+    shortName: "LS445",
+    manufacturer: "BrightSign", modelNumber: "LS445 (LS5)",
+    referenceUrl: "https://www.brightsign.biz/wp-content/uploads/2023/04/LS5-datasheet.pdf",
+    searchTerms: ["ls445", "ls5", "brightsign", "signage player", "media player", "dwav"],
+    widthMm: 126.6, heightMm: 19.4, depthMm: 141.8, weightKg: 0.18,
+    powerDrawW: 18,
+    voltage: "12 V DC 1.5 A, locking adapter",
+    unitCost: 495,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // BrightSign LS5 series LS445: 4K HDMI signage player, HTML5, USB-C (host / device), 10/100 Ethernet, 3.5 mm analog / S/PDIF audio, microSD.
+    // GPIO, serial and IR only through BrightSign USB-C adapter cables; optional Wi-Fi / BT module on the internal M.2 slot.
+    // 126.6 W x 141.84 D x 19.41 H mm, 0.18 kg, built-in wall mounting, locking 12 V 1.5 A supply. Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("HDMI OUT", "hdmi", "output", "hdmi"), notes: "HDMI out, 4K on the LS445." },
+      { ...port("AUDIO", "analog-audio", "output", "trs-eighth"), notes: "3.5 mm analog audio; also carries S/PDIF digital audio." },
+      { ...port("USB-C", "usb", "bidirectional", "usb-c"), notes: "Host and device mode; BrightSign USB-C adapters add GPIO, serial (3.5 mm) and IR." },
+      { ...port("ETHERNET", "ethernet", "bidirectional", "rj45"), addressable: true, linkSpeed: "100M", notes: "10/100 Ethernet. No PoE." },
+      { ...port("DC IN", "power", "input", "barrel"), notes: "Locking power input, 12 V 1.5 A supply." },
+    ],
+  },
+  {
+    id: "5d05bdeb-783e-4798-b22b-48bf51cda0b8",
+    deviceType: "power-distribution",
+    label: "SSRC SL-12-2/6-520D",
+    shortName: "SL-12-2/6",
+    manufacturer: "SSRC", modelNumber: "SL-12-2/6-520D",
+    referenceUrl: "https://www.ssrconline.com/",
+    searchTerms: ["ssrc", "connector strip", "lightbar", "sl series", "raceway", "dwav"],
+    widthMm: 3657.6, heightMm: 85.7, depthMm: 63.5,
+    voltage: "2 x 20 A circuits",
+    unitCost: 760.76,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // SSRC SL Series connector strip, 12 ft, 2 x 20 A circuits, 6 outlets, type code 520D: extruded aluminium wireway, 2.5 x 3.375 in section,
+    // hung on a pipe batten (steel C-channel brackets at 60 in o.c., U-bolts to 2 in O.D.) or wall. Outlets on 6 in increments only.
+    // The Room Designer draws it from the library entry SSRC-SL (buildlib.py, sources of 2026-10-05). Verified 2026-10-27 against the maker documents listed in sources.
+    ports: [
+      { ...port("CIRCUIT 1 FEED", "power", "input", "terminal-block"), notes: "One 20 A homerun to the terminal box (#10 AWG max) at the feed end." },
+      { ...port("CIRCUIT 2 FEED", "power", "input", "terminal-block"), notes: "One 20 A homerun to the terminal box (#10 AWG max) at the feed end." },
+      { ...port("OUTLET 1", "power", "output", "edison"), notes: "20 A NEMA 5-20 (\"520\" in the part code), circuit 1 of 2 - SSRC assigns circuits; the \"D\" suffix is not on SSRC's order sheet, confirm with SSRC." },
+      { ...port("OUTLET 2", "power", "output", "edison"), notes: "20 A NEMA 5-20 (\"520\" in the part code), circuit 1 of 2 - SSRC assigns circuits; the \"D\" suffix is not on SSRC's order sheet, confirm with SSRC." },
+      { ...port("OUTLET 3", "power", "output", "edison"), notes: "20 A NEMA 5-20 (\"520\" in the part code), circuit 1 of 2 - SSRC assigns circuits; the \"D\" suffix is not on SSRC's order sheet, confirm with SSRC." },
+      { ...port("OUTLET 4", "power", "output", "edison"), notes: "20 A NEMA 5-20 (\"520\" in the part code), circuit 2 of 2 - SSRC assigns circuits; the \"D\" suffix is not on SSRC's order sheet, confirm with SSRC." },
+      { ...port("OUTLET 5", "power", "output", "edison"), notes: "20 A NEMA 5-20 (\"520\" in the part code), circuit 2 of 2 - SSRC assigns circuits; the \"D\" suffix is not on SSRC's order sheet, confirm with SSRC." },
+      { ...port("OUTLET 6", "power", "output", "edison"), notes: "20 A NEMA 5-20 (\"520\" in the part code), circuit 2 of 2 - SSRC assigns circuits; the \"D\" suffix is not on SSRC's order sheet, confirm with SSRC." },
+    ],
+  },
+  {
+    id: "8ff58568-9552-4dc6-92ea-1874509187bf",
+    deviceType: "led-fixture",
+    label: "Chauvet Professional COLORado 1 Quad Zoom",
+    shortName: "COLORado 1 Quad Zoom",
+    manufacturer: "Chauvet Professional", modelNumber: "COLORADO1QUADZOOM",
+    referenceUrl: "https://chauvetprofessional.com/wp-content/uploads/2018/01/Colorado_1_Quad_Zoom_NG_UM_Rev2.pdf",
+    searchTerms: ["colorado 1 quad zoom", "chauvet professional", "par / wash", "dwav"],
+    widthMm: 236, heightMm: 334, depthMm: 190, weightKg: 7,
+    powerDrawW: 119,
+    voltage: "100-240 VAC, 50/60 Hz",
+    unitCost: 999,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // IP65 RGBW LED wash PAR, 7 x 15 W Osram quad LEDs, motorised zoom 7-45 deg, centre-pixel control, 16-bit dimming.
+    // UM Rev. 2 p. 27: 334 L x 236 W x 190 H mm (13.14 x 9.25 x 7.48 in), 15.4 lb (7 kg). Recorded W 236 x H 334 x D 190: across yoke arms + knob, yoke top to lens face (as hung pointing down), body diameter. p. 6 drawing prints the width as 235 mm.
+    // UM p. 27: 112 W / 0.97 A at 120 V 60 Hz, 119 W / 0.51 A at 230 V 50 Hz; power link 13.6 A = 14 units at 120 V, 26 at 230 V; p. 7: 23 at 208 V.
+    // UM p. 27: beam 7-32 deg, field 13-45 deg (narrow/wide), 4,009 / 324 lux at 5 m. Photometrics Report (2020) p. 2: 2,662 lm full flood at 120 V (all RGBW full).
+    // Max ambient 45 C, convection cooled, no fan (UM p. 3, 27). UL 1573, CSA C22.2 No. 166. Chauvet item code 01031243, UPC 781462215910.
+    // DMX: 12 personalities FULL 25, TR16 17, STD.Y 17, TOUR 12, C1Q 10, AR2.Z 7, AR2.S 6, AR2.D 5, ARC.2 4, AR1.D 4, ARC.1 3, HSV 3 (UM p. 13-21).
+    // Verified 2026-10-21 against Chauvet Colorado 1 Quad Zoom User Manual Rev. 2 (2021-02), pages as cited.
+    // Disagreements: POWER: UM Rev. 2 (2021-02) p. 27 = 112 W / 0.97 A at 120 V; the 2026 web spec sheet (pdf/en/COLORADO1QUADZOOM.pdf) = 101 W / 0.861 A (this is where the Jetbuilt 101 W comes from); the 2020 Photometrics Report measured 104.96-105.74 W / 0.875-0.885 A at 119-120 V. UM used (current revisioned manual; also the conservative number for circuit loading). LINKING: UM p. 7/27 = 14 at 120 V, 23 at 208 V, 26 at 230 V; QRG Rev. 3 (2020-07) p. 2 and the web sheet = 15 at 120 V, 27 at 208 V, 28 at 230 V (QRG adds 13 at 100 V, 29 at 240 V). UM (newest revisioned document) used. LENGTH: UM 334 mm (table and p. 6 drawing); web sheet 357 x 236 x 190 mm. UM used (it matches its own dimensioned drawing). WIDTH: table 236 mm vs drawing 235 mm (table used). OPTICS: UM and web sheet beam 7-32 / field 13-45 deg; the 2020 Photometrics Report measured beam 9.3-9.6 / 37.1 deg and field 15.8-15.9 / 52.4 deg (full spot / full flood). UM used. NARROW ILLUMINANCE: UM 4,009 lux at 5 m; web 3,280 lux at 5 m (13 deg). PERSONALITY NAMES: the web sheet spells AR1D, AR2Z, ARC1, ARC2, ARC2D, ARC2S; the UM DMX section prints AR1.D, AR2.Z, ARC.1, ARC.2, AR2.D, AR2.S (UM names used). JETBUILT: CRM 7.0 kg matches the maker (UM 7 kg); CRM 101.0 W matches only the web sheet, not the UM (112 W).
+    // Left blank: cct_k and cri: not published (RGBW mixer; the photometric report gives only CIE x 0.246 y 0.191 at full). Fuse: not published. Default DMX personality: not stated. pan/tilt: not a moving head. Lumens per zoom position other than the 2020 report not published (output_lm 2,662 is the report's full-flood figure; full spot 2,354 lm, 50 % zoom 2,650 lm).
+    // power.link_units_208: 23
+    // power.link_units_230: 26
+    // Weight_lb 15.4: as the maker prints it in pounds (the kg figure converts to a hair different).
+    ports: [
+      { ...port("DMX In (5-pin)", "dmx", "input", "xlr-5"), notes: "Seetronic IP65 5-pin XLR. 12 personalities 3-25 ch. Use IP65 cables or the attached caps to keep IP65 (UM p. 2, 7-8)." },
+      { ...port("DMX Out (5-pin)", "dmx", "output", "xlr-5"), notes: "Seetronic IP65 5-pin XLR thru; also carries master/slave (UM p. 5, 8)." },
+      { ...port("AC In", "power", "input", "powercon-true1"), notes: "Seetronic Powerkon IP65 (TRUE1-style). 112 W / 0.97 A at 120 V 60 Hz; 119 W / 0.51 A at 230 V 50 Hz. Ships with Powerkon-to-Edison cord (UM p. 7, 27)." },
+      { ...port("AC Out", "power", "output", "powercon-true1"), notes: "Power link: 14 units at 120 V (13.6 A), 23 at 208 V, 26 at 230 V (UM p. 7, 27). UM table prints \"Edison\" in the US column for the output; the p. 5 overview, the UK column and the 2026 web sheet show Seetronic Powerkon IP65 - see questions." },
+    ],
+  },
+  {
+    id: "ceffe9a4-6b40-4aaf-8831-78e44d8b7b84",
+    deviceType: "led-fixture",
+    label: "Chauvet Professional Ovation E-160WW",
+    shortName: "Ovation E-160WW",
+    manufacturer: "Chauvet Professional", modelNumber: "OVATIONE160WW-2",
+    referenceUrl: "https://chauvetprofessional.com/wp-content/uploads/2015/01/Ovation-E-160WW_UM_Rev8.pdf",
+    searchTerms: ["ovation e-160ww", "chauvet professional", "ellipsoidal", "dwav"],
+    widthMm: 285, heightMm: 487, depthMm: 495, weightKg: 6.4,
+    powerDrawW: 103,
+    voltage: "100-240 VAC, 50/60 Hz",
+    unitCost: 1250,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Warm-white LED ellipsoidal light engine (575 W tungsten equivalent), ERS-style barrel, 4 shutters, A/B gobo slot, lens tube sold separately. Model ID OVATIONE160WW-2 (UM Rev. 8, 09/2024).
+    // UM Rev. 8 p. 16: fixture only (no lens) 495 L x 285 W x 487 H mm (19.49 x 11.22 x 19.17 in), 14.2 lb (6.4 kg). Recorded W 285 x H 487 x D 495.
+    // With the 26 deg lens: 653 mm long on the p. 6 drawing / 658 mm "extended" on the web sheet; 18.4 lb (8.3 kg) (web sheet). OHDLENS26: 245 x 174 x 174 mm, 4.0 lb (1.8 kg).
+    // UM p. 16: 103 W / 0.9 A at 120 V 60 Hz, 99 W / 0.5 A at 208 V, 102 W / 0.5 A at 230 V; link 13.6 A = 15 units at 120 V, 26 at 208 V, 28 at 230 V; fuse T 2 A 250 V.
+    // With the 26 deg HD lens: beam 16 deg, field 25 deg, 3,189 lux at 5 m, 5,458 lm (UM p. 16). 3031 K, CRI 90 (web sheet; not in the UM).
+    // Max ambient 45 C (UM p. 2, 16); fan with Auto/On/Off/Silent modes (UM p. 11, 14) although the spec table says "Convection". IP20 (spec sheet p. 3, web sheet).
+    // DMX personalities 1Ch, 2Ch, 3Ch, 6Ch (UM p. 10-12); RDM. Chauvet item code 03032341, UPC 781462226893. UL 1573, CSA C22.2 No. 166.
+    // Verified 2026-10-21 against Chauvet Ovation E-160WW User Manual Rev. 8 (09/2024), pages as cited; lens tubes against the OHDLENS / OEZOOM web spec sheets.
+    // Disagreements: FUSE: UM Rev. 8 p. 16 spec table T 2 A 250 V; UM p. 7 fuse-replacement text T 3.15 A 250 V. Table value recorded, unresolved. CURRENT: UM p. 16 0.9 A at 120 V; UM p. 7 linking table 0.86 A at 120 V (1.02 / 0.86 / 0.51 / 0.47 / 0.45 A at 100/120/208/230/240 V); web sheet 101 W / 0.86 A. Spec table (103 W / 0.9 A) used. LINKING: UM p. 16 and QRG Rev. 8 = 15 units at 120 V (13.6 A); UM p. 7 says "Never exceed 12 A on a single circuit"; web sheet = 13 units at 120 V, 23 at 208, 25 at 230, 26 at 240 V. UM table + QRG (both Rev. 8) used. LED: UM 88 W / 2.3 A; 2017 spec sheet 90 W (Citizen); web sheet 86 W. UM used. CONNECTORS: 2017 spec sheet says Neutrik powerCON in/thru; UM Rev. 8 ("Updated power connectors") and the web sheet say Seetronic Powerkon IP65 - Rev. 8 used (it is the -2 model). COOLING: UM p. 16 "Convection" vs fan modes on p. 11/14 and the spec sheet ("active cooling via a low noise fan"). PHOTOMETRY: the Photometric Report Rev. 1 (measured 2019-11, original model) gives the 26 deg lens beam 18.5-18.7 / field 26.9-27.3 deg, 6,657 lm, 114.3 W / 0.944 A at 121 V; UM Rev. 8 (the -2 model) gives 16 / 25 deg, 5,458 lm - UM used. Same report, 36 deg lens: 24.3 / 35.2 deg vs UM 20 / 33. HEIGHT: spec table 487 mm vs 506 mm on the p. 6 drawing (yoke top to the lowest shutter handle) - table used for height_mm. LENS TUBE PAGE says "six fixed focal lengths, 5 to 36 deg" but lists seven (5, 10, 14, 19, 26, 36, 50). ZOOM CODES: OHDZOOM1530/2550 (Ovation web sheet) vs OEZOOM1530/2550 (zoom-lens web sheet).
+    // Left blank: Lumens for the 5/10/14 deg and zoom lenses: UM prints "N/a". Default DMX personality: not stated. pan/tilt: fixed fixture. Floor/stand use: not described. White-housing lens tube (OHDLENS26WHT): no Chauvet document found (the US lens page and web sheet list only OHDLENS5-50); its row is assumed identical to OHDLENS26 optically - weight/finish of the white version not published. Lens-tube weights of the 12-piece pack: not published.
+    // with_26_lens: {"depth_mm_drawing": 653, "depth_mm_web_extended": 658, "height_mm_drawing": 506, "weight_kg": 8.3, "weight_lb": 18.4, "notes": "UM p. 6 drawing (with a 245 mm HD lens tube) prints 653 mm long and 506 mm from yoke top to the lowest shutter handle; web sheet: \"w/ 26 deg Lens Extended 658 x 285 x 487 mm\", 18.4 lb (8.3 kg)."}
+    // crm_related: [{"record_id": "6798303000022213005", "product_code": "OHDLENS26WHT", "product_name": "26\u00b0 - Ovation Ellipsoidal HD Lens Tube (WHITE Housing)"}, {"record_id": "6798303000022213003", "product_code": "(12-piece code)", "product_name": "26\u00b0 Ovation Ellipsoidal HD Lens Tube, 12-piece"}]
+    // light.lens_for_angles: OHDLENS26 (26 deg HD lens tube) - the angles belong to the lens; see lenses
+    // power.link_units_208: 26
+    // power.link_units_230: 28
+    // Weight_lb 14.1: as the maker prints it in pounds (the kg figure converts to a hair different).
+    // 2026-10-21, user: 'use the most conservative numbers' - link 12 A / 13 units (UM p. 7, web sheet) over the table's 13.6 A / 15.
+    ports: [
+      { ...port("DMX In (3-pin)", "dmx", "input", "xlr-3"), notes: "3-pin XLR; 1/2/3/6 ch personalities; RDM (UM p. 5, 7)." },
+      { ...port("DMX In (5-pin)", "dmx", "input", "xlr-5"), notes: "5-pin XLR, same DMX input as the 3-pin (UM p. 5)." },
+      { ...port("DMX Out (3-pin)", "dmx", "output", "xlr-3"), notes: "3-pin XLR thru." },
+      { ...port("DMX Out (5-pin)", "dmx", "output", "xlr-5"), notes: "5-pin XLR thru." },
+      { ...port("AC In", "power", "input", "powercon-true1"), notes: "Seetronic Powerkon IP65 (TRUE1-style; the web sheet lists \"TRUE 1 Style power extension cables\"). 103 W / 0.9 A at 120 V 60 Hz (UM p. 16). Ships with a 5 ft Powerkon-to-Edison cord." },
+      { ...port("AC Out", "power", "output", "powercon-true1"), notes: "Seetronic Powerkon IP65 link out: designed to 12 A / 13 units at 120 V (UM p. 7 'never exceed 12 A', web sheet 13) - the conservative figures; UM p. 16 / QRG print 13.6 A / 15 units." },
+    ],
+  },
+  {
+    id: "c1db2e4e-f229-4c00-a82e-1a18b429ac5a",
+    deviceType: "led-fixture",
+    label: "Chauvet Professional Rogue R1X Wash",
+    shortName: "Rogue R1X Wash",
+    manufacturer: "Chauvet Professional", modelNumber: "ROGUER1XWASH",
+    referenceUrl: "https://chauvetprofessional.com/wp-content/uploads/2019/10/Rogue_R1X_Wash_UM_Rev7-2.pdf",
+    searchTerms: ["rogue r1x wash", "chauvet professional", "moving head wash", "dwav"],
+    widthMm: 265, heightMm: 354, depthMm: 187, weightKg: 6.2,
+    powerDrawW: 303,
+    voltage: "100-240 VAC, 50/60 Hz",
+    unitCost: 1499,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // Compact RGBW LED moving-head wash, 7 x 25 W quad LEDs, motorised zoom 7.9-62.7 deg, 540 / 230 deg pan / tilt, 16-bit dimming.
+    // UM Rev. 7 p. 25: 187 L x 265 W x 354 H mm (7.36 x 10.43 x 13.94 in), 13.6 lb (6.2 kg). Recorded W 265 (base incl. handles) x H 354 (overall, head up) x D 187 (base depth).
+    // UM p. 25: 160 W @100 V, 157 W @120 V, 152 W @208 V, 153 W @230/240 V; 1.6 / 1.33 / 0.738 / 0.660 / 0.629 A. Power link 12 A at every voltage. Fuse F 3 A 250 V (p. 6, 25).
+    // UM p. 25: beam 7.9-35.5 deg, field 11.5-50.8 deg, cutoff 19.3-62.7 deg, zoom range 7.9-62.7 deg; 2,872 lux at 5 m (11 deg), 279 lux (50.8 deg); CCT range 2800-10000 K.
+    // Output 2,455 lm (4,000 lm source) and IP20: web spec sheet only (the UM prints neither). Pan 540 deg / tilt 230 deg (UM p. 8 menu; web sheet).
+    // DMX personalities 14CH, 15CH, 19CH, 21CH (UM p. 10); RDM. Max ambient 45 C, fan-assisted. Chauvet item code 08011591, UPC 781462219390. UL 1573, CSA C22.2 No. 166.
+    // Verified 2026-10-21 against Chauvet Rogue R1X Wash User Manual Rev. 7 (08/2025), pages as cited.
+    // Disagreements: POWER: UM Rev. 7 (2025-08) p. 25 = 157 W / 1.33 A at 120 V; the web spec sheet (pdf/en/ROGUER1XWASH.pdf, generated 2026-06) = 303 W / 2.34 A at 120 V, 297 W / 1.35 A at 208 V, 299 W / 1.20 A at 230 V and power linking 5 units at 120 V. UM used (revisioned manual, consistent with the QRG; 303 W is implausible for 7 x 25 W LEDs) - but this must be confirmed. LINKING: UM p. 25 prints "12 A (10 products)" at 120 V, which its own 1.33 A contradicts (10 x 1.33 = 13.3 A); QRG Rev. 6 (2022) p. 2 = 7 / 9 / 16 / 18 / 19 units at 100 / 120 / 208 / 230 / 240 V, which is floor(12 A / current). QRG count (9 at 120 V) recorded as the safe, self-consistent figure; UM p. 6 also says "Never exceed 12 A on a single circuit". DIMENSION LABEL: the p. 5 front view prints "7.81 in / 198.5" on a dimension line that measures 247 mm at the drawing scale (head top to the top of the base); not used.
+    // Left blank: cct_k / cri: RGBW mixer - only a 2800-10000 K range and a 7500 K calibrated-white mode are published, no CRI. Head width and tilt-axis height above the base: not printed on the drawing. Default DMX personality: not stated. floor_ok: upright use not described.
+    // light.cct_range_k: [2800, 10000]
+    // light.pan_tilt_selectable: {"pan": [540, 360, 180], "tilt": [230, 180, 90]}
+    // light.parts_note: UM p. 5: front view 230 mm across the yoke arms, 265 mm across the base, 97 mm base height, 354 mm overall; side view 152 mm head depth, 187 mm base depth, 162 mm head length (head top to the bottom of the head, head pointing up). Head width and tilt-axis height are not printed.
+    // Weight_lb 13.7: as the maker prints it in pounds (the kg figure converts to a hair different).
+    // 2026-10-21, user: 'use the most conservative numbers' - power and link count switched to the web sheet's 303 W / 2.34 A / 5 per link.
+    ports: [
+      { ...port("DMX In (3-pin)", "dmx", "input", "xlr-3"), notes: "3-pin XLR; 14/15/19/21 ch; RDM (UM p. 4, 6)." },
+      { ...port("DMX Out (3-pin)", "dmx", "output", "xlr-3"), notes: "3-pin XLR thru." },
+      { ...port("DMX In (5-pin)", "dmx", "input", "xlr-5"), notes: "5-pin XLR, same input as the 3-pin." },
+      { ...port("DMX Out (5-pin)", "dmx", "output", "xlr-5"), notes: "5-pin XLR thru." },
+      { ...port("AC In", "power", "input", "powercon"), notes: "Neutrik powerCON A (blue). 303 W / 2.34 A at 120 V (2026 web sheet - the conservative figure; UM Rev. 7 p. 25 says 157 W / 1.33 A). Ships with powerCON-to-Edison cord. Fuse F 3 A 250 V." },
+      { ...port("AC Out", "power", "output", "powercon"), notes: "Neutrik powerCON B (grey) link out, 12 A max: 5 units at 120 V (2026 web sheet - the conservative count; QRG Rev. 6 says 9, the UM table 10)." },
+    ],
+  },
+  {
+    id: "4dc1c064-8a33-4791-83ef-acc6777a157d",
+    deviceType: "led-fixture",
+    label: "ETC Source 4WRD II Retrofit Kit, 120 V, black",
+    shortName: "Source 4WRD II",
+    manufacturer: "ETC", modelNumber: "S4WRDT120",
+    referenceUrl: "https://www.etcconnect.com/workarea/DownloadAsset.aspx?id=10737484370",
+    searchTerms: ["source 4wrd ii", "etc", "ellipsoidal", "dwav"],
+    widthMm: 178, heightMm: 142, depthMm: 160, weightKg: 1.69,
+    powerDrawW: 150,
+    voltage: "114-125 VAC, 60 Hz",
+    unitCost: 720,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // LED retrofit that replaces the HPL burner/lamp cap of an existing full-size Source Four ellipsoidal; DMX/RDM over RJ45 or line-dimmable; 3200 K, 80 CRI (standard version).
+    // Kit only: 142 H x 178 W x 160 D mm (5.59 x 7.00 x 6.29 in), 1.69 kg (3.73 lb) (datasheet p. 2, 7; UM p. 9). Recorded W 178 x H 142 x D 160.
+    // 150 W / 1.26 A at 120 V full, 1.2 W standby in DMX mode, 0 W in AC mode; 114-125 V 60 Hz; inrush 30 A; 14 per 20 A switched circuit, 2 per dimmed circuit (datasheet p. 2; UM p. 9).
+    // Output with the existing lens: 8,941 lm with a 26 deg Source Four lens (beam 18.6 / field 25.7 deg), 11,430 lm max with the 26 deg EDLT (Photometry Guide p. 5-6; datasheet p. 2, 5).
+    // CRI Ra 81 (R9 9), TLCI 66, TM-30 measured 3233 K (datasheet p. 3-4). Fan cooled, 28 dBA. IP20, indoor only. UL 1598C (retrofit kit), CSA TIL B79-A.
+    // DMX: 1 channel (intensity); RDM personalities 1 = DMX, 2 = AC Dimming, 3 = Local Control (UM p. 20).
+    // Verified 2026-10-21 against ETC Source 4WRD II datasheet Rev M 2026-02 and Installation and User Manual v2.0 (7067M1230-2.0 Rev D, 2026-01), both from etcconnect.com.
+    // Disagreements: Ambient: datasheet p. 2 says 5-50 C ambient operating; UM p. 9 says 5-40 C ambient operating with a 50 C maximum recommended (Ta) - UM wording kept. Power: datasheet / UM 150 W at full; the Photometry Guide tables list 149 W. Weight installed: datasheet "with fixture body (no lens)" 5.99 kg vs UM "installed on 26 deg fixture with yoke and C-clamp" 6.39 kg - different configurations, both recorded. Inrush at 230/240 V: datasheet 12 A at 230 V, UM 12 A at 240 V (the 120 V kit is 114-125 V only).
+    // Left blank: Fuse: not published. Beam/field of the kit itself: none - they belong to the Source Four lens tube (lenses table). Lens-tube weights: not in these documents. Default personality: not stated. Power link/thru: none exists. The Gallery / Daylight variants are different part numbers (not these records).
+    // what_it_is: LED replacement for the standard Source Four HPL burner assembly (lamp cap/housing): remove the incandescent lamp housing, fit the supplied threaded post and slide the Source 4WRD II onto the existing Source Four body; the fixture's own reflector, shutter barrel and lens tube stay. Fits any full-size Source Four incandescent ellipsoidal (and the Source 4WRD PAR / PARNel fixture bodies); NOT compatible with Source Four LED, Fresnel, PAR, PARNel or jr (UM p. 5, 12-14; datasheet p. 1, 3).
+    // part_decoding: S4WRDT120 = "Source 4WRD II, Retrofit Kit, 120 V", ETC part number 7067A1112 (datasheet p. 1; standard 80 CRI 3200 K version - G = Gallery 90+ CRI 7067A1114, DG = Daylight Gallery 5900 K 7067A1116, FB = with Source Four fixture body 7067A1113, 230 V = S4WRDT230 7067A1200). No "-1" = black ("For White please add -1", datasheet p. 1). No connector suffix: the 1 m power lead is supplied bare-ended (UM p. 11: "If you ordered a Source 4WRD II retrofit without a power connector, wire the connector...").
+    // installed: {"with_fixture_body_and_26_lens_mm": {"h": 535, "w": 339, "d": 604}, "weight_kg_fixture_body_no_lens": 5.99, "weight_kg_on_26_fixture_with_yoke_and_c_clamp": 6.39, "adds_kg_over_standard_burner": 0.93, "notes": "Datasheet p. 7 (S4WRDFB with 26 deg lens: 535 H x 339 W x 604 D max; body no lens 5.99 kg / 13.20 lb; +0.93 kg / 2.05 lb over a standard burner); UM p. 9 (installed on a 26 deg fixture with yoke and C-clamp: 6.39 kg / 14.08 lb)."}
+    // accessory_7067K1001: ETC 7067K1001 = S4WRDACCKIT "Data Accessory Kit": RJ45-to-female 5-pin XLR adapter (W6538), RJ45-to-male 5-pin XLR adapter (W6539) and an RJ45 DMX terminator (N4086) - lets the RJ45-only Source 4WRD II / Color II join a 5-pin XLR DMX line (datasheet p. 6; UM p. 17).
+    // weight_lb: 3.73
+    // part_number: 7067A1112
+    // light.kind: LED retrofit light engine for an existing ETC Source Four (lens and barrel are the fixture's)
+    // light.lens_for_angles: ETC 426LT (Source Four 26 deg) - the angles are the existing lens tube's; see lenses
+    // light.output_lm_max: 11430
+    // light.tlci: 66
+    // power.standby_w: 1.2
+    // power.inrush_a_120: 30
+    // power.per_circuit_120: 14
+    // power.per_dimmed_circuit_120: 2
+    // power.link: No power thru: one cord per kit. 14 per 20 A switched circuit (R20); 2 per dimmed circuit (D20) recommended.
+    // AC In port note, full text: Hardwired 1 m cord, bare end (no connector suffix). Brown live / blue neutral / green-yellow earth. 114-125 V 60 Hz, 150 W / 1.26 A at full; DMX mode needs constant/relay power or a dimmer parked at full; AC mode = line dimming. Inrush 30 A first half-cycle. No power thru. Bare end - recorded as connector "none".
+    ports: [
+      { ...port("DMX In (RJ45)", "dmx", "input", "rj45"), notes: "DMX512 + RDM on RJ45: pin 1 DMX+, pin 2 DMX-, pin 7 common/shield, others NC. Cat5e or better, 300 m / 32 fixtures per chain; terminate the last with N4086. XLR via W6538/W6539 (kit 7067K1001) or the retrofit-mounted 7067A1118 adapter (UM p. 11, 16-18)." },
+      { ...port("DMX Thru (RJ45)", "dmx", "output", "rj45"), notes: "RJ45 DMX/RDM thru (UM p. 11, 16)." },
+      { ...port("AC In (1 m cord)", "power", "input", "none"), notes: "1 m cord, bare end (brown L / blue N / green-yellow E). 114-125 V 60 Hz, 150 W / 1.26 A at full, inrush 30 A. DMX mode: constant or relay power (or a dimmer parked at full); AC mode: line dimming. No power thru." },
+    ],
+  },
+  {
+    id: "0f9efb17-03c2-4e26-b10b-2df7696aab56",
+    deviceType: "led-fixture",
+    label: "ETC Source 4WRD II Retrofit Kit, 120 V, black, stage pin",
+    shortName: "Source 4WRD II (stage pin)",
+    manufacturer: "ETC", modelNumber: "S4WRDT120-B",
+    referenceUrl: "https://www.etcconnect.com/workarea/DownloadAsset.aspx?id=10737484370",
+    searchTerms: ["source 4wrd ii (stage pin)", "etc", "ellipsoidal", "dwav"],
+    widthMm: 178, heightMm: 142, depthMm: 160, weightKg: 1.69,
+    powerDrawW: 150,
+    voltage: "114-125 VAC, 60 Hz",
+    unitCost: 720,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // LED retrofit that replaces the HPL burner/lamp cap of an existing full-size Source Four ellipsoidal; DMX/RDM over RJ45 or line-dimmable; 3200 K, 80 CRI (standard version).
+    // Kit only: 142 H x 178 W x 160 D mm (5.59 x 7.00 x 6.29 in), 1.69 kg (3.73 lb) (datasheet p. 2, 7; UM p. 9). Recorded W 178 x H 142 x D 160.
+    // 150 W / 1.26 A at 120 V full, 1.2 W standby in DMX mode, 0 W in AC mode; 114-125 V 60 Hz; inrush 30 A; 14 per 20 A switched circuit, 2 per dimmed circuit (datasheet p. 2; UM p. 9).
+    // Output with the existing lens: 8,941 lm with a 26 deg Source Four lens (beam 18.6 / field 25.7 deg), 11,430 lm max with the 26 deg EDLT (Photometry Guide p. 5-6; datasheet p. 2, 5).
+    // CRI Ra 81 (R9 9), TLCI 66, TM-30 measured 3233 K (datasheet p. 3-4). Fan cooled, 28 dBA. IP20, indoor only. UL 1598C (retrofit kit), CSA TIL B79-A.
+    // DMX: 1 channel (intensity); RDM personalities 1 = DMX, 2 = AC Dimming, 3 = Local Control (UM p. 20).
+    // Verified 2026-10-21 against ETC Source 4WRD II datasheet Rev M 2026-02 and Installation and User Manual v2.0 (7067M1230-2.0 Rev D, 2026-01), both from etcconnect.com.
+    // Disagreements: Ambient: datasheet p. 2 says 5-50 C ambient operating; UM p. 9 says 5-40 C ambient operating with a 50 C maximum recommended (Ta) - UM wording kept. Power: datasheet / UM 150 W at full; the Photometry Guide tables list 149 W. Weight installed: datasheet "with fixture body (no lens)" 5.99 kg vs UM "installed on 26 deg fixture with yoke and C-clamp" 6.39 kg - different configurations, both recorded. Inrush at 230/240 V: datasheet 12 A at 230 V, UM 12 A at 240 V (the 120 V kit is 114-125 V only).
+    // Left blank: Fuse: not published. Beam/field of the kit itself: none - they belong to the Source Four lens tube (lenses table). Lens-tube weights: not in these documents. Default personality: not stated. Power link/thru: none exists. The Gallery / Daylight variants are different part numbers (not these records).
+    // what_it_is: LED replacement for the standard Source Four HPL burner assembly (lamp cap/housing): remove the incandescent lamp housing, fit the supplied threaded post and slide the Source 4WRD II onto the existing Source Four body; the fixture's own reflector, shutter barrel and lens tube stay. Fits any full-size Source Four incandescent ellipsoidal (and the Source 4WRD PAR / PARNel fixture bodies); NOT compatible with Source Four LED, Fresnel, PAR, PARNel or jr (UM p. 5, 12-14; datasheet p. 1, 3).
+    // part_decoding: S4WRDT120 = "Source 4WRD II, Retrofit Kit, 120 V", ETC part number 7067A1112 (datasheet p. 1; standard 80 CRI 3200 K version - G = Gallery 90+ CRI 7067A1114, DG = Daylight Gallery 5900 K 7067A1116, FB = with Source Four fixture body 7067A1113, 230 V = S4WRDT230 7067A1200). No "-1" = black ("For White please add -1", datasheet p. 1). Suffix "-B" = factory-fitted "Two-pin and ground, 20 amp connector" (stage pin) - ETC's connector-designation key on the Source Four datasheets (-A parallel-blade U-ground / Edison, -B two-pin and ground 20 A, -C grounded 20 A twist-lock, -M dimmer doubling NEMA L5-15P); the S4WRD II datasheet only says "1 m cord, bare end or various connector options (120 V)" and does not print the key itself.
+    // installed: {"with_fixture_body_and_26_lens_mm": {"h": 535, "w": 339, "d": 604}, "weight_kg_fixture_body_no_lens": 5.99, "weight_kg_on_26_fixture_with_yoke_and_c_clamp": 6.39, "adds_kg_over_standard_burner": 0.93, "notes": "Datasheet p. 7 (S4WRDFB with 26 deg lens: 535 H x 339 W x 604 D max; body no lens 5.99 kg / 13.20 lb; +0.93 kg / 2.05 lb over a standard burner); UM p. 9 (installed on a 26 deg fixture with yoke and C-clamp: 6.39 kg / 14.08 lb)."}
+    // accessory_7067K1001: ETC 7067K1001 = S4WRDACCKIT "Data Accessory Kit": RJ45-to-female 5-pin XLR adapter (W6538), RJ45-to-male 5-pin XLR adapter (W6539) and an RJ45 DMX terminator (N4086) - lets the RJ45-only Source 4WRD II / Color II join a 5-pin XLR DMX line (datasheet p. 6; UM p. 17).
+    // weight_lb: 3.73
+    // part_number: 7067A1112-B
+    // light.kind: LED retrofit light engine for an existing ETC Source Four (lens and barrel are the fixture's)
+    // light.lens_for_angles: ETC 426LT (Source Four 26 deg) - the angles are the existing lens tube's; see lenses
+    // light.output_lm_max: 11430
+    // light.tlci: 66
+    // power.standby_w: 1.2
+    // power.inrush_a_120: 30
+    // power.per_circuit_120: 14
+    // power.per_dimmed_circuit_120: 2
+    // power.link: No power thru: one cord per kit. 14 per 20 A switched circuit (R20); 2 per dimmed circuit (D20) recommended.
+    // AC In port note, full text: Hardwired 1 m cord with factory-fitted two-pin-and-ground 20 A ("stage pin") plug - ETC connector suffix -B. Brown live / blue neutral / green-yellow earth. 114-125 V 60 Hz, 150 W / 1.26 A at full; DMX mode needs constant/relay power or a dimmer parked at full; AC mode = line dimming. Inrush 30 A first half-cycle. No power thru. No vocabulary slug for a 2P&G stage-pin plug - recorded as "other".
+    ports: [
+      { ...port("DMX In (RJ45)", "dmx", "input", "rj45"), notes: "DMX512 + RDM on RJ45: pin 1 DMX+, pin 2 DMX-, pin 7 common/shield, others NC. Cat5e or better, 300 m / 32 fixtures per chain; terminate the last with N4086. XLR via W6538/W6539 (kit 7067K1001) or the retrofit-mounted 7067A1118 adapter (UM p. 11, 16-18)." },
+      { ...port("DMX Thru (RJ45)", "dmx", "output", "rj45"), notes: "RJ45 DMX/RDM thru (UM p. 11, 16)." },
+      { ...port("AC In (1 m cord)", "power", "input", "other"), notes: "1 m cord, factory 2P&G 20 A stage-pin plug (ETC suffix -B; no slug - 'other'). 114-125 V 60 Hz, 150 W / 1.26 A at full, inrush 30 A. DMX mode: constant or relay power; AC mode: line dimming. No power thru." },
+    ],
+  },
+  {
+    id: "0617867d-df7c-4e69-aa39-baba601c9dfc",
+    deviceType: "led-fixture",
+    label: "ETC Source 4WRD Color II Retrofit Kit, black",
+    shortName: "Source 4WRD Color II",
+    manufacturer: "ETC", modelNumber: "S4WRDCII",
+    referenceUrl: "https://www.etcconnect.com/WorkArea/DownloadAsset.aspx?id=10737513601",
+    searchTerms: ["source 4wrd color ii", "etc", "ellipsoidal", "dwav"],
+    widthMm: 178, heightMm: 142, depthMm: 160, weightKg: 1.63,
+    powerDrawW: 148,
+    voltage: "100-240 VAC, 50/60 Hz",
+    unitCost: 720,   // sale price (CRM Unit_Price / MSRP) - never dealer cost in this public file
+    dwavVerified: true,
+    // RGBA LED retrofit that replaces the HPL burner/lamp cap of an existing full-size Source Four; 6-channel DMX/RDM over RJ45; switched power, not line-dimmable.
+    // Kit only: 142 H x 178 W x 160 D mm (5.59 x 7.00 x 6.29 in), 1.63 kg (3.6 lb) (datasheet p. 2, 6; UM p. 30). Recorded W 178 x H 142 x D 160.
+    // 146 W / 1.25 A at 120 V typical, 3 W standby; 148 W / 1.5 A at 100 V; 143 W / 0.67 A at 230 V; inrush 32 A; 10 per 20 A non-dim circuit (datasheet p. 2; UM p. 30).
+    // With the existing lens: 4,505 lm Full ON with a Source Four 26 deg (beam 20.0 / field 25.8 deg), 6,042 lm max with the 26 deg EDLT (datasheet p. 2, 4; photometry workbook).
+    // CRI Ra 88 (R9 96) at 3200 K, 80 (63) at 5600 K; 2200-6500 K; camera flicker 1.2 / 20 kHz; 27 dBA; IP20 indoor (datasheet p. 2, 4).
+    // Verified 2026-10-21 against ETC Source 4WRD Color II datasheet Rev E 2026-02 and Installation and User Manual v3.0 (7068M1220-3.0 Rev D, 2026-01), both from etcconnect.com.
+    // Disagreements: Weight: datasheet p. 2 and UM p. 30 = 1.63 kg (3.6 lb); datasheet p. 6 weight table = 1.69 kg (3.73 lb), the same figure as the white-light S4WRD II - p. 2 / UM used. Power: datasheet / UM 146 W at 120 V; the photometry workbook lists 143 W Full ON. Installed weight: UM 8.98 kg on a 26 deg fixture with yoke and C-clamp vs datasheet 5.99 kg "with fixture body" (no lens) - different configurations; the 8.98 kg looks high next to the S4WRD II's 6.39 kg for the same build, flag only. The 2020 Photometry Guide's "Source 4WRD Color" pages are the first-generation Color retrofit, not Color II - not used.
+    // Left blank: Fuse: not published. Kit beam/field: none (lens tube's). Default mode: only one mode. cct_k: RGBA, range only. Power thru: none.
+    // what_it_is: RGBA (red, green, blue, amber) LED replacement for the standard Source Four HPL burner assembly; installs on the existing Source Four body with the supplied threaded post, plus a reflector insert placed over the Source Four reflector. Switched (non-dim) power, DMX dimming. Not compatible with Source Four LED, Fresnel, PAR, PARNel or jr; can also go in a Source 4WRD PAR / PARNel fixture body (UM p. 5, 9-14).
+    // part_decoding: S4WRDCII = "Source 4WRD Color II Retrofit Kit, Black": UL part number 7068A1011, CE part number 7068A1211; "-1" for white (datasheet p. 1). No connector suffix: 1 m cord, bare end (datasheet p. 2 "Hardwired, 1 m cord, bare end or various connector options (120 V)"; UM p. 9).
+    // installed: {"with_fixture_body_and_26_lens_mm": {"h": 535, "w": 339, "d": 604}, "weight_kg_fixture_body": 5.99, "weight_kg_on_26_fixture_with_yoke_and_c_clamp": 8.98, "adds_kg_over_standard_burner": 0.93, "notes": "Datasheet p. 6; UM p. 30 (installed on a 26 deg fixture with yoke and C-clamp: 8.98 kg / 19.8 lb)."}
+    // accessory_7067K1001: ETC 7067K1001 = S4WRDACCKIT "Data Accessory Kit": RJ45-to-female 5-pin XLR adapter (W6538), RJ45-to-male 5-pin XLR adapter (W6539) and an RJ45 DMX terminator (N4086) (Color II datasheet p. 5; Color II UM p. 17).
+    // weight_lb: 3.6
+    // part_number: 7068A1011
+    // light.kind: RGBA LED retrofit light engine for an existing ETC Source Four (lens and barrel are the fixture's)
+    // light.lens_for_angles: ETC 426LT (Source Four 26 deg) - the angles are the existing lens tube's; see lenses
+    // light.output_lm_max: 6042
+    // light.cct_range_k: [2200, 6500]
+    // light.cri_note: Ra 88 (R9 96) at 3200 K; Ra 80 (R9 63) at 5600 K; TLCI 78 / 83
+    // power.standby_w: 3.0
+    // power.inrush_a_120: 32
+    // power.per_circuit_120: 10
+    // power.link: No power thru. Max 10 per non-dimmed 20 A circuit (R20).
+    // AC In port note, full text: Hardwired 1 m cord, bare end (black live / white neutral / green + drain earth). 100-240 V 50/60 Hz switched (non-dim) power; 146 W / 1.25 A at 120 V, 148 W / 1.5 A at 100 V, 143 W / 0.67 A at 230 V; inrush 32 A at 120 V. No power thru. Bare end - recorded as connector "none".
+    // Beam / field with the 26 deg tube are ETC's 20.02 / 25.83 deg, carried to one decimal in CRM.
+    ports: [
+      { ...port("DMX In (RJ45)", "dmx", "input", "rj45"), notes: "DMX512 + RDM on RJ45: pin 1 DMX+, pin 2 DMX-, pins 3/6 DMX2 (pass-thru), pins 7/8 common. 32 fixtures / 300 m per chain; 6-ch footprint. XLR via 7067K1001 or 7067A1118 (UM p. 9, 17-18)." },
+      { ...port("DMX Thru (RJ45)", "dmx", "output", "rj45"), notes: "RJ45 DMX/RDM thru (UM p. 9)." },
+      { ...port("AC In (1 m cord)", "power", "input", "none"), notes: "1 m cord, bare end (black L / white N / green E). 100-240 V 50/60 Hz switched (non-dim) power: 146 W / 1.25 A at 120 V, 143 W / 0.67 A at 230 V; inrush 32 A at 120 V. No power thru." },
+    ],
+  },
 ];
